@@ -12,6 +12,10 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const flip = index % 2 === 1;
+  const external = project.href.startsWith("http");
+  const linkProps = external
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -32,6 +36,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
       >
         <a
           href={project.href}
+          {...linkProps}
           className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-ivory"
         >
           <motion.div
@@ -113,10 +118,11 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         <Reveal delay={0.25}>
           <a
             href={project.href}
+            {...linkProps}
             className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-ink"
           >
             <span className="relative">
-              Visit Project
+              {project.cta ?? "Visit Project"}
               <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-ink transition-transform duration-500 ease-expo group-hover:scale-x-0" />
             </span>
             <ArrowUpRight

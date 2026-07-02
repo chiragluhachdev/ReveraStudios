@@ -62,8 +62,13 @@ export default function Contact() {
               <a href="#" className="text-canvas/60 transition-colors hover:text-canvas">
                 Instagram {contactMeta.instagram}
               </a>
-              <a href="#" className="text-canvas/60 transition-colors hover:text-canvas">
-                LinkedIn — {contactMeta.linkedin}
+              <a
+                href={`https://facebook.com/${contactMeta.facebook.replace("@", "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-canvas/60 transition-colors hover:text-canvas"
+              >
+                Facebook {contactMeta.facebook}
               </a>
             </div>
           </Reveal>

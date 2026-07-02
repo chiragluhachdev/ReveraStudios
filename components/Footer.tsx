@@ -63,13 +63,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-base text-ink/70 transition-colors hover:text-ink">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-base text-ink/70 transition-colors hover:text-ink">
-                  Behance
+                <a
+                  href={`https://facebook.com/${contactMeta.facebook.replace("@", "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base text-ink/70 transition-colors hover:text-ink"
+                >
+                  Facebook
                 </a>
               </li>
             </ul>

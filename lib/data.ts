@@ -67,27 +67,36 @@ export type Project = {
   services: string[];
   results: { value: string; label: string }[];
   href: string;
+  /** Optional custom label for the visit link (defaults to "Visit Project"). */
+  cta?: string;
 };
 
 export const projects: Project[] = [
   {
-    id: "maison-lume",
+    id: "presnag",
     index: "01",
-    title: "Maison Lumé",
-    client: "Maison Lumé",
-    sector: "Fine Dining · Hospitality",
-    year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1600&q=80",
+    title: "PreSnag",
+    client: "PreSnag",
+    sector: "Restaurant SaaS • Ordering Platform",
+    year: "2026",
+    image: "/videos/presnagx.png",
     story:
-      "A Michelin-aspiring restaurant needed an identity as considered as its tasting menu. We built a warm, tactile brand world — from monogram to menu — and a reservation platform that feels like an invitation.",
-    services: ["Brand Identity", "Photography", "Web Development", "Art Direction"],
-    results: [
-      { value: "3.4×", label: "Reservations" },
-      { value: "+62%", label: "Avg. spend" },
-      { value: "1", label: "Design award" },
+      "PreSnag reimagines how modern restaurants connect with customers through seamless digital ordering. From QR-powered experiences to intelligent order management, every interaction was crafted to be effortless, fast, and memorable.",
+    services: [
+      "Product Design",
+      "UI/UX Design",
+      "Web Development",
+      "Mobile App",
+      "Backend Engineering",
+      "Brand Identity",
     ],
-    href: "#",
+    results: [
+      { value: "Web + Mobile", label: "Platform" },
+      { value: "Production", label: "Ready" },
+      { value: "End-to-End", label: "Design → Deployment" },
+    ],
+    href: "https://presnag.com",
+    cta: "Visit Platform",
   },
   {
     id: "orla-fine",
@@ -283,10 +292,10 @@ export const processSteps = [
 ];
 
 export const stats = [
-  { value: 240, suffix: "+", label: "Projects delivered" },
-  { value: 90, suffix: "+", label: "Happy clients" },
-  { value: 320, suffix: "", label: "Campaigns launched" },
-  { value: 11, suffix: "", label: "Years of craft" },
+  { value: 8, suffix: "", label: "Disciplines in-house" },
+  { value: 100, suffix: "%", label: "Founder-led delivery" },
+  { value: 24, suffix: "h", label: "Response time" },
+  { value: 1, suffix: "", label: "Flagship platform" },
 ];
 
 export const testimonials = [
@@ -370,6 +379,6 @@ export const contactMeta = {
   email: "studiorevera@gmail.com",
   phone: "+91 8796657504",
   instagram: "@reverastudio",
-  linkedin: "Rêvera Studio",
+  facebook: "@reverastudio",
   location: "Faridabad, 121001, Haryana",
 };

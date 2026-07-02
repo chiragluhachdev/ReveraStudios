@@ -44,7 +44,7 @@ export default function Stats() {
     <section className="relative overflow-hidden bg-ink py-24 text-canvas lg:py-32">
       <div className="container-x">
         <Reveal className="mb-16">
-          <span className="eyebrow text-canvas/50">07 — By the Numbers</span>
+          <span className="eyebrow text-canvas/50">07 — The Studio Today</span>
         </Reveal>
         <div className="grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-4">
           {stats.map((s, i) => (
