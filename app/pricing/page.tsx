@@ -36,7 +36,7 @@ export default function PricingPage() {
               <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-stone">
                 Every business is different. Whether you&apos;re just getting
                 started or ready to scale, Rêvera Studio offers carefully crafted
-                solutions designed to build, grow, and elevate your brand.
+                solutions designed to build, grow and elevate your brand.
               </p>
             </Reveal>
           </div>
