@@ -367,9 +367,9 @@ export const nav = [
 ];
 
 export const contactMeta = {
-  email: "hello@reverastudio.com",
-  phone: "+1 (415) 555-0117",
+  email: "studiorevera@gmail.com",
+  phone: "+91 8796657504",
   instagram: "@reverastudio",
   linkedin: "Rêvera Studio",
-  location: "San Francisco · London · Dubai",
+  location: "Faridabad, 121001, Haryana",
 };

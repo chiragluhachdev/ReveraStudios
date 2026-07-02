@@ -6,10 +6,7 @@ import { contactMeta } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
 
-const budgets = ["< $10k", "$10k–$25k", "$25k–$50k", "$50k+"];
-
 export default function Contact() {
-  const [budget, setBudget] = useState<string>("");
   const [sent, setSent] = useState(false);
 
   const onSubmit = (e: FormEvent) => {
@@ -19,7 +16,7 @@ export default function Contact() {
   };
 
   const field =
-    "w-full border-b border-ink/15 bg-transparent py-4 text-lg text-ink placeholder:text-ink/35 outline-none transition-colors duration-300 focus:border-ink";
+    "w-full border-b border-canvas/20 bg-transparent py-4 text-lg text-canvas placeholder:text-canvas/40 outline-none transition-colors duration-300 focus:border-canvas";
 
   return (
     <section id="contact" className="relative bg-ink py-28 text-canvas lg:py-40">
@@ -115,28 +112,9 @@ export default function Contact() {
                   <input required name="name" placeholder="Your name" className={field} />
                   <input required type="email" name="email" placeholder="Email address" className={field} />
                 </div>
-                <input name="company" placeholder="Company (optional)" className={field} />
-
-                <div>
-                  <p className="mb-4 text-sm uppercase tracking-[0.2em] text-canvas/45">
-                    Budget
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    {budgets.map((b) => (
-                      <button
-                        key={b}
-                        type="button"
-                        onClick={() => setBudget(b)}
-                        className={`rounded-full border px-5 py-2.5 text-sm transition-all duration-300 ease-expo ${
-                          budget === b
-                            ? "border-accent bg-accent text-canvas"
-                            : "border-canvas/20 text-canvas/70 hover:border-canvas/50"
-                        }`}
-                      >
-                        {b}
-                      </button>
-                    ))}
-                  </div>
+                <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+                  <input name="company" placeholder="Company (optional)" className={field} />
+                  <input type="tel" name="phone" placeholder="Phone number" className={field} />
                 </div>
 
                 <textarea
