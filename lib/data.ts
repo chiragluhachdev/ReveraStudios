@@ -67,6 +67,7 @@ export type Project = {
   services: string[];
   results: { value: string; label: string }[];
   href: string;
+  images?: string[];
   /** Optional custom label for the visit link (defaults to "Visit Project"). */
   cta?: string;
 };
@@ -107,6 +108,11 @@ export const projects: Project[] = [
     year: "2025",
     image:
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80"
+    ],
     story:
       "Heritage craftsmanship, reimagined for a new generation of collectors. A cinematic campaign and editorial e-commerce experience that lets each piece breathe under gallery lighting.",
     services: ["Creative Strategy", "Videography", "E-Commerce", "Campaign"],

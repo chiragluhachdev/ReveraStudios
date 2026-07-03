@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-const siteUrl = "https://reverastudio.com";
+const siteUrl = "https://reverastudios.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
