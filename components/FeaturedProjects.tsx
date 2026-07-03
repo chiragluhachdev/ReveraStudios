@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -10,17 +10,6 @@ import AnimatedHeading from "@/components/ui/AnimatedHeading";
 
 function ProjectRow({ project, index }: { project: Project; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    if (project.images && project.images.length > 1) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-      }, 2000);
-      return () => clearInterval(interval);
-    }
-  }, [project.images]);
-
   const reduce = useReducedMotion();
   const flip = index % 2 === 1;
   const external = project.href.startsWith("http");
@@ -52,25 +41,15 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         >
           <motion.div
             style={reduce ? undefined : { y, scale }}
-            className="absolute inset-0 overflow-hidden"
+            className="absolute inset-0"
           >
-            <motion.div
-              className="flex h-full w-full"
-              animate={{ x: `-${currentImageIndex * 100}%` }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              {(project.images || [project.image]).map((img, i) => (
-                <div key={i} className="relative h-full min-w-full flex-shrink-0">
-                  <Image
-                    src={img}
-                    alt={`${project.title} ${i + 1}`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                    className="object-cover transition-transform duration-700 ease-expo group-hover:scale-[1.04]"
-                  />
-                </div>
-              ))}
-            </motion.div>
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              className="object-cover transition-all duration-700 ease-expo group-hover:scale-[1.04]"
+            />
           </motion.div>
           <div className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/10" />
           <span className="absolute right-6 top-6 flex h-14 w-14 translate-y-3 items-center justify-center rounded-full bg-canvas text-ink opacity-0 transition-all duration-500 ease-expo group-hover:translate-y-0 group-hover:opacity-100">
