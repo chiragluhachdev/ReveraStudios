@@ -309,20 +309,20 @@ export const testimonials = [
   {
     quote:
       "Rêvera didn't just redesign our brand — they gave us a point of view. Everything since has been easier to sell.",
-    name: "Isabelle Moreau",
-    role: "Founder, Maison Lumé",
+    name: "Mukul Yadav",
+    role: "Founder, Miyaabi",
   },
   {
     quote:
-      "The most considered studio we've worked with. Every detail felt intentional, every deadline respected.",
-    name: "Daniel Osei",
-    role: "CMO, Meridian Group",
+      "The website was something I wanted for a long time and they made it happen.",
+    name: "Sanchit Chugh",
+    role: "Student, GeoEnergys",
   },
   {
     quote:
-      "They shot our collection like it belonged in a museum. Sales doubled in a quarter. Enough said.",
-    name: "Lena Fischer",
-    role: "Creative Director, VAULT",
+      "The most considered team I've worked with. Every detail felt intentional, every deadline respected.",
+    name: "Kartthik Reddy",
+    role: "Founder, MKP",
   },
 ];
 
