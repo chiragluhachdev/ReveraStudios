@@ -128,23 +128,29 @@ export const projects: Project[] = [
     cta: "Visit Store",
   },
   {
-    id: "vault-fashion",
+    id: "miyaabi",
     index: "03",
-    title: "VAULT Atelier",
-    client: "VAULT",
-    sector: "Fashion · Direct-to-Consumer",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80",
+    title: "Miyaabi",
+    client: "Miyaabi",
+    sector: "Fashion E-Commerce • Lifestyle Brand Experience",
+    year: "2026",
+    image: "/videos/miyaabix2.png",
     story:
-      "A fashion label with a cult following and no digital home. We shot the seasonal lookbook, defined the tone of voice, and shipped a headless storefront that loads in under a second.",
-    services: ["Photography", "Brand Identity", "Web Development", "Social Media"],
-    results: [
-      { value: "0.8s", label: "Load time" },
-      { value: "+95%", label: "Conversion" },
-      { value: "240k", label: "New followers" },
+      "A modern fashion commerce platform for a contemporary clothing brand built on elevated everyday essentials. Minimal design, immersive storytelling and seamless shopping showcase curated collections and timeless wardrobe staples.",
+    services: [
+      "Brand Identity",
+      "Fashion UI/UX",
+      "E-Commerce Development",
+      "Responsive Design",
+      "Product Experience",
     ],
-    href: "#",
+    results: [
+      { value: "Fashion", label: "Design-led" },
+      { value: "Desktop + Mobile", label: "Responsive store" },
+      { value: "End-to-End", label: "Design → Build" },
+    ],
+    href: "https://miyaabi.vercel.app/",
+    cta: "Visit Store",
   },
   {
     id: "geoenergys",
