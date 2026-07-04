@@ -345,6 +345,11 @@ export const clients = [
   "MIYAABI",
   "MKP",
   "GEO ENERGYS",
+  "SSJ",
+  "PRESNAG",
+  "MIYAABI",
+  "MKP",
+  "GEO ENERGYS",
 ];
 
 export const team = [
