@@ -340,16 +340,11 @@ export const testimonials = [
 ];
 
 export const clients = [
-  "AURELIA",
-  "MERIDIAN",
-  "VAULT",
-  "NORD",
-  "BOTANICA",
-  "ATLAS",
-  "ORLA",
-  "PULSE",
-  "MAISON LUMÉ",
-  "SEED",
+  "SSJ",
+  "PRESNAG",
+  "MIYAABI",
+  "MKP",
+  "GEO ENERGYS",
 ];
 
 export const team = [
