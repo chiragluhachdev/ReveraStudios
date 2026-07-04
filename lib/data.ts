@@ -69,6 +69,8 @@ export type Project = {
   href: string;
   /** Optional custom label for the visit link (defaults to "Visit Project"). */
   cta?: string;
+  /** Optional client / attribution line shown under the sector. */
+  clientLabel?: string;
 };
 
 export const projects: Project[] = [
@@ -137,23 +139,33 @@ export const projects: Project[] = [
     href: "#",
   },
   {
-    id: "meridian-corp",
+    id: "geoenergys",
     index: "04",
-    title: "Meridian Group",
-    client: "Meridian",
-    sector: "Corporate · Enterprise",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+    title: "GeoEnergys",
+    client: "Sanchit Chugh",
+    clientLabel: "Sanchit Chugh · Independent Research / Energy Analytics",
+    sector: "Energy Intelligence Platform • Data Analytics",
+    year: "2026",
+    image: "/videos/GeoEnergys.png",
     story:
-      "A 40-year-old holding company needed to speak to a modern market without losing its authority. We delivered a restrained rebrand and a corporate platform architected for scale.",
-    services: ["Branding", "Creative Strategy", "Web Development", "AI Automation"],
-    results: [
-      { value: "+3", label: "Enterprise deals" },
-      { value: "−48%", label: "Bounce rate" },
-      { value: "AA", label: "Accessibility" },
+      "An interactive energy intelligence platform that turns global energy trade into clean, explorable data. Compare major economies and analyse petroleum, gas, coal and electricity flows — powered by official U.S. EIA datasets.",
+    services: [
+      "Research",
+      "UI/UX Design",
+      "Dashboard Design",
+      "Data Visualization",
+      "Frontend Development",
+      "API Integration",
+      "Responsive Development",
     ],
-    href: "#",
+    results: [
+      { value: "10", label: "Major economies" },
+      { value: "4", label: "Energy types" },
+      { value: "EIA.gov", label: "Official data source" },
+      { value: "Multiple", label: "Interactive dashboards" },
+    ],
+    href: "https://geo-energys.vercel.app/",
+    cta: "View Live Project",
   },
   {
     id: "pulse-app",

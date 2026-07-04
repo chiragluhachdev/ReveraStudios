@@ -81,6 +81,15 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
           </p>
         </Reveal>
 
+        {project.clientLabel && (
+          <Reveal delay={0.07}>
+            <p className="mt-2 text-sm text-stone">
+              <span className="text-ink/40">Client — </span>
+              {project.clientLabel}
+            </p>
+          </Reveal>
+        )}
+
         <Reveal delay={0.1}>
           <p className="mt-6 max-w-md text-pretty text-base leading-relaxed text-ink/70">
             {project.story}
@@ -101,7 +110,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div className="mt-8 flex gap-10 border-t border-ink/10 pt-6">
+          <div className="mt-8 flex flex-wrap gap-x-10 gap-y-5 border-t border-ink/10 pt-6">
             {project.results.map((r) => (
               <div key={r.label}>
                 <p className="font-display text-3xl font-medium text-ink">
