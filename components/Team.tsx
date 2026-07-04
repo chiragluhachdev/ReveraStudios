@@ -31,14 +31,24 @@ export default function Team() {
           {team.map((member, i) => (
             <Reveal key={member.name} delay={(i % 4) * 0.06}>
               <figure className="group">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-ivory">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover grayscale transition-all duration-700 ease-expo group-hover:scale-[1.04] group-hover:grayscale-0"
-                  />
+                <div
+                  className={`relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-2xl ${
+                    member.image ? "bg-ivory" : "bg-ink"
+                  }`}
+                >
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                      className="object-cover grayscale transition-all duration-700 ease-expo group-hover:scale-[1.04] group-hover:grayscale-0"
+                    />
+                  ) : (
+                    <span className="font-display text-6xl font-medium text-canvas/25 transition-colors duration-700 ease-expo group-hover:text-canvas/40">
+                      {member.name.charAt(0)}
+                    </span>
+                  )}
                 </div>
                 <figcaption className="mt-5">
                   <h3 className="font-display text-2xl font-medium tracking-tight text-ink">

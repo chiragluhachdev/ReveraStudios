@@ -181,25 +181,6 @@ export const projects: Project[] = [
     href: "https://geo-energys.vercel.app/",
     cta: "View Live Project",
   },
-  {
-    id: "pulse-app",
-    index: "05",
-    title: "Pulse — Wellness App",
-    client: "Pulse",
-    sector: "Technology · Mobile App",
-    year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1600&q=80",
-    story:
-      "A wellness startup with a bold vision and a Series A to earn it. We designed and built a mobile app with an AI coaching layer that feels calm, personal, and effortless.",
-    services: ["Mobile App", "AI Automation", "Brand Identity", "Product Design"],
-    results: [
-      { value: "4.9★", label: "App Store" },
-      { value: "120k", label: "Installs / mo" },
-      { value: "$14M", label: "Series A" },
-    ],
-    href: "#",
-  },
 ];
 
 export type Service = {
@@ -365,7 +346,7 @@ export const team = [
     image: "/videos/chirag.png",
   },
   {
-    name: "Kanhiya",
+    name: "Kanhaiya",
     role: "Director · Cinematographer",
     image: "/videos/kanhiyax.png",
   },
@@ -375,9 +356,9 @@ export const team = [
     image: "/videos/harshit.png",
   },
   {
-    name: "Kanhiya.",
+    name: "Sara",
     role: "Visual Artist · Model",
-    image: "/videos/kanhiyax.png",
+    image: "",
   },
 ];
 
