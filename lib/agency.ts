@@ -11,7 +11,7 @@ export const BRAND = {
   type: "Technology & Digital Agency",
   address: "Faridabad, Haryana – 121001, India",
   udyam: "UDYAM-HR-03-0157904",
-  email: "studiorevera@gmail.com",
+  email: "studios.revera@gmail.com",
   phone: "+91 8796657504",
 };
 

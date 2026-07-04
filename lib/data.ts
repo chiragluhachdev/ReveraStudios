@@ -383,7 +383,7 @@ export const nav = [
 ];
 
 export const contactMeta = {
-  email: "studiorevera@gmail.com",
+  email: "studios.revera@gmail.com",
   phone: "+91 8796657504",
   instagram: "@reverastudio",
   facebook: "@reverastudio",

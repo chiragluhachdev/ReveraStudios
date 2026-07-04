@@ -10,20 +10,14 @@ import PricingFAQ from "@/components/pricing/PricingFAQ";
 import { OnboardingProvider } from "@/components/onboarding/OnboardingContext";
 import StartProjectButton from "@/components/onboarding/StartProjectButton";
 import JsonLd from "@/components/seo/JsonLd";
-import { breadcrumbSchema } from "@/lib/site";
+import { breadcrumbSchema, pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Pricing",
   description:
-    "Rêvera Studio pricing — carefully crafted plans to build, grow and launch premium websites, mobile apps, branding and digital experiences for modern businesses.",
-  alternates: { canonical: "/pricing" },
-  openGraph: {
-    title: "Pricing | Rêvera Studio",
-    description:
-      "Carefully crafted plans to build, grow and launch your brand with Rêvera Studio.",
-    url: "/pricing",
-  },
-};
+    "Rêvera Studio pricing — carefully crafted plans to build, grow and launch premium websites, mobile apps, branding and AI experiences for modern businesses.",
+  path: "/pricing",
+});
 
 export default function PricingPage() {
   return (

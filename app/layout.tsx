@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     default: site.titleDefault,
     template: site.titleTemplate,
   },
-  description: site.description,
+  description: site.metaDescription,
   keywords: site.keywords,
   applicationName: site.name,
   authors: [{ name: site.name, url: SITE_URL }],

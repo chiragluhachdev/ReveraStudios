@@ -24,6 +24,11 @@ export const site = {
   description:
     "Rêvera Studio is a creative technology and digital agency based in Faridabad, India, specializing in premium websites, mobile applications, branding, digital marketing, cinematic content creation, AI integrations, and end-to-end digital experiences for modern businesses.",
 
+  // Short homepage <meta description> (~155 chars) — kept separate from
+  // the long `description` used in structured data / manifest.
+  metaDescription:
+    "Rêvera Studio is a creative technology & digital agency in Faridabad, India, building premium websites, mobile apps, branding, content and AI experiences.",
+
   // Short description for Open Graph / social cards.
   ogDescription:
     "Premium creative technology studio building websites, mobile apps, digital brands and cinematic experiences.",
@@ -97,6 +102,52 @@ export const site = {
 
 export const absoluteUrl = (path = "") =>
   `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+
+import type { Metadata } from "next";
+
+// Builds a COMPLETE per-page metadata object (canonical + full Open
+// Graph + Twitter, always including the OG image). Use this for every
+// new page so no page ever ships with missing/partial social tags.
+// `title` is the segment title; the root layout's template appends
+// " | Rêvera Studio" to the <title>, while og/twitter get the full form.
+export function pageMetadata({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const fullTitle = `${title} | ${site.name}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      siteName: site.name,
+      title: fullTitle,
+      description,
+      url: path,
+      locale: "en_US",
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: "Rêvera Studio — Creative Technology & Digital Agency",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: ["/opengraph-image"],
+    },
+  };
+}
 
 // ── Public pages (drives the sitemap; extend to add routes) ──
 export const pages: {
