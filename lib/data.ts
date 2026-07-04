@@ -101,23 +101,31 @@ export const projects: Project[] = [
     cta: "Visit Platform",
   },
   {
-    id: "orla-fine",
+    id: "ss-fine-jewellery",
     index: "02",
-    title: "Orla Fine Jewellery",
-    client: "Orla",
-    sector: "Luxury Retail · Jewellery",
-    year: "2025",
+    title: "SS Fine Jewellery",
+    client: "SS Fine Jewellery",
+    sector: "Luxury Jewellery E-Commerce • Premium Brand Experience",
+    year: "2026",
     image:
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1600&q=80",
     story:
-      "Heritage craftsmanship, reimagined for a new generation of collectors. A cinematic campaign and editorial e-commerce experience that lets each piece breathe under gallery lighting.",
-    services: ["Creative Strategy", "Videography", "E-Commerce", "Campaign"],
-    results: [
-      { value: "5.1×", label: "Online sales" },
-      { value: "+180%", label: "Time on site" },
-      { value: "42", label: "Countries" },
+      "A premium luxury e-commerce experience for SS Fine Jewellery — sophisticated visuals, immersive product presentation and seamless shopping. Every interaction highlights timeless craftsmanship across desktop and mobile.",
+    services: [
+      "Brand Identity",
+      "Luxury UI/UX",
+      "E-Commerce",
+      "Responsive Development",
+      "Product Showcase",
+      "Performance Optimization",
     ],
-    href: "#",
+    results: [
+      { value: "Luxury", label: "Design system" },
+      { value: "Desktop + Mobile", label: "Responsive store" },
+      { value: "End-to-End", label: "Premium build" },
+    ],
+    href: "https://ss-jewellery.vercel.app",
+    cta: "Visit Store",
   },
   {
     id: "vault-fashion",
