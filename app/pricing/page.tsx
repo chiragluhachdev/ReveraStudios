@@ -9,16 +9,31 @@ import PricingComparison from "@/components/pricing/PricingComparison";
 import PricingFAQ from "@/components/pricing/PricingFAQ";
 import { OnboardingProvider } from "@/components/onboarding/OnboardingContext";
 import StartProjectButton from "@/components/onboarding/StartProjectButton";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Choose the right brand engagement for your business. Rêvera Studio offers carefully crafted plans to build, grow and elevate your brand.",
+    "Rêvera Studio pricing — carefully crafted plans to build, grow and launch premium websites, mobile apps, branding and digital experiences for modern businesses.",
+  alternates: { canonical: "/pricing" },
+  openGraph: {
+    title: "Pricing | Rêvera Studio",
+    description:
+      "Carefully crafted plans to build, grow and launch your brand with Rêvera Studio.",
+    url: "/pricing",
+  },
 };
 
 export default function PricingPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Pricing", path: "/pricing" },
+        ])}
+      />
       <Navbar />
       <main>
         {/* Hero */}

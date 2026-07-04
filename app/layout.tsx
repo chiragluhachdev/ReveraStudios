@@ -2,6 +2,13 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  SITE_URL,
+  organizationSchema,
+  site,
+  websiteSchema,
+} from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,42 +23,65 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-const siteUrl = "https://reverastudios.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Rêvera Studio — Where Ideas Become Experiences",
-    template: "%s · Rêvera Studio",
+    default: site.titleDefault,
+    template: site.titleTemplate,
   },
-  description:
-    "Rêvera Studio is a creative technology studio crafting brand identity, cinematic film, photography and world-class digital products for luxury and enterprise clients.",
-  keywords: [
-    "creative studio",
-    "brand identity",
-    "cinematic photography",
-    "videography",
-    "web development",
-    "mobile apps",
-    "AI automation",
-    "creative agency",
-  ],
-  authors: [{ name: "Rêvera Studio" }],
+  description: site.description,
+  keywords: site.keywords,
+  applicationName: site.name,
+  authors: [{ name: site.name, url: SITE_URL }],
+  creator: site.name,
+  publisher: site.name,
+  category: "Creative Technology & Digital Agency",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Rêvera Studio — Where Ideas Become Experiences",
-    description:
-      "A creative technology studio building brands that people remember.",
-    url: siteUrl,
-    siteName: "Rêvera Studio",
     type: "website",
+    siteName: site.name,
+    title: site.name,
+    description: site.ogDescription,
+    url: SITE_URL,
+    locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Rêvera Studio — Creative Technology & Digital Agency",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rêvera Studio",
-    description:
-      "A creative technology studio building brands that people remember.",
+    title: site.name,
+    description: site.ogDescription,
+    images: ["/opengraph-image"],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: [{ url: "/icon", type: "image/png", sizes: "any" }],
+    apple: [{ url: "/apple-icon", sizes: "180x180" }],
+    other: [{ rel: "mask-icon", url: "/mask-icon.svg", color: "#0A0A0A" }],
+  },
+  manifest: "/manifest.webmanifest",
+  // Set NEXT_PUBLIC_GSC_VERIFICATION to your Search Console token to verify.
+  verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {
@@ -68,6 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
