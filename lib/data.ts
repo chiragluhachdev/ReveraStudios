@@ -302,7 +302,7 @@ export const stats = [
   { value: 8, suffix: "", label: "Disciplines in-house" },
   { value: 100, suffix: "%", label: "Founder-led delivery" },
   { value: 24, suffix: "h", label: "Response time" },
-  { value: 1, suffix: "", label: "Flagship platform" },
+  { value: 10, suffix: "+", label: "Flagship platforms" },
 ];
 
 export const testimonials = [
@@ -385,7 +385,7 @@ export const nav = [
 export const contactMeta = {
   email: "studios.revera@gmail.com",
   phone: "+91 8796657504",
-  instagram: "@reverastudio",
+  instagram: "@reverastudios.co",
   facebook: "@reverastudio",
   location: "Faridabad, 121001, Haryana",
 };

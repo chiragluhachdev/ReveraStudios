@@ -69,7 +69,7 @@ export const site = {
 
   // Public social profiles (drives Organization `sameAs`).
   sameAs: [
-    "https://instagram.com/reverastudio",
+    "https://instagram.com/reverastudios.co",
     "https://facebook.com/reverastudio",
   ],
 
