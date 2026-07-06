@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Showreel from "@/components/Showreel";
+// import Showreel from "@/components/Showreel"; // temporarily hidden
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
@@ -23,7 +23,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Showreel />
+        {/* Showreel temporarily hidden — restore when films are ready. */}
+        {/* <Showreel /> */}
         <FeaturedProjects />
         <Services />
         <Process />
