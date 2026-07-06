@@ -321,8 +321,8 @@ export const testimonials = [
   {
     quote:
       "The most considered team I've worked with. Every detail felt intentional, every deadline respected.",
-    name: "Kartthik Reddy",
-    role: "Founder, MKP",
+    name: "Chirag Luhach",
+    role: "Founder, PreSnag",
   },
 ];
 
