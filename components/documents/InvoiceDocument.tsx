@@ -68,6 +68,18 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
         <Meta label="Payment Due" value={isReceipt ? "Received" : "Within 3 Days"} />
       </section>
 
+      {/* Project */}
+      {doc.projectName && (
+        <section className="border-b border-ink/10 py-6">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-stone">
+            Project
+          </p>
+          <p className="mt-1.5 font-display text-lg tracking-tight text-ink">
+            {doc.projectName}
+          </p>
+        </section>
+      )}
+
       {/* Billed to */}
       <section className="grid grid-cols-1 gap-8 border-b border-ink/10 py-8 sm:grid-cols-2">
         <div>
@@ -78,7 +90,10 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
             {doc.client.name}
           </p>
           {doc.client.organization && (
-            <p className="mt-1 text-sm text-ink/70">{doc.client.organization}</p>
+            <p className="mt-1 text-sm text-ink/70">
+              <span className="text-stone">Organization: </span>
+              {doc.client.organization}
+            </p>
           )}
           {doc.client.address && (
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-stone">

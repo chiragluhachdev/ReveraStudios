@@ -140,6 +140,8 @@ export type Invoice = {
     address: string;
   };
   planLabel: string;
+  /** Optional project / engagement name shown on the document. */
+  projectName?: string;
   items: InvoiceItem[];
   notes: string;
   terms: string[];

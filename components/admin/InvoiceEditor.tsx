@@ -41,6 +41,7 @@ export default function InvoiceEditor({
     phone: request.phone,
     address: "",
   });
+  const [projectName, setProjectName] = useState("");
   const [invoiceDate, setInvoiceDate] = useState(todayISO());
   const [dueDate, setDueDate] = useState(plusDaysISO(3));
   const [items, setItems] = useState<InvoiceItem[]>(
@@ -79,6 +80,7 @@ export default function InvoiceEditor({
           address: client.address,
         },
         planLabel: planLabel(request.planId),
+        projectName: projectName.trim() || undefined,
         items,
         notes,
         terms,
@@ -167,6 +169,15 @@ export default function InvoiceEditor({
                     setClient({ ...client, address: e.target.value })
                   }
                   placeholder="Street, City, State – PIN"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label className={label}>Project Name</label>
+                <input
+                  className={input}
+                  value={projectName}
+                  onChange={(e) => setProjectName(e.target.value)}
+                  placeholder="e.g. MR Bites – Campus Food Pre-Ordering Platform"
                 />
               </div>
             </div>
