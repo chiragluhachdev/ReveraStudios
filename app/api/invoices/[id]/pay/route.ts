@@ -6,13 +6,18 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(
-  _req: Request,
+  req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const denied = await guard();
   if (denied) return denied;
   const { id } = await params;
-  const record = await markPaid(id);
+  const body = await req.json().catch(() => ({}));
+  const record = await markPaid(id, {
+    upiTxnId: body?.upiTxnId,
+    paymentMethod: body?.paymentMethod,
+    paidAt: body?.paidAt,
+  });
   if (!record) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(record);
 }

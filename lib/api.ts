@@ -60,10 +60,15 @@ export function createDocument(
   }).then((r) => json<Invoice>(r));
 }
 
-export function markPaid(id: string): Promise<Invoice> {
-  return fetch(`/api/invoices/${id}/pay`, { method: "POST" }).then((r) =>
-    json<Invoice>(r)
-  );
+export function markPaid(
+  id: string,
+  details?: { upiTxnId?: string; paymentMethod?: string; paidAt?: string }
+): Promise<Invoice> {
+  return fetch(`/api/invoices/${id}/pay`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(details ?? {}),
+  }).then((r) => json<Invoice>(r));
 }
 
 // ── Admin: auth ──────────────────────────────────────────────

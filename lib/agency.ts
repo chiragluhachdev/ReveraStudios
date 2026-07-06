@@ -147,6 +147,9 @@ export type Invoice = {
   terms: string[];
   paidAt?: string;
   receiptId?: string;
+  // Payment / receipt details (set when the receipt is generated).
+  paymentMethod?: string;
+  upiTxnId?: string;
 };
 
 // ── Plan → editable service breakdown defaults ───────────────

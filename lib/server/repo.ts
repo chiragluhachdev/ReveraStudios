@@ -126,21 +126,30 @@ export async function updateInvoice(
 }
 
 // Mark an invoice paid, mint a receipt id, and flip the request to Paid.
-export async function markPaid(id: string): Promise<Invoice | null> {
+export async function markPaid(
+  id: string,
+  details?: { upiTxnId?: string; paymentMethod?: string; paidAt?: string }
+): Promise<Invoice | null> {
   const db = await getDb();
   const invoice = await getInvoice(id);
   if (!invoice) return null;
 
-  const seq = await nextSeq(`receipt-${year()}`);
-  const receiptId = `REV-RCP-${year()}-${pad(seq, 3)}`;
+  // Preserve an existing receipt id if the invoice was already paid.
+  let receiptId = invoice.receiptId;
+  if (!receiptId) {
+    const seq = await nextSeq(`receipt-${year()}`);
+    receiptId = `REV-RCP-${year()}-${pad(seq, 3)}`;
+  }
 
   await db.collection("invoices").updateOne(
     { _id: id as never },
     {
       $set: {
         status: "Paid",
-        paidAt: new Date().toISOString(),
+        paidAt: details?.paidAt || invoice.paidAt || new Date().toISOString(),
         receiptId,
+        paymentMethod: details?.paymentMethod || invoice.paymentMethod || "UPI",
+        upiTxnId: details?.upiTxnId ?? invoice.upiTxnId ?? "",
       },
     }
   );

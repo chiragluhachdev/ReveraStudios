@@ -11,8 +11,9 @@ import {
   invoiceTotal,
   toReceipt,
 } from "@/lib/agency";
-import { markPaid as apiMarkPaid } from "@/lib/api";
 import InvoiceDocument from "@/components/documents/InvoiceDocument";
+import ReceiptDocument from "@/components/documents/ReceiptDocument";
+import ReceiptEditor from "@/components/admin/ReceiptEditor";
 
 export default function DocumentViewer({
   invoice,
@@ -25,8 +26,10 @@ export default function DocumentViewer({
 }) {
   const [current, setCurrent] = useState<Invoice>(invoice);
   const [showReceipt, setShowReceipt] = useState(invoice.docType === "Receipt");
+  const [editorOpen, setEditorOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
+  // `doc` drives the toolbar label + share text (receipt id vs invoice id).
   const doc = showReceipt ? toReceipt(current) : current;
   const total = invoiceTotal(doc.items);
   const paid = current.status === "Paid";
@@ -42,12 +45,13 @@ export default function DocumentViewer({
     `Rêvera Studio — ${doc.docType} ${doc.id}`
   )}&body=${encodeURIComponent(shareText)}`;
 
-  const markPaid = async () => {
-    const updated = await apiMarkPaid(current.id);
-    setCurrent(updated); // now-paid invoice with receiptId
-    setShowReceipt(true); // reveal the freshly minted receipt
-    onChanged?.();
-  };
+  // The "Receipt" render uses the dedicated ReceiptDocument; everything
+  // else uses the InvoiceDocument. Both take the live `current` record.
+  const DocBody = showReceipt ? (
+    <ReceiptDocument doc={current} />
+  ) : (
+    <InvoiceDocument doc={current} />
+  );
 
   return (
     <>
@@ -72,9 +76,9 @@ export default function DocumentViewer({
           <Action href={waHref} icon={<MessageCircle size={15} />} label="WhatsApp" />
           {!paid && current.docType === "Invoice" && (
             <Action
-              onClick={markPaid}
+              onClick={() => setEditorOpen(true)}
               icon={<BadgeCheck size={15} />}
-              label="Mark as Paid"
+              label="Generate Receipt"
               solid
             />
           )}
@@ -103,7 +107,7 @@ export default function DocumentViewer({
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-[820px] rounded-xl bg-white shadow-2xl"
         >
-          <InvoiceDocument doc={doc} />
+          {DocBody}
         </motion.div>
       </div>
     </div>
@@ -112,11 +116,23 @@ export default function DocumentViewer({
         across A4 pages instead of being clipped by the modal's scroll box. */}
     {mounted &&
       createPortal(
-        <div className="print-portal">
-          <InvoiceDocument doc={doc} />
-        </div>,
+        <div className="print-portal">{DocBody}</div>,
         document.body
       )}
+
+    {/* Verify-payment step: edit the UPI transaction ID before generating. */}
+    {editorOpen && (
+      <ReceiptEditor
+        invoice={current}
+        onClose={() => setEditorOpen(false)}
+        onGenerated={(updated) => {
+          setCurrent(updated);
+          setShowReceipt(true);
+          setEditorOpen(false);
+          onChanged?.();
+        }}
+      />
+    )}
     </>
   );
 }
