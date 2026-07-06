@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { guard } from "@/lib/server/auth";
-import { getInvoice, updateInvoice } from "@/lib/server/repo";
+import { deleteInvoice, getInvoice, updateInvoice } from "@/lib/server/repo";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,4 +28,16 @@ export async function PATCH(
   const record = await updateInvoice(id, patch);
   if (!record) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(record);
+}
+
+export async function DELETE(
+  _req: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const denied = await guard();
+  if (denied) return denied;
+  const { id } = await params;
+  const ok = await deleteInvoice(id);
+  if (!ok) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  return NextResponse.json({ ok: true });
 }

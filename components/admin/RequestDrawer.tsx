@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FileText, Plus, ReceiptText, X } from "lucide-react";
+import { FileText, Plus, ReceiptText, Trash2, X } from "lucide-react";
 import {
   DocType,
   PROJECT_STATUSES,
@@ -11,7 +11,7 @@ import {
   TIMELINES,
   planLabel,
 } from "@/lib/agency";
-import { updateRequest } from "@/lib/api";
+import { deleteRequest, updateRequest } from "@/lib/api";
 
 const selectCls =
   "w-full rounded-lg border border-ink/15 bg-white/60 px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-ink";
@@ -57,6 +57,18 @@ export default function RequestDrawer({
     setNote("");
   };
 
+  const remove = async () => {
+    if (
+      !window.confirm(
+        `Delete request ${request.id} from ${request.businessName}? This cannot be undone.`
+      )
+    )
+      return;
+    await deleteRequest(request.id);
+    onRefresh();
+    onClose();
+  };
+
   return (
     <div className="fixed inset-0 z-[88] flex justify-end bg-ink/40 backdrop-blur-sm" onClick={onClose}>
       <motion.aside
@@ -77,13 +89,23 @@ export default function RequestDrawer({
             </h3>
             <p className="mt-1 text-xs text-stone">{request.id}</p>
           </div>
-          <button
-            onClick={onClose}
-            aria-label="Close"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors hover:bg-ink hover:text-canvas"
-          >
-            <X size={18} />
-          </button>
+          <div className="flex shrink-0 items-center gap-2">
+            <button
+              onClick={remove}
+              aria-label="Delete request"
+              title="Delete request"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-red-300 text-red-500 transition-colors hover:bg-red-500 hover:text-canvas"
+            >
+              <Trash2 size={17} />
+            </button>
+            <button
+              onClick={onClose}
+              aria-label="Close"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors hover:bg-ink hover:text-canvas"
+            >
+              <X size={18} />
+            </button>
+          </div>
         </div>
 
         <div className="flex-1 space-y-8 px-6 py-6">

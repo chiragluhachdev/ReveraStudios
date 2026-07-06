@@ -36,6 +36,12 @@ export function updateRequest(
   }).then((r) => json<ProjectRequest>(r));
 }
 
+export function deleteRequest(id: string): Promise<void> {
+  return fetch(`/api/requests/${id}`, { method: "DELETE" }).then((r) => {
+    if (!r.ok) throw new Error(`Delete failed (${r.status})`);
+  });
+}
+
 // ── Admin: invoices / quotations ─────────────────────────────
 export function listInvoices(): Promise<Invoice[]> {
   return fetch("/api/invoices", { cache: "no-store" }).then((r) =>
@@ -47,6 +53,12 @@ export function getInvoice(id: string): Promise<Invoice> {
   return fetch(`/api/invoices/${id}`, { cache: "no-store" }).then((r) =>
     json<Invoice>(r)
   );
+}
+
+export function deleteInvoice(id: string): Promise<void> {
+  return fetch(`/api/invoices/${id}`, { method: "DELETE" }).then((r) => {
+    if (!r.ok) throw new Error(`Delete failed (${r.status})`);
+  });
 }
 
 export function createDocument(

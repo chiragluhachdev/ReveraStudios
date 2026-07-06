@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-import { BadgeCheck, Download, Mail, MessageCircle, Receipt, X } from "lucide-react";
+import { BadgeCheck, Download, Mail, MessageCircle, Receipt, Trash2, X } from "lucide-react";
 import {
   Invoice,
   UPI,
@@ -11,6 +11,7 @@ import {
   invoiceTotal,
   toReceipt,
 } from "@/lib/agency";
+import { deleteInvoice } from "@/lib/api";
 import InvoiceDocument from "@/components/documents/InvoiceDocument";
 import ReceiptDocument from "@/components/documents/ReceiptDocument";
 import ReceiptEditor from "@/components/admin/ReceiptEditor";
@@ -44,6 +45,18 @@ export default function DocumentViewer({
   const mailHref = `mailto:${doc.client.email}?subject=${encodeURIComponent(
     `Rêvera Studio — ${doc.docType} ${doc.id}`
   )}&body=${encodeURIComponent(shareText)}`;
+
+  const remove = async () => {
+    if (
+      !window.confirm(
+        `Delete ${current.docType} ${current.id}? This permanently removes it and cannot be undone.`
+      )
+    )
+      return;
+    await deleteInvoice(current.id);
+    onChanged?.();
+    onClose();
+  };
 
   // The "Receipt" render uses the dedicated ReceiptDocument; everything
   // else uses the InvoiceDocument. Both take the live `current` record.
@@ -89,6 +102,14 @@ export default function DocumentViewer({
               label={showReceipt ? "View Invoice" : "View Receipt"}
             />
           )}
+          <button
+            onClick={remove}
+            aria-label="Delete document"
+            title="Delete"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-red-400/40 text-red-300 transition-colors hover:bg-red-500 hover:text-canvas"
+          >
+            <Trash2 size={16} />
+          </button>
           <button
             onClick={onClose}
             aria-label="Close"

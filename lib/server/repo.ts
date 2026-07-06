@@ -73,6 +73,12 @@ export async function updateRequest(
   return getRequest(id);
 }
 
+export async function deleteRequest(id: string): Promise<boolean> {
+  const db = await getDb();
+  const res = await db.collection("requests").deleteOne({ _id: id as never });
+  return res.deletedCount > 0;
+}
+
 // ── Invoices / Quotations ────────────────────────────────────
 export async function createDocument(
   docType: Exclude<DocType, "Receipt">,
@@ -123,6 +129,12 @@ export async function updateInvoice(
   void _omit;
   await db.collection("invoices").updateOne({ _id: id as never }, { $set: rest });
   return getInvoice(id);
+}
+
+export async function deleteInvoice(id: string): Promise<boolean> {
+  const db = await getDb();
+  const res = await db.collection("invoices").deleteOne({ _id: id as never });
+  return res.deletedCount > 0;
 }
 
 // Mark an invoice paid, mint a receipt id, and flip the request to Paid.
