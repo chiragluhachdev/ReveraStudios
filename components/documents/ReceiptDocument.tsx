@@ -83,6 +83,9 @@ export default function ReceiptDocument({ doc }: { doc: Invoice }) {
             {doc.projectName ?? "—"}
           </p>
           <p className="mt-2 text-sm text-stone">Plan: {doc.planLabel}</p>
+          <p className="mt-2 text-sm text-stone">
+            Received Against: <span className="text-ink">Invoice {doc.id}</span>
+          </p>
         </div>
       </section>
 
