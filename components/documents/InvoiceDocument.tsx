@@ -37,7 +37,8 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
           </p>
           <div className="mt-4 space-y-0.5 text-xs leading-relaxed text-stone">
             <p>{BRAND.address}</p>
-            <p>MSME (UDYAM): {BRAND.udyam}</p>
+            <p>Udyam Registration No.: {BRAND.udyam}</p>
+            <p>PAN: {BRAND.pan}</p>
             <p>
               {BRAND.email} · {BRAND.phone}
             </p>
@@ -126,7 +127,7 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
                 Service Category
               </th>
               <th className="pb-3 text-right text-[11px] font-medium uppercase tracking-[0.18em] text-stone">
-                Approx. Value
+                Service Value
               </th>
             </tr>
           </thead>
@@ -191,6 +192,11 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
                 <p className="font-medium text-ink">{UPI.id}</p>
               </div>
             </div>
+            <p className="mt-4 text-xs leading-relaxed text-stone">
+              Please mention Invoice No.{" "}
+              <span className="text-ink">({doc.id})</span> while making the
+              payment.
+            </p>
           </div>
         ) : (
           <div>

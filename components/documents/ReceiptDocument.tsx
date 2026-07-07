@@ -30,7 +30,8 @@ export default function ReceiptDocument({ doc }: { doc: Invoice }) {
           </p>
           <div className="mt-4 space-y-0.5 text-xs leading-relaxed text-stone">
             <p>{BRAND.address}</p>
-            <p>MSME (UDYAM): {BRAND.udyam}</p>
+            <p>Udyam Registration No.: {BRAND.udyam}</p>
+            <p>PAN: {BRAND.pan}</p>
             <p>
               {BRAND.email} · {BRAND.phone}
             </p>
