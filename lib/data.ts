@@ -341,9 +341,9 @@ export const clients = [
 
 export const team = [
   {
-    name: "Chirag Luhach",
+    name: "Harshit",
     role: "Founder · Technologist",
-    image: "/videos/chirag.png",
+    image: "",
   },
   {
     name: "Kanhaiya",
