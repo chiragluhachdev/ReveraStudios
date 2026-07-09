@@ -108,8 +108,9 @@ export default function ReceiptEditor({
           </div>
 
           <div className="rounded-xl border border-ink/10 bg-white/50 px-4 py-3 text-xs text-stone">
-            Paid to <span className="text-ink">{UPI.accountHolder}</span> ·{" "}
-            <span className="text-ink">{UPI.id}</span>
+            Paid to <span className="text-ink">{UPI.accountHolder}</span> · A/c{" "}
+            <span className="text-ink">{UPI.accountNumber}</span> ·{" "}
+            <span className="text-ink">{UPI.ifsc}</span>
           </div>
         </div>
 

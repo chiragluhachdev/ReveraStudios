@@ -57,7 +57,7 @@ export const site = {
   ],
 
   email: "studios.revera@gmail.com",
-  phone: "+91 8796657504",
+  phone: "+91 87966 57504",
 
   address: {
     locality: "Faridabad",

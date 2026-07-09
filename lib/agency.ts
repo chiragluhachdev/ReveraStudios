@@ -10,15 +10,16 @@ export const BRAND = {
   name: "Rêvera Studio",
   type: "Technology & Digital Agency",
   address: "Faridabad, Haryana – 121001, India",
-  udyam: "UDYAM-HR-03-0157904",
-  pan: "ABCDE1234F",
+  pan: "BQRPH8890K",
   email: "studios.revera@gmail.com",
-  phone: "+91 89294 00047",
+  phone: "+91 87966 57504",
 };
 
+// Payee / bank details shown on invoices and receipts.
 export const UPI = {
-  accountHolder: "Ms. MUKESH",
-  id: "8920545623@axl",
+  accountHolder: "Mr. Harshit",
+  accountNumber: "0747950965",
+  ifsc: "KKBK0000286",
 };
 
 // ── Onboarding constants ─────────────────────────────────────

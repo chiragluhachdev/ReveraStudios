@@ -30,7 +30,6 @@ export default function ReceiptDocument({ doc }: { doc: Invoice }) {
           </p>
           <div className="mt-4 space-y-0.5 text-xs leading-relaxed text-stone">
             <p>{BRAND.address}</p>
-            <p>Udyam Registration No.: {BRAND.udyam}</p>
             <p>PAN: {BRAND.pan}</p>
             <p>
               {BRAND.email} · {BRAND.phone}
@@ -146,7 +145,8 @@ export default function ReceiptDocument({ doc }: { doc: Invoice }) {
             Paid To
           </p>
           <Row label="Account Holder" value={UPI.accountHolder} align="right" />
-          <Row label="UPI ID" value={UPI.id} align="right" />
+          <Row label="Account Number" value={UPI.accountNumber} align="right" />
+          <Row label="IFSC Code" value={UPI.ifsc} align="right" />
         </div>
       </section>
 

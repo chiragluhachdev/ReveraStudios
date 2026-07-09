@@ -384,7 +384,7 @@ export const nav = [
 
 export const contactMeta = {
   email: "studios.revera@gmail.com",
-  phone: "+91 8796657504",
+  phone: "+91 87966 57504",
   instagram: "@reverastudios.co",
   facebook: "@reverastudio",
   location: "Faridabad, 121001, Haryana",

@@ -37,7 +37,7 @@ export default function DocumentViewer({
 
   const shareText = `Hi ${doc.client.name}, here is your ${doc.docType} ${doc.id} from Rêvera Studio. Amount: ${formatINR(
     total
-  )}. Pay via UPI: ${UPI.id} (${UPI.accountHolder}). Thank you for choosing Rêvera Studio.`;
+  )}. Pay to ${UPI.accountHolder}, A/c ${UPI.accountNumber}, IFSC ${UPI.ifsc}. Thank you for choosing Rêvera Studio.`;
 
   const waHref = `https://wa.me/${doc.client.phone.replace(/\D/g, "")}?text=${encodeURIComponent(
     shareText

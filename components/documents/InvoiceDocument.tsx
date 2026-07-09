@@ -37,7 +37,6 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
           </p>
           <div className="mt-4 space-y-0.5 text-xs leading-relaxed text-stone">
             <p>{BRAND.address}</p>
-            <p>Udyam Registration No.: {BRAND.udyam}</p>
             <p>PAN: {BRAND.pan}</p>
             <p>
               {BRAND.email} · {BRAND.phone}
@@ -180,16 +179,18 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
               <div className="flex h-[132px] w-[132px] items-center justify-center rounded-lg border border-ink/10 bg-white p-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/videos/xpayment.png"
-                  alt="Scan & Pay UPI QR code"
+                  src="/image.png"
+                  alt="Scan & Pay QR code"
                   className="h-full w-full object-contain"
                 />
               </div>
               <div className="space-y-1 text-sm">
                 <p className="text-stone">Account Holder</p>
                 <p className="font-medium text-ink">{UPI.accountHolder}</p>
-                <p className="pt-2 text-stone">UPI ID</p>
-                <p className="font-medium text-ink">{UPI.id}</p>
+                <p className="pt-2 text-stone">Account Number</p>
+                <p className="font-medium text-ink">{UPI.accountNumber}</p>
+                <p className="pt-2 text-stone">IFSC Code</p>
+                <p className="font-medium text-ink">{UPI.ifsc}</p>
               </div>
             </div>
             <p className="mt-4 text-xs leading-relaxed text-stone">
@@ -206,8 +207,10 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
             <p className="font-display text-xl tracking-tight text-emerald-700">
               Payment Received in Full
             </p>
-            <p className="mt-2 text-sm text-stone">Paid via UPI · {UPI.id}</p>
-            <p className="mt-1 text-sm text-stone">Account Holder: {UPI.accountHolder}</p>
+            <p className="mt-2 text-sm text-stone">
+              Paid to {UPI.accountHolder} · A/c {UPI.accountNumber}
+            </p>
+            <p className="mt-1 text-sm text-stone">IFSC: {UPI.ifsc}</p>
           </div>
         )}
 
