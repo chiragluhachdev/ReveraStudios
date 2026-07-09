@@ -222,11 +222,23 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-ink/10 pt-6 text-center [break-inside:avoid]">
-        <p className="font-display text-lg tracking-tight text-ink">
-          Thank you for choosing Rêvera Studio.
-        </p>
-        <p className="mt-3 text-[11px] leading-relaxed text-stone">
+      <footer className="border-t border-ink/10 pt-8 [break-inside:avoid]">
+        <div className="flex items-end justify-between">
+          <p className="font-display text-lg tracking-tight text-ink">
+            Thank you for choosing Rêvera Studio.
+          </p>
+          <div className="flex flex-col items-end text-right">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-stone">
+              Authorized Signatory
+            </p>
+            <div className="h-24 w-full"></div>
+            <p className="text-stone">__________________________</p>
+            <p className="mt-1 text-sm font-medium text-ink">Harshit Vishariya</p>
+            <p className="text-xs text-stone">Proprietor</p>
+            <p className="text-xs text-stone">Rêvera Studio</p>
+          </div>
+        </div>
+        <p className="mt-8 text-center text-[11px] leading-relaxed text-stone">
           This is a computer-generated {doc.docType.toLowerCase()} and does not
           require a physical signature.
         </p>
