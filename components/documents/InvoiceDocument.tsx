@@ -9,12 +9,6 @@ import {
   invoiceTotal,
 } from "@/lib/agency";
 
-const statusStyles: Record<string, string> = {
-  Pending: "border-amber-500/30 bg-amber-500/10 text-amber-700",
-  Paid: "border-emerald-500/30 bg-emerald-500/10 text-emerald-700",
-  Expired: "border-red-500/30 bg-red-500/10 text-red-700",
-};
-
 /**
  * Reusable, print-ready A4 document for Invoice / Quotation / Receipt.
  * Purely presentational — all content is driven by the `doc` prop.
@@ -46,13 +40,6 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
         <div className="text-right">
           <p className="font-display text-2xl tracking-[0.1em] text-ink">{title}</p>
           <p className="mt-2 text-sm font-medium text-ink">{doc.id}</p>
-          <span
-            className={`mt-3 inline-block rounded-full border px-3 py-1 text-[11px] font-medium uppercase tracking-[0.15em] ${
-              statusStyles[isReceipt ? "Paid" : doc.status] ?? statusStyles.Pending
-            }`}
-          >
-            {isReceipt ? "Paid" : doc.status}
-          </span>
         </div>
       </header>
 
