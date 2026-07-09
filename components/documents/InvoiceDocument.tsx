@@ -222,7 +222,7 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-ink/10 pt-8 [break-inside:avoid]">
+      <footer className="border-t border-ink/10 pt-8 pb-8 [break-inside:avoid]">
         <div className="flex items-end justify-between">
           <p className="font-display text-lg tracking-tight text-ink">
             Thank you for choosing Rêvera Studio.
@@ -238,10 +238,6 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
             <p className="text-xs text-stone">Rêvera Studio</p>
           </div>
         </div>
-        <p className="mt-8 text-center text-[11px] leading-relaxed text-stone">
-          This is a computer-generated {doc.docType.toLowerCase()} and does not
-          require a physical signature.
-        </p>
       </footer>
     </div>
   );
