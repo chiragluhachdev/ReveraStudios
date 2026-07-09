@@ -90,6 +90,9 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
           <p className="mt-2 text-sm text-stone">
             {[doc.client.email, doc.client.phone].filter(Boolean).join(" · ")}
           </p>
+          <p className="mt-1 text-sm font-medium text-ink/80">
+            GSTIN: 06AAATU5658A1ZL
+          </p>
         </div>
         <div className="sm:text-right">
           <p className="mb-3 text-[11px] uppercase tracking-[0.2em] text-stone">
