@@ -87,12 +87,12 @@ export default function DocumentViewer({
           <Action onClick={() => window.print()} icon={<Download size={15} />} label="Download PDF" />
           <Action href={mailHref} icon={<Mail size={15} />} label="Email" />
           <Action href={waHref} icon={<MessageCircle size={15} />} label="WhatsApp" />
-          {!paid && current.docType === "Invoice" && (
+          {current.docType === "Invoice" && (
             <Action
               onClick={() => setEditorOpen(true)}
               icon={<BadgeCheck size={15} />}
-              label="Generate Receipt"
-              solid
+              label={paid ? "Regenerate Receipt" : "Generate Receipt"}
+              solid={!paid}
             />
           )}
           {paid && (
