@@ -75,8 +75,31 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "presnag",
+    id: "ark-kidoid",
     index: "01",
+    title: "ARK Kidoid | MKP",
+    client: "Masti Ki Paathshaala",
+    sector: "Education • App & Web Platform",
+    year: "2026",
+    image: "/videos/mkpx.png",
+    story:
+      "A dedicated application and website built for Masti Ki Paathshaala, an organization focused on teaching new skills to kids and adults in a joyful, engaging environment.",
+    services: [
+      "Product Design",
+      "UI/UX Design",
+      "App Development",
+      "Web Development"
+    ],
+    results: [
+      { value: "Web + App", label: "Platform" },
+      { value: "Kids & Adults", label: "Audience" }
+    ],
+    href: "https://www.mastikipaathshaala.org/",
+    cta: "Visit Website",
+  },
+  {
+    id: "presnag",
+    index: "02",
     title: "PreSnag",
     client: "PreSnag",
     sector: "Restaurant SaaS • Ordering Platform",
@@ -99,29 +122,6 @@ export const projects: Project[] = [
     ],
     href: "https://presnag.com",
     cta: "Visit Platform",
-  },
-  {
-    id: "ark-kidoid",
-    index: "02",
-    title: "ARK Kidoid | MKP",
-    client: "Masti Ki Paathshaala",
-    sector: "Education • App & Web Platform",
-    year: "2026",
-    image: "/videos/mkpx.png",
-    story:
-      "A dedicated application and website built for Masti Ki Paathshaala, an organization focused on teaching new skills to kids and adults in a joyful, engaging environment.",
-    services: [
-      "Product Design",
-      "UI/UX Design",
-      "App Development",
-      "Web Development"
-    ],
-    results: [
-      { value: "Web + App", label: "Platform" },
-      { value: "Kids & Adults", label: "Audience" }
-    ],
-    href: "https://www.mastikipaathshaala.org/",
-    cta: "Visit Website",
   },
   {
     id: "ss-fine-jewellery",
