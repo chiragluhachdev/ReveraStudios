@@ -91,15 +91,37 @@ export const projects: Project[] = [
       "Web Development"
     ],
     results: [
-      { value: "Web + App", label: "Platform" },
+      { value: "Web, iOS & Android", label: "Platform" },
       { value: "Kids & Adults", label: "Audience" }
     ],
     href: "https://www.mastikipaathshaala.org/",
     cta: "Visit Website",
   },
   {
-    id: "presnag",
+    id: "mr-bites",
     index: "02",
+    title: "MR BITES",
+    client: "MR BITES",
+    sector: "Foodtech • Campus Ordering App",
+    year: "2026",
+    image: "/videos/mrbitesx.png",
+    story:
+      "A dedicated campus food ordering platform designed for students and teachers. By allowing users to place orders early through the mobile app, MR BITES eliminates long queues and waiting times, ensuring a seamless and efficient dining experience.",
+    services: [
+      "Product Strategy",
+      "UI/UX Design",
+      "Mobile App Development"
+    ],
+    results: [
+      { value: "Zero Wait", label: "Queue Time" },
+      { value: "iOS & Android", label: "Platform" }
+    ],
+    href: "#",
+    cta: "Coming Soon",
+  },
+  {
+    id: "presnag",
+    index: "03",
     title: "PreSnag",
     client: "PreSnag",
     sector: "Restaurant SaaS • Ordering Platform",
@@ -123,9 +145,10 @@ export const projects: Project[] = [
     href: "https://presnag.com",
     cta: "Visit Platform",
   },
+  /*
   {
     id: "ss-fine-jewellery",
-    index: "03",
+    index: "04",
     title: "SS Fine Jewellery",
     client: "SS Fine Jewellery",
     sector: "Luxury Jewellery E-Commerce • Premium Brand Experience",
@@ -150,6 +173,7 @@ export const projects: Project[] = [
     href: "https://ss-jewellery.vercel.app",
     cta: "Visit Store",
   },
+  */
   {
     id: "miyaabi",
     index: "04",
@@ -203,7 +227,7 @@ export const projects: Project[] = [
     ],
     href: "https://geo-energys.vercel.app/",
     cta: "View Live Project",
-  },
+  }
 ];
 
 export type Service = {
@@ -364,7 +388,7 @@ export const clients = [
 
 export const team = [
   {
-    name: "Harshit",
+    name: "Chirag",
     role: "Founder · Technologist",
     image: "",
   },

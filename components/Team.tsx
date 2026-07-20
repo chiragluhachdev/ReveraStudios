@@ -46,7 +46,7 @@ export default function Team() {
                     />
                   ) : (
                     <span className="font-display text-6xl font-medium text-canvas/25 transition-colors duration-700 ease-expo group-hover:text-canvas/40">
-                      {member.name.charAt(0)}
+                      X
                     </span>
                   )}
                 </div>
