@@ -101,8 +101,31 @@ export const projects: Project[] = [
     cta: "Visit Platform",
   },
   {
-    id: "ss-fine-jewellery",
+    id: "ark-kidoid",
     index: "02",
+    title: "ARK Kidoid | MKP",
+    client: "Masti Ki Paathshaala",
+    sector: "Education • App & Web Platform",
+    year: "2026",
+    image: "/videos/mkpx.png",
+    story:
+      "A dedicated application and website built for Masti Ki Paathshaala, an organization focused on teaching new skills to kids and adults in a joyful, engaging environment.",
+    services: [
+      "Product Design",
+      "UI/UX Design",
+      "App Development",
+      "Web Development"
+    ],
+    results: [
+      { value: "Web + App", label: "Platform" },
+      { value: "Kids & Adults", label: "Audience" }
+    ],
+    href: "https://www.mastikipaathshaala.org/",
+    cta: "Visit Website",
+  },
+  {
+    id: "ss-fine-jewellery",
+    index: "03",
     title: "SS Fine Jewellery",
     client: "SS Fine Jewellery",
     sector: "Luxury Jewellery E-Commerce • Premium Brand Experience",
@@ -129,7 +152,7 @@ export const projects: Project[] = [
   },
   {
     id: "miyaabi",
-    index: "03",
+    index: "04",
     title: "Miyaabi",
     client: "Miyaabi",
     sector: "Fashion E-Commerce • Lifestyle Brand Experience",
@@ -154,7 +177,7 @@ export const projects: Project[] = [
   },
   {
     id: "geoenergys",
-    index: "04",
+    index: "05",
     title: "GeoEnergys",
     client: "Sanchit Chugh",
     clientLabel: "Sanchit Chugh · Independent Research / Energy Analytics",
