@@ -24,7 +24,7 @@ export default function Testimonials() {
         </Reveal>
 
         <div className="relative min-h-[280px] max-w-5xl">
-          <span className="pointer-events-none absolute -left-2 -top-16 font-display text-[12rem] leading-none text-ink/8 lg:-top-24 lg:text-[16rem]">
+          <span className="hidden md:block pointer-events-none absolute -left-2 -top-16 font-display text-[12rem] leading-none text-ink/8 lg:-top-24 lg:text-[16rem]">
             “
           </span>
           <AnimatePresence mode="wait" custom={dir}>
@@ -35,7 +35,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="relative"
+              className="relative md:pl-16 lg:pl-24"
             >
               <p className="font-display text-3xl font-medium leading-[1.2] tracking-tight text-ink sm:text-4xl lg:text-6xl">
                 {current.quote}

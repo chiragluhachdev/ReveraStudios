@@ -355,9 +355,9 @@ export const stats = [
 export const testimonials = [
   {
     quote:
-      "Rêvera didn't just redesign our brand — they gave us a point of view. Everything since has been easier to sell.",
-    name: "Mukul Yadav",
-    role: "Founder, Miyaabi",
+      "They transformed our vision into a joyful, engaging platform that our students absolutely love.",
+    name: "Kartthik Reddy",
+    role: "Founder, ARK Kidoid | MKP",
   },
   {
     quote:
