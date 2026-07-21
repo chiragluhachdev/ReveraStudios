@@ -120,8 +120,30 @@ export const projects: Project[] = [
     cta: "Coming Soon",
   },
   {
-    id: "presnag",
+    id: "indian-sacred-roots",
     index: "03",
+    title: "Indian Sacred Roots",
+    client: "Indian Sacred Roots",
+    sector: "Culture • Information Portal",
+    year: "2026",
+    image: "/videos/templex.png",
+    story:
+      "A comprehensive digital platform dedicated to the spiritual heritage of India. Users can explore, search, and filter through a vast database of temples across various states, complete with rich historical details and cultural insights.",
+    services: [
+      "Web Development",
+      "UI/UX Design",
+      "Database Architecture"
+    ],
+    results: [
+      { value: "National", label: "Temple Database" },
+      { value: "Web", label: "Platform" }
+    ],
+    href: "https://www.indiansacredroots.com/",
+    cta: "Visit Website",
+  },
+  {
+    id: "presnag",
+    index: "04",
     title: "PreSnag",
     client: "PreSnag",
     sector: "Restaurant SaaS • Ordering Platform",
@@ -148,7 +170,7 @@ export const projects: Project[] = [
   /*
   {
     id: "ss-fine-jewellery",
-    index: "04",
+    index: "05",
     title: "SS Fine Jewellery",
     client: "SS Fine Jewellery",
     sector: "Luxury Jewellery E-Commerce • Premium Brand Experience",
@@ -176,7 +198,7 @@ export const projects: Project[] = [
   */
   {
     id: "miyaabi",
-    index: "04",
+    index: "05",
     title: "Miyaabi",
     client: "Miyaabi",
     sector: "Fashion E-Commerce • Lifestyle Brand Experience",
@@ -201,7 +223,7 @@ export const projects: Project[] = [
   },
   {
     id: "geoenergys",
-    index: "05",
+    index: "06",
     title: "GeoEnergys",
     client: "Sanchit Chugh",
     clientLabel: "Sanchit Chugh · Independent Research / Energy Analytics",
