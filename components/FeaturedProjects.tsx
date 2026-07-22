@@ -8,7 +8,7 @@ import { projects, Project } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
 
-function ProjectRow({ project, index }: { project: Project; index: number }) {
+function ProjectRow({ project, index, className = "" }: { project: Project; index: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const flip = index % 2 === 1;
@@ -27,8 +27,19 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
   return (
     <div
       ref={ref}
-      className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16"
+      className={`grid grid-cols-1 items-center gap-6 lg:grid-cols-12 lg:gap-16 ${className}`}
     >
+      {/* Mobile Number & Year */}
+      <Reveal className="lg:hidden">
+        <div className="flex items-center gap-4 text-xs uppercase tracking-[0.25em] text-stone">
+          <span className="font-display text-2xl text-accent">
+            {project.index}
+          </span>
+          <span className="h-px w-10 bg-ink/20" />
+          <span>{project.year}</span>
+        </div>
+      </Reveal>
+
       {/* Image */}
       <Reveal
         className={`lg:col-span-7 ${flip ? "lg:order-2" : ""}`}
@@ -60,7 +71,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 
       {/* Text */}
       <div className={`lg:col-span-5 ${flip ? "lg:order-1" : ""}`}>
-        <Reveal>
+        <Reveal className="hidden lg:block">
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.25em] text-stone">
             <span className="font-display text-2xl text-accent">
               {project.index}
@@ -72,7 +83,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 
         <AnimatedHeading
           text={project.title}
-          className="mt-5 font-display text-4xl font-medium tracking-tight text-ink sm:text-5xl"
+          className="mt-0 lg:mt-5 font-display text-4xl font-medium tracking-tight text-ink sm:text-5xl"
         />
 
         <Reveal delay={0.05}>
@@ -109,7 +120,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="hidden md:block">
           <div className="mt-8 flex flex-wrap gap-x-10 gap-y-5 border-t border-ink/10 pt-6">
             {project.results.map((r) => (
               <div key={r.label}>
@@ -140,6 +151,9 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
             />
           </a>
         </Reveal>
+
+        {/* Mobile divider */}
+        <div className="mt-10 h-px w-full bg-ink/10 md:hidden" />
       </div>
     </div>
   );
@@ -147,9 +161,9 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 
 export default function FeaturedProjects() {
   return (
-    <section id="work" className="relative bg-canvas py-28 lg:py-40">
+    <section id="work" className="relative bg-canvas py-16 lg:py-40">
       <div className="container-x">
-        <div className="mb-20 flex flex-col justify-between gap-6 border-b border-ink/10 pb-12 md:flex-row md:items-end">
+        <div className="mb-10 lg:mb-20 flex flex-col justify-between gap-6 border-b-0 md:border-b border-ink/10 pb-8 lg:pb-12 md:flex-row md:items-end">
           <div>
             <Reveal>
               <span className="eyebrow">02 — Selected Work</span>
@@ -167,9 +181,9 @@ export default function FeaturedProjects() {
           </Reveal>
         </div>
 
-        <div className="flex flex-col gap-28 lg:gap-40">
+        <div className="flex flex-col gap-12 lg:gap-40">
           {projects.map((p, i) => (
-            <ProjectRow key={p.id} project={p} index={i} />
+            <ProjectRow key={p.id} project={p} index={i} className={i >= 4 ? "hidden md:grid" : ""} />
           ))}
         </div>
       </div>
