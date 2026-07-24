@@ -12,7 +12,7 @@ export const BRAND = {
   address: "Faridabad, Haryana – 121001, India",
   pan: "BQRPH8890K",
   email: "studios.revera@gmail.com",
-  phone: "+91 87966 57504",
+  phone: "+91 8130809374",
 };
 
 // Payee / bank details shown on invoices and receipts.
