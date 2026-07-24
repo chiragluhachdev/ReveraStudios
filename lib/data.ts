@@ -390,22 +390,22 @@ export const testimonials = [
   {
     quote:
       "The most considered team I've worked with. Every detail felt intentional, every deadline respected.",
-    name: "Chirag Luhach",
-    role: "Founder, PreSnag",
+    name: "Neha Wahi",
+    role: "Co-Founder, Indian Sacred Roots",
   },
 ];
 
 export const clients = [
-  "SSJ",
   "PRESNAG",
   "MIYAABI",
   "MKP",
-  "GEO ENERGYS",
-  "SSJ",
+  "INDIAN SACRED ROOTS",
+  "MR-BITES",
   "PRESNAG",
   "MIYAABI",
   "MKP",
-  "GEO ENERGYS",
+  "INDIAN SACRED ROOTS",
+  "MR-BITES",
 ];
 
 export const team = [
