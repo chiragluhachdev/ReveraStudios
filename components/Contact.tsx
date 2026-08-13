@@ -8,11 +8,36 @@ import AnimatedHeading from "@/components/ui/AnimatedHeading";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Wire this to your provider (Resend, Formspree, an API route, etc.).
-    setSent(true);
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+    // Add the Web3Forms access key
+    formData.append("access_key", "ddd62bd8-d371-4fe5-8b1a-950647809c6d");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSent(true);
+      } else {
+        console.error("Web3Forms Error", data);
+        alert("Something went wrong sending your message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong sending your message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const field =
@@ -132,13 +157,16 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 rounded-full bg-canvas px-9 py-4 text-sm font-medium text-ink transition-all duration-500 ease-expo hover:bg-accent hover:text-canvas"
+                  disabled={isSubmitting}
+                  className="group inline-flex items-center gap-3 rounded-full bg-canvas px-9 py-4 text-sm font-medium text-ink transition-all duration-500 ease-expo hover:bg-accent hover:text-canvas disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send enquiry
-                  <ArrowUpRight
-                    size={17}
-                    className="transition-transform duration-500 ease-expo group-hover:translate-x-1 group-hover:-translate-y-1"
-                  />
+                  {isSubmitting ? "Sending..." : "Send enquiry"}
+                  {!isSubmitting && (
+                    <ArrowUpRight
+                      size={17}
+                      className="transition-transform duration-500 ease-expo group-hover:translate-x-1 group-hover:-translate-y-1"
+                    />
+                  )}
                 </button>
               </form>
             </Reveal>
