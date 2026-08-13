@@ -15,8 +15,10 @@ export default function Contact() {
     setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
-    // Add the Web3Forms access key
+    // Add the Web3Forms access key and professional formatting
     formData.append("access_key", "ddd62bd8-d371-4fe5-8b1a-950647809c6d");
+    formData.append("subject", "✨ New Project Enquiry | Revera Studios");
+    formData.append("from_name", "Revera Studios Website");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
