@@ -117,9 +117,9 @@ export default function PricingCards() {
             </div>
           </Reveal>
           
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          <div className="flex snap-x snap-mandatory overflow-x-auto pb-10 -mx-6 px-6 gap-6 md:grid md:grid-cols-3 md:snap-none md:overflow-visible md:pb-0 md:px-0 md:-mx-0 md:gap-8 hide-scrollbar">
             {webPlans.map((plan, i) => (
-              <Reveal key={plan.id} delay={i * 0.1}>
+              <Reveal key={plan.id} delay={i * 0.1} className="w-[85vw] shrink-0 snap-center md:w-auto md:shrink">
                 <PlanCard plan={plan} open={open} setActive={setActive} />
               </Reveal>
             ))}
@@ -135,10 +135,9 @@ export default function PricingCards() {
             </div>
           </Reveal>
           
-          {/* We only have 1 app plan right now, make it standard size but centered or max width */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          <div className="flex snap-x snap-mandatory overflow-x-auto pb-10 -mx-6 px-6 gap-6 md:grid md:grid-cols-3 md:snap-none md:overflow-visible md:pb-0 md:px-0 md:-mx-0 md:gap-8 hide-scrollbar">
             {appPlans.map((plan, i) => (
-              <Reveal key={plan.id} delay={i * 0.1}>
+              <Reveal key={plan.id} delay={i * 0.1} className="w-[85vw] shrink-0 snap-center md:w-auto md:shrink">
                 <PlanCard plan={plan} open={open} setActive={setActive} />
               </Reveal>
             ))}
