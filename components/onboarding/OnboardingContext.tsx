@@ -20,10 +20,10 @@ export function useOnboarding() {
 export function OnboardingProvider({ children }: { children: ReactNode }) {
   const [openState, setOpenState] = useState<{ open: boolean; plan: PlanId }>({
     open: false,
-    plan: "launch",
+    plan: "custom",
   });
 
-  const open = useCallback((planId: PlanId = "launch") => {
+  const open = useCallback((planId: PlanId = "custom") => {
     setOpenState({ open: true, plan: planId });
   }, []);
   const close = useCallback(() => setOpenState((s) => ({ ...s, open: false })), []);
