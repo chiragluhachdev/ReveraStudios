@@ -66,7 +66,7 @@ export const webPlans: Plan[] = [
   {
     id: "growth",
     name: "Growth",
-    price: "₹30,000",
+    price: "₹25,000",
     cadence: "year",
     tagline: "For growing businesses.",
     featured: true,
@@ -95,7 +95,7 @@ export const webPlans: Plan[] = [
           ]
         }
       ],
-      timeline: "2-4 weeks",
+      timeline: "1-2 weeks",
       ideal: "Growing startups, restaurants, agencies"
     }
   },
@@ -129,7 +129,7 @@ export const webPlans: Plan[] = [
           ]
         }
       ],
-      timeline: "4-6 weeks",
+      timeline: "1-2 weeks",
       ideal: "E-commerce, dynamic portals, scale-ups"
     }
   }
