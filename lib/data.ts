@@ -371,7 +371,7 @@ export const stats = [
   { value: 8, suffix: "", label: "Disciplines in-house" },
   { value: 100, suffix: "%", label: "Founder-led delivery" },
   { value: 24, suffix: "h", label: "Response time" },
-  { value: 10, suffix: "+", label: "Flagship platforms" },
+  { value: 100, suffix: "%", label: "Custom codebases" },
 ];
 
 export const testimonials = [

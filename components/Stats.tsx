@@ -5,13 +5,14 @@ import { useInView, useReducedMotion } from "framer-motion";
 import { stats } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 
-function Counter({ value, suffix }: { value: number; suffix: string }) {
+function Counter({ value, suffix }: { value: number | string; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-15% 0px" });
   const reduce = useReducedMotion();
-  const [display, setDisplay] = useState(0);
+  const [display, setDisplay] = useState<number | string>(typeof value === "number" ? 0 : value);
 
   useEffect(() => {
+    if (typeof value === "string") return;
     if (!inView) return;
     if (reduce) {
       setDisplay(value);
