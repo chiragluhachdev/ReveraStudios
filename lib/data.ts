@@ -113,11 +113,11 @@ export const projects: Project[] = [
       "Mobile App Development"
     ],
     results: [
-      { value: "Zero Wait", label: "Queue Time" },
-      { value: "iOS & Android", label: "Platform" }
+      { value: "50%", label: "Wait time reduced" },
+      { value: "iOS & Android", label: "App Platforms" }
     ],
-    href: "#",
-    cta: "Coming Soon",
+    href: "https://www.mrbites.in/",
+    cta: "Visit Website",
   },
   {
     id: "indian-sacred-roots",
