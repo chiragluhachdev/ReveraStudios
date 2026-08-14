@@ -65,9 +65,12 @@ export const TIMELINES = [
 ] as const;
 
 export const PLAN_OPTIONS = [
-  { id: "starter", label: "Starter Brand" },
-  { id: "growth", label: "Growth Brand" },
-  { id: "launch", label: "Launch Brand" },
+  { id: "starter", label: "Starter" },
+  { id: "growth", label: "Growth" },
+  { id: "scale", label: "Scale" },
+  { id: "app-deployment", label: "App Deployment" },
+  { id: "deployment-care", label: "Deployment + Care" },
+  { id: "app-maintenance", label: "App Maintenance" },
   { id: "custom", label: "Custom" },
 ] as const;
 
@@ -158,24 +161,32 @@ export type Invoice = {
 export function defaultBreakdown(planId: PlanId): InvoiceItem[] {
   const rows: Record<PlanId, [string, number][]> = {
     starter: [
-      ["Brand Foundation & Identity Guidance", 3000],
-      ["Website Design & Development (up to 5 pages)", 9000],
-      ["Technical Setup & Deployment", 2000],
-      ["Launch Support & Training", 1000],
+      ["Website Design & Development", 10000],
+      ["Domain & Hosting Setup", 3000],
+      ["Basic Maintenance & Support", 2000],
     ],
     growth: [
-      ["Brand Strategy & Creative Direction", 5000],
-      ["Digital Presence Management & Maintenance", 7000],
-      ["Professional Content Production (Photo & Reels)", 7000],
-      ["Social Media Management & Creatives", 4000],
-      ["Support & Monthly Strategy", 2000],
+      ["Premium Custom Website Design", 20000],
+      ["Performance & Security Optimization", 5000],
+      ["Monthly Maintenance & Updates", 5000],
     ],
-    launch: [
-      ["Brand Strategy, UI/UX & Product Planning", 8000],
-      ["Website Development, Digital Presence & Deployment", 8000],
-      ["Google Play & Apple App Store Launch", 12000],
-      ["API Integrations & Business Automation", 7000],
-      ["Professional Content, Launch Assets & Premium Support", 5000],
+    scale: [
+      ["Advanced CMS & Integrations", 25000],
+      ["Priority Technical Support", 10000],
+      ["Continuous Improvement & Maintenance", 5000],
+    ],
+    "app-deployment": [
+      ["App Store & Play Store Deployment", 12000],
+      ["Build & Release Management", 3000],
+    ],
+    "deployment-care": [
+      ["App Deployment", 12000],
+      ["Backend & Database Maintenance", 8000],
+      ["Bug Fixes & Updates", 5000],
+    ],
+    "app-maintenance": [
+      ["Backend & Database Maintenance", 8000],
+      ["Performance Monitoring & Bug Fixes", 7000],
     ],
     custom: [["Project scope — to be defined", 0]],
   };

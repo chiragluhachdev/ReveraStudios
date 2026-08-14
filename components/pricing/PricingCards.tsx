@@ -3,10 +3,94 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Check, Clock, Sparkles, Target, X } from "lucide-react";
-import { plans, Plan } from "@/lib/pricing";
+import { webPlans, appPlans, Plan } from "@/lib/pricing";
 import { PlanId } from "@/lib/agency";
 import Reveal from "@/components/ui/Reveal";
 import { useOnboarding } from "@/components/onboarding/OnboardingContext";
+
+function PlanCard({ plan, open, setActive }: { plan: Plan; open: (id: PlanId) => void; setActive: (p: Plan) => void }) {
+  return (
+    <article
+      className={`group relative flex h-full flex-col rounded-2xl border p-8 backdrop-blur-xl transition-all duration-500 ease-expo lg:p-10 ${
+        plan.featured
+          ? "border-gold/40 bg-white/80 shadow-[0_24px_60px_-30px_rgba(176,141,87,0.45)] hover:-translate-y-1.5 hover:border-gold/60"
+          : "border-ink/10 bg-white/60 hover:-translate-y-1.5 hover:border-ink/20 hover:bg-white/80"
+      }`}
+    >
+      {/* Badge */}
+      {plan.badge && (
+        <span className="absolute -top-3 left-8 inline-flex items-center gap-1.5 rounded-full bg-gold px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-canvas lg:left-10">
+          <Sparkles size={12} />
+          {plan.badge}
+        </span>
+      )}
+
+      <header>
+        <h3 className="font-display text-3xl font-medium tracking-tight text-ink">
+          {plan.name}
+        </h3>
+        <p className="mt-3 text-pretty text-sm leading-relaxed text-stone">
+          {plan.tagline}
+        </p>
+      </header>
+
+      {/* Price */}
+      <div className="mt-8 flex items-baseline gap-2 border-b border-ink/10 pb-8">
+        <span className="font-display text-5xl font-medium tracking-tight text-ink">
+          {plan.price}
+        </span>
+        {plan.cadence && (
+          <span className="text-sm text-stone">/ {plan.cadence}</span>
+        )}
+      </div>
+
+      {/* Highlights */}
+      <ul className="mt-8 flex flex-1 flex-col gap-3.5">
+        {plan.highlights.map((h) => (
+          <li key={h} className="flex items-start gap-3">
+            <span
+              className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
+                plan.featured ? "bg-gold/15 text-gold" : "bg-ink/[0.06] text-ink"
+              }`}
+            >
+              <Check size={12} strokeWidth={2.5} />
+            </span>
+            <span className="text-sm leading-relaxed text-ink/80">{h}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Actions */}
+      <div className="mt-10 flex flex-col gap-3">
+        <button
+          onClick={() => open(plan.id as PlanId)}
+          className={`group/cta inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition-all duration-500 ease-expo ${
+            plan.featured
+              ? "bg-ink text-canvas hover:bg-gold"
+              : "bg-ink text-canvas hover:bg-accent"
+          }`}
+        >
+          {plan.cta.label}
+          <ArrowUpRight
+            size={16}
+            className="transition-transform duration-500 ease-expo group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5"
+          />
+        </button>
+        <button
+          onClick={() => setActive(plan)}
+          className="group/details inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 px-7 py-3.5 text-sm font-medium text-ink transition-colors duration-300 ease-expo hover:border-ink/40"
+          aria-haspopup="dialog"
+        >
+          View Details
+          <ArrowRight
+            size={15}
+            className="transition-transform duration-500 ease-expo group-hover/details:translate-x-1"
+          />
+        </button>
+      </div>
+    </article>
+  );
+}
 
 export default function PricingCards() {
   const [active, setActive] = useState<Plan | null>(null);
@@ -23,91 +107,44 @@ export default function PricingCards() {
   return (
     <section id="plans" className="relative bg-ivory py-24 lg:py-32">
       <div className="container-x">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
-          {plans.map((plan, i) => (
-            <Reveal key={plan.id} delay={i * 0.1}>
-              <article
-                className={`group relative flex h-full flex-col rounded-2xl border p-8 backdrop-blur-xl transition-all duration-500 ease-expo lg:p-10 ${
-                  plan.featured
-                    ? "border-gold/40 bg-white/80 shadow-[0_24px_60px_-30px_rgba(176,141,87,0.45)] hover:-translate-y-1.5 hover:border-gold/60"
-                    : "border-ink/10 bg-white/60 hover:-translate-y-1.5 hover:border-ink/20 hover:bg-white/80"
-                }`}
-              >
-                {/* Badge */}
-                {plan.badge && (
-                  <span className="absolute -top-3 left-8 inline-flex items-center gap-1.5 rounded-full bg-gold px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-canvas lg:left-10">
-                    <Sparkles size={12} />
-                    {plan.badge}
-                  </span>
-                )}
-
-                <header>
-                  <h3 className="font-display text-3xl font-medium tracking-tight text-ink">
-                    {plan.name}
-                  </h3>
-                  <p className="mt-3 text-pretty text-sm leading-relaxed text-stone">
-                    {plan.tagline}
-                  </p>
-                </header>
-
-                {/* Price */}
-                <div className="mt-8 flex items-baseline gap-2 border-b border-ink/10 pb-8">
-                  <span className="font-display text-5xl font-medium tracking-tight text-ink">
-                    {plan.price}
-                  </span>
-                  {plan.cadence && (
-                    <span className="text-sm text-stone">/ {plan.cadence}</span>
-                  )}
-                </div>
-
-                {/* Highlights */}
-                <ul className="mt-8 flex flex-1 flex-col gap-3.5">
-                  {plan.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-3">
-                      <span
-                        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                          plan.featured ? "bg-gold/15 text-gold" : "bg-ink/[0.06] text-ink"
-                        }`}
-                      >
-                        <Check size={12} strokeWidth={2.5} />
-                      </span>
-                      <span className="text-sm leading-relaxed text-ink/80">{h}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Actions */}
-                <div className="mt-10 flex flex-col gap-3">
-                  <button
-                    onClick={() => open(plan.id as PlanId)}
-                    className={`group/cta inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition-all duration-500 ease-expo ${
-                      plan.featured
-                        ? "bg-ink text-canvas hover:bg-gold"
-                        : "bg-ink text-canvas hover:bg-accent"
-                    }`}
-                  >
-                    {plan.cta.label}
-                    <ArrowUpRight
-                      size={16}
-                      className="transition-transform duration-500 ease-expo group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5"
-                    />
-                  </button>
-                  <button
-                    onClick={() => setActive(plan)}
-                    className="group/details inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 px-7 py-3.5 text-sm font-medium text-ink transition-colors duration-300 ease-expo hover:border-ink/40"
-                    aria-haspopup="dialog"
-                  >
-                    View Details
-                    <ArrowRight
-                      size={15}
-                      className="transition-transform duration-500 ease-expo group-hover/details:translate-x-1"
-                    />
-                  </button>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+        
+        {/* Web & SaaS */}
+        <div className="mb-24">
+          <Reveal>
+            <div className="mb-10 flex flex-col gap-2">
+              <span className="eyebrow text-ink/50">01 — Websites & SaaS</span>
+              <h2 className="font-display text-4xl font-medium tracking-tight text-ink">Digital Presence & Platforms</h2>
+            </div>
+          </Reveal>
+          
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+            {webPlans.map((plan, i) => (
+              <Reveal key={plan.id} delay={i * 0.1}>
+                <PlanCard plan={plan} open={open} setActive={setActive} />
+              </Reveal>
+            ))}
+          </div>
         </div>
+
+        {/* Mobile Apps */}
+        <div>
+          <Reveal>
+            <div className="mb-10 flex flex-col gap-2">
+              <span className="eyebrow text-ink/50">02 — Mobile Apps</span>
+              <h2 className="font-display text-4xl font-medium tracking-tight text-ink">iOS & Android Maintenance</h2>
+            </div>
+          </Reveal>
+          
+          {/* We only have 1 app plan right now, make it standard size but centered or max width */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+            {appPlans.map((plan, i) => (
+              <Reveal key={plan.id} delay={i * 0.1}>
+                <PlanCard plan={plan} open={open} setActive={setActive} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
       </div>
 
       {/* Slide-over details panel */}

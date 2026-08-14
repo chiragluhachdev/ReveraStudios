@@ -6,28 +6,19 @@
 export type FeatureGroup = {
   title: string;
   items: string[];
-  /** Optional fine-print shown beneath the group's items. */
   note?: string;
 };
 
 export type Plan = {
   id: string;
   name: string;
-  /** Card summary price, e.g. "₹15,000" or "Custom". */
   price: string;
-  /** Small qualifier under the price, e.g. "one-time". Optional. */
   cadence?: string;
-  /** One-line description shown on the card. */
   tagline: string;
-  /** 4–6 highlighted features shown on the card (summary only). */
   highlights: string[];
-  /** Subtle gold emphasis for the recommended plan. */
   featured?: boolean;
-  /** Badge label for the featured plan. */
   badge?: string;
-  /** Primary call-to-action. */
   cta: { label: string; href: string };
-  /** Full plan structure — revealed inside the "View Details" panel. */
   details: {
     intro: string;
     groups: FeatureGroup[];
@@ -36,352 +27,248 @@ export type Plan = {
   };
 };
 
-export const plans: Plan[] = [
+export const webPlans: Plan[] = [
   {
     id: "starter",
-    name: "Starter Brand",
+    name: "Starter",
     price: "₹15,000",
-    tagline: "Get your brand online, professionally — from day one.",
+    cadence: "year",
+    tagline: "For simple digital presence.",
     highlights: [
-      "Brand identity guidance",
-      "Custom responsive website (up to 5 pages)",
-      "Mobile optimized & fast-loading",
-      "Basic SEO setup",
-      "15 days of launch support",
+      "Domain included",
+      "Business email",
+      "Custom website design",
+      "Monthly maintenance",
+      "Content updates",
+      "Technical support"
     ],
-    cta: { label: "Start Your Brand", href: "/#contact" },
+    cta: { label: "Start Building", href: "/#contact" },
     details: {
-      intro:
-        "Perfect for freelancers, students, creators, local businesses, cafés and startups just getting online. A considered foundation that looks intentional from the first impression.",
+      intro: "Perfect for a simple digital presence. We build your website, host it, and maintain it for you.",
       groups: [
         {
-          title: "Brand Foundation",
+          title: "Inclusions",
           items: [
-            "Brand consultation (1 session)",
-            "Basic brand identity guidance",
-            "Colour palette selection",
-            "Typography selection",
-          ],
-        },
-        {
-          title: "Website",
-          items: [
-            "Custom responsive website (up to 5 pages)",
-            "Premium modern UI",
-            "Mobile optimized",
-            "Contact form",
-            "Basic SEO setup",
-            "Fast loading & performance optimized",
-          ],
-        },
-        {
-          title: "Technical Setup",
-          items: [
-            "Domain connection (domain cost not included)",
-            "SSL configuration",
-            "Website deployment",
-            "Basic analytics integration",
-          ],
-        },
-        {
-          title: "Launch Support",
-          items: [
-            "15 days of technical support",
-            "Minor content updates",
-            "Training on basic website management",
-          ],
-        },
+            "Domain setup",
+            "Business email",
+            "Hosting",
+            "Custom website design",
+            "Monthly maintenance",
+            "Content updates",
+            "Technical support"
+          ]
+        }
       ],
-      timeline: "7–10 business days",
-      ideal:
-        "Personal portfolios, restaurants & cafés, salons, coaches & consultants, small businesses, student startups, interior designers and local shops.",
-    },
+      timeline: "1-2 weeks",
+      ideal: "Freelancers, creators, local shops"
+    }
   },
   {
     id: "growth",
-    name: "Growth Brand",
-    price: "₹25,000",
-    tagline:
-      "Build a stronger digital presence with branding and growth features.",
+    name: "Growth",
+    price: "₹30,000",
+    cadence: "year",
+    tagline: "For growing businesses.",
+    featured: true,
+    badge: "Recommended",
     highlights: [
-      "Brand strategy & identity refinement",
-      "Website growth & ongoing maintenance",
-      "Monthly photo & reel production",
-      "Social media management",
-      "Monthly strategy & performance reports",
+      "Everything in Starter",
+      "Premium custom design",
+      "Advanced sections & features",
+      "Regular updates",
+      "Performance & security maintenance",
+      "Priority support"
     ],
     cta: { label: "Grow Your Brand", href: "/#contact" },
     details: {
-      intro:
-        "Perfect for businesses looking to strengthen their digital presence and consistently engage their audience — brand, content and platform working together.",
+      intro: "For growing businesses that need a custom online presence with regular updates and advanced features.",
       groups: [
         {
-          title: "Brand Presence",
+          title: "Inclusions",
           items: [
-            "Brand strategy consultation",
-            "Brand consistency across digital platforms",
-            "Creative direction for campaigns",
-            "Visual identity refinement",
-          ],
-        },
-        {
-          title: "Digital Presence Management",
-          items: [
-            "Website growth & ongoing maintenance",
-            "Landing page creation & optimization",
-            "Performance improvements",
-            "SEO health monitoring",
-            "Content updates & feature enhancements",
-          ],
-        },
-        {
-          title: "Content Production",
-          items: [
-            "Professional photo shoot (1 session / month)",
-            "Cinematic reel/video shoot (up to 4 short-form reels)",
-            "Professional editing & colour grading",
-            "Platform-ready exports (Instagram, Facebook, YouTube Shorts)",
-          ],
-        },
-        {
-          title: "Social Media",
-          items: [
-            "Profile optimization",
-            "Content planning",
-            "Caption & hashtag guidance",
-            "Content scheduling support",
-            "Monthly content calendar",
-          ],
-        },
-        {
-          title: "Technical Support",
-          items: [
-            "Domain & hosting management",
-            "Website monitoring",
-            "Security & backup checks",
-            "Analytics monitoring",
-            "Monthly performance report",
-          ],
-        },
-        {
-          title: "Creative Design",
-          items: [
-            "Social media creatives",
-            "Promotional banners",
-            "Event posters",
-            "Story templates",
-            "Marketing assets",
-          ],
-        },
-        {
-          title: "Consultation",
-          items: [
-            "Monthly strategy session",
-            "Growth recommendations",
-            "Technical & marketing guidance",
-          ],
-        },
-        {
-          title: "Support",
-          items: [
-            "Priority support",
-            "Monthly revisions",
-            "30 days of continuous assistance",
-          ],
-        },
+            "Everything in Starter",
+            "Premium custom website design",
+            "Advanced sections & features",
+            "Regular content updates",
+            "Performance & security maintenance",
+            "Priority support"
+          ]
+        }
       ],
-      timeline: "2–4 weeks (initial setup)",
-      ideal:
-        "Cafés & restaurants, cloud kitchens, fashion brands, jewellery stores, salons & spas, fitness studios, interior designers, clinics and growing startups.",
-    },
+      timeline: "2-4 weeks",
+      ideal: "Growing startups, restaurants, agencies"
+    }
   },
   {
-    id: "launch",
-    name: "Launch Brand",
+    id: "scale",
+    name: "Scale",
     price: "₹40,000",
-    tagline:
-      "Everything we do, in one engagement — for brands serious about scaling.",
+    cadence: "year",
+    tagline: "For businesses needing more.",
     highlights: [
-      "Brand strategy & positioning",
-      "Website & digital presence",
-      "Mobile app store launch",
-      "Professional content creation",
-      "Integrations & automation (SMS, notifications, Meta API)",
-      "90 days premium support",
+      "Everything in Growth",
+      "CMS / dynamic functionality",
+      "Advanced integrations",
+      "Ongoing improvements",
+      "More frequent updates",
+      "Priority technical support"
     ],
-    featured: true,
-    cta: { label: "Launch With Rêvera", href: "/#contact" },
+    cta: { label: "Scale Up", href: "/#contact" },
     details: {
-      intro:
-        "This is everything Rêvera does, in a single engagement. Built for founders who are serious about their business — brand, website, mobile apps, content, integrations and automation, all under one roof. If you're ready to treat your brand as real infrastructure, this is the package you want.",
+      intro: "For businesses needing complex, dynamic functionality, advanced integrations, and continuous improvements.",
       groups: [
         {
-          title: "Brand Strategy",
+          title: "Inclusions",
           items: [
-            "Brand discovery & positioning workshop",
-            "Complete visual identity refinement",
-            "Brand guidelines",
-            "Creative direction for digital campaigns",
-            "Digital growth roadmap",
-          ],
-        },
-        {
-          title: "Digital Infrastructure",
-          items: [
-            "Website development, enhancements & ongoing maintenance",
-            "Landing page creation & optimization",
-            "Performance optimization",
-            "SEO foundation & monitoring",
-            "Security, backups & regular updates",
-          ],
-        },
-        {
-          title: "Mobile App Launch",
-          items: [
-            "Android app deployment",
-            "iOS app deployment",
-            "Google Play Console setup & publishing",
-            "Apple Developer enrollment & App Store publishing",
-            "Store listing optimization",
-            "App submission support",
-            "Version management guidance",
-          ],
-          note: "Google Play Console and Apple Developer Program fees can be included in the project scope when agreed.",
-        },
-        {
-          title: "Professional Content Production",
-          items: [
-            "Professional brand photo shoot",
-            "Cinematic promotional video",
-            "Up to 8 edited short-form reels",
-            "Product photography",
-            "Colour grading & professional editing",
-            "Platform-ready exports",
-          ],
-        },
-        {
-          title: "Social Media Presence",
-          items: [
-            "Profile optimization",
-            "Content strategy",
-            "Monthly content calendar",
-            "Creative assets",
-            "Captions & hashtag strategy",
-            "Launch campaign support",
-          ],
-        },
-        {
-          title: "Business Essentials",
-          items: [
-            "Domain consultation & configuration",
-            "Hosting deployment",
-            "Professional email setup",
-            "Google Business Profile optimization",
-            "Google Analytics & Search Console",
-            "Performance tracking",
-          ],
-        },
-        {
-          title: "Integrations & Automation",
-          items: [
-            "Fast2SMS integration (transactional SMS & OTP)",
-            "Push notifications (web & mobile app)",
-            "Meta API integration (WhatsApp Business, Instagram & Facebook)",
-            "WhatsApp Business API setup",
-            "Payment gateway integration",
-            "Automated alerts & lead notifications",
-          ],
-          note: "Third-party service fees (SMS credits, WhatsApp/Meta and payment gateway charges) are billed at cost and can be included in the project scope when agreed.",
-        },
-        {
-          title: "Creative Design",
-          items: [
-            "Marketing creatives",
-            "Event posters",
-            "Promotional banners",
-            "Story templates",
-            "Website graphics",
-            "Brand presentation deck",
-          ],
-        },
-        {
-          title: "Consultation",
-          items: [
-            "Dedicated strategy sessions",
-            "Product planning",
-            "Technical consulting",
-            "Marketing guidance",
-            "Digital transformation recommendations",
-          ],
-        },
-        {
-          title: "Priority Support",
-          items: [
-            "90 days of premium support",
-            "Priority response time",
+            "Everything in Growth",
+            "CMS / dynamic functionality",
+            "Advanced integrations",
             "Ongoing improvements",
-            "Monthly performance review",
-            "Technical assistance",
-          ],
-        },
+            "More frequent updates",
+            "Priority technical support"
+          ]
+        }
       ],
-      timeline: "4–8 weeks (depending on project scope)",
-      ideal:
-        "Startups, restaurants & cloud kitchens, SaaS products, healthcare, educational institutions, fashion & lifestyle brands, jewellery businesses, real estate and growing enterprises.",
-    },
-  },
+      timeline: "4-6 weeks",
+      ideal: "E-commerce, dynamic portals, scale-ups"
+    }
+  }
 ];
 
-// ── Comparison table ─────────────────────────────────────────
-// Cell values: `true`/`false` render as check/dash; strings render as text.
-export type CompareRow = {
-  label: string;
-  values: (boolean | string)[];
-};
+export const appPlans: Plan[] = [
+  {
+    id: "app-deployment",
+    name: "App Deployment",
+    price: "₹15,000",
+    cadence: "one-time",
+    tagline: "For clients who already have an app and simply need it published.",
+    highlights: [
+      "iOS App Store deployment",
+      "Google Play Store deployment",
+      "Store listing setup",
+      "App signing & certificates",
+      "Build & release management",
+      "Submission support"
+    ],
+    cta: { label: "Deploy App", href: "/#contact" },
+    details: {
+      intro: "A dedicated service to take your finished app source code and successfully publish it to the Apple App Store and Google Play Store.",
+      groups: [
+        {
+          title: "Inclusions",
+          items: [
+            "iOS App Store deployment",
+            "Google Play Store deployment",
+            "Store listing setup",
+            "App signing & certificates",
+            "Build & release management",
+            "Submission support"
+          ]
+        }
+      ],
+      timeline: "1-2 weeks",
+      ideal: "Founders who have built an app but need expert help launching it."
+    }
+  },
+  {
+    id: "deployment-care",
+    name: "Deployment + Care",
+    price: "₹25,000",
+    cadence: "year",
+    tagline: "For clients who want Rêvera to keep their app running.",
+    featured: true,
+    badge: "Recommended",
+    highlights: [
+      "Everything in App Deployment",
+      "Bug fixes",
+      "App updates",
+      "Backend maintenance",
+      "Database maintenance",
+      "Store update management"
+    ],
+    cta: { label: "Deploy & Maintain", href: "/#contact" },
+    details: {
+      intro: "The complete package. We will deploy your app to the stores and provide ongoing technical care, updates, and backend maintenance for a full year.",
+      groups: [
+        {
+          title: "Inclusions",
+          items: [
+            "Everything in App Deployment",
+            "Bug fixes",
+            "App updates",
+            "Backend maintenance",
+            "Database maintenance",
+            "Content updates",
+            "Store update management",
+            "Technical support"
+          ]
+        }
+      ],
+      timeline: "Ongoing",
+      ideal: "Businesses wanting complete peace of mind for their app infrastructure."
+    }
+  },
+  {
+    id: "app-maintenance",
+    name: "App Maintenance",
+    price: "₹15,000",
+    cadence: "year",
+    tagline: "For apps already deployed and needing ongoing technical care.",
+    highlights: [
+      "Bug fixes",
+      "Backend maintenance",
+      "Content updates",
+      "Performance monitoring",
+      "Technical support",
+      "Store update assistance"
+    ],
+    cta: { label: "Maintain App", href: "/#contact" },
+    details: {
+      intro: "A dedicated maintenance plan to ensure your already-deployed mobile application stays secure, updated, and flawless.",
+      groups: [
+        {
+          title: "Inclusions",
+          items: [
+            "Bug fixes",
+            "Backend maintenance",
+            "Content updates",
+            "Performance monitoring",
+            "Technical support",
+            "Store update assistance"
+          ]
+        }
+      ],
+      timeline: "Ongoing",
+      ideal: "Founders with an active app looking for reliable ongoing technical support."
+    }
+  }
+];
 
-export const comparison: {
-  plans: string[];
-  featuredIndex: number;
-  rows: CompareRow[];
-} = {
-  plans: ["Starter", "Growth", "Launch"],
-  featuredIndex: 2,
-  rows: [
-    { label: "Brand identity", values: ["Guidance", "Strategy + refinement", "Full strategy"] },
-    { label: "Website", values: ["Up to 5 pages", "Growth & maintenance", "Full + maintenance"] },
-    { label: "SEO", values: ["Basic setup", "Health monitoring", "Foundation + monitoring"] },
-    { label: "Photo & video production", values: [false, true, true] },
-    { label: "Social media management", values: [false, true, true] },
-    { label: "Monthly content calendar", values: [false, true, true] },
-    { label: "Mobile app store launch", values: [false, false, true] },
-    { label: "Integrations & automation", values: [false, false, true] },
-    { label: "Google Business & email setup", values: [false, false, true] },
-    { label: "Brand guidelines & deck", values: [false, false, true] },
-    { label: "Strategy sessions", values: ["1 session", "Monthly", "Dedicated"] },
-    { label: "Support window", values: ["15 days", "30 days", "90 days"] },
-  ],
-};
+export const oneTimeProjects = [
+  { name: "Landing Website", price: "₹15K+" },
+  { name: "Business Website", price: "₹25K+" },
+  { name: "E-commerce", price: "₹25K+" },
+  { name: "Web App", price: "₹30K+" },
+  { name: "SaaS MVP", price: "₹30K+" },
+  { name: "Mobile App", price: "₹30K+" },
+  { name: "Custom Software", price: "₹75K+" },
+];
 
-// ── FAQ ──────────────────────────────────────────────────────
 export const pricingFaqs: { q: string; a: string }[] = [
   {
-    q: "How long does a project take?",
-    a: "It depends on scope. A Starter Brand typically goes live in 7–10 business days, Growth takes 2–4 weeks for initial setup, and a full Launch Brand runs 4–8 weeks. We agree a precise schedule before any work begins.",
+    q: "What does the yearly maintenance plan cover?",
+    a: "Our yearly plans cover everything needed to keep your product alive: hosting, domains, regular security updates, bug fixes, and minor content or feature updates."
   },
   {
-    q: "Do you provide ongoing support?",
-    a: "Yes. Every plan includes a post-launch support window — 15 days on Starter, 30 days on Growth and 90 days of premium support on Launch — with ongoing maintenance built into the higher tiers.",
+    q: "Do I have to pay for the build separately?",
+    a: "Yes. Our one-time development costs cover the initial build of your product. The yearly maintenance plans ensure it stays online, secure, and updated."
   },
   {
-    q: "Can I upgrade later?",
-    a: "Absolutely. The plans are designed as a natural progression, so you can start with Starter and move up to Growth or Launch as your brand scales — we carry your work forward.",
+    q: "Can I cancel my maintenance plan?",
+    a: "Yes, you can cancel at any time. If you do, we will package up your codebase and assets so you can self-host and maintain it yourself."
   },
   {
-    q: "Do you work with startups?",
-    a: "Often. We partner with early-stage founders, local businesses and growing enterprises alike, and tailor the engagement to your stage and goals.",
-  },
-  {
-    q: "Can I request a custom quotation?",
-    a: "Yes. If none of the plans fit precisely — or you need an enterprise-level partnership — we'll craft a bespoke proposal built around your goals and budget.",
-  },
+    q: "What is included in 'content updates'?",
+    a: "Content updates include text changes, swapping images, adding a new standard section, or tweaking colors. Major structural changes or entirely new features may be billed as custom development."
+  }
 ];
