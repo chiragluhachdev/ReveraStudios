@@ -6,6 +6,7 @@ import Reveal from "@/components/ui/Reveal";
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import PricingCards from "@/components/pricing/PricingCards";
 import PricingFAQ from "@/components/pricing/PricingFAQ";
+import PartnershipCards from "@/components/pricing/PartnershipCards";
 import { OnboardingProvider } from "@/components/onboarding/OnboardingContext";
 import StartProjectButton from "@/components/onboarding/StartProjectButton";
 import JsonLd from "@/components/seo/JsonLd";
@@ -52,6 +53,9 @@ export default function PricingPage() {
         <OnboardingProvider>
           {/* Pricing cards + slide-over details */}
           <PricingCards />
+
+          {/* Partnership Cards */}
+          <PartnershipCards />
 
           {/* One-Time Projects */}
           <section className="relative bg-white py-24 lg:py-32">

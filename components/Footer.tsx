@@ -34,7 +34,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 border-t border-ink/10 py-14 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 border-t border-ink/10 py-14 sm:grid-cols-3">
           <div>
             <p className="mb-5 text-xs uppercase tracking-[0.2em] text-stone">
               Navigate
@@ -50,28 +50,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-            </ul>
-          </div>
-          <div>
-            <p className="mb-5 text-xs uppercase tracking-[0.2em] text-stone">
-              Social
-            </p>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-base text-ink/70 transition-colors hover:text-ink">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`https://facebook.com/${contactMeta.facebook.replace("@", "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base text-ink/70 transition-colors hover:text-ink"
-                >
-                  Facebook
-                </a>
-              </li>
             </ul>
           </div>
           <div>

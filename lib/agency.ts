@@ -71,6 +71,8 @@ export const PLAN_OPTIONS = [
   { id: "app-deployment", label: "App Deployment" },
   { id: "deployment-care", label: "Deployment + Care" },
   { id: "app-maintenance", label: "App Maintenance" },
+  { id: "social-presence", label: "Social Presence" },
+  { id: "digital-partner", label: "Digital Growth Partner" },
   { id: "custom", label: "Custom" },
 ] as const;
 
@@ -187,6 +189,15 @@ export function defaultBreakdown(planId: PlanId): InvoiceItem[] {
     "app-maintenance": [
       ["Backend & Database Maintenance", 8000],
       ["Performance Monitoring & Bug Fixes", 7000],
+    ],
+    "social-presence": [
+      ["Social Media Strategy & Content", 15000],
+      ["Community Management & Insights", 10000],
+    ],
+    "digital-partner": [
+      ["Social Media & Digital Strategy", 15000],
+      ["Web & App Maintenance", 10000],
+      ["Ongoing Design & UI Updates", 9999],
     ],
     custom: [["Project scope — to be defined", 0]],
   };

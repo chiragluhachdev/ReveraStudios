@@ -31,8 +31,8 @@ export const webPlans: Plan[] = [
   {
     id: "starter",
     name: "Starter",
-    price: "₹15,000",
-    cadence: "year",
+    price: "₹2,499",
+    cadence: "month",
     tagline: "For simple digital presence.",
     highlights: [
       "Domain included",
@@ -66,8 +66,8 @@ export const webPlans: Plan[] = [
   {
     id: "growth",
     name: "Growth",
-    price: "₹25,000",
-    cadence: "year",
+    price: "₹4,999",
+    cadence: "month",
     tagline: "For growing businesses.",
     featured: true,
     badge: "Recommended",
@@ -102,8 +102,8 @@ export const webPlans: Plan[] = [
   {
     id: "scale",
     name: "Scale",
-    price: "₹40,000",
-    cadence: "year",
+    price: "₹8,999",
+    cadence: "month",
     tagline: "For businesses needing more.",
     highlights: [
       "Everything in Growth",
@@ -139,7 +139,7 @@ export const appPlans: Plan[] = [
   {
     id: "app-deployment",
     name: "App Deployment",
-    price: "₹15,000",
+    price: "₹24,999",
     cadence: "one-time",
     tagline: "For clients who already have an app and simply need it published.",
     highlights: [
@@ -173,7 +173,7 @@ export const appPlans: Plan[] = [
   {
     id: "deployment-care",
     name: "Deployment + Care",
-    price: "₹25,000",
+    price: "₹49,999",
     cadence: "year",
     tagline: "For clients who want Rêvera to keep their app running.",
     featured: true,
@@ -211,7 +211,7 @@ export const appPlans: Plan[] = [
   {
     id: "app-maintenance",
     name: "App Maintenance",
-    price: "₹15,000",
+    price: "₹29,999",
     cadence: "year",
     tagline: "For apps already deployed and needing ongoing technical care.",
     highlights: [
@@ -240,6 +240,92 @@ export const appPlans: Plan[] = [
       ],
       timeline: "Ongoing",
       ideal: "Founders with an active app looking for reliable ongoing technical support."
+    }
+  }
+];
+
+export const partnershipPlans: Plan[] = [
+  {
+    id: "social-presence",
+    name: "Social Presence",
+    price: "₹25,000",
+    cadence: "month",
+    tagline: "Your complete social media team, handled by Rêvera.",
+    highlights: [
+      "Social media strategy",
+      "Content planning & monthly calendar",
+      "Post & carousel design",
+      "Reels / short-form content",
+      "Captions & copywriting",
+      "Posting & scheduling",
+      "Hashtag & trend research",
+      "Ads & campaign management"
+    ],
+    cta: { label: "Start Social Management", href: "/#contact" },
+    details: {
+      intro: "A dedicated partnership where our team handles your social media presence from top to bottom.",
+      groups: [
+        {
+          title: "Inclusions",
+          items: [
+            "Social media strategy",
+            "Content planning & monthly calendar",
+            "Post & carousel design",
+            "Reels / short-form content",
+            "Captions & copywriting",
+            "Posting & scheduling",
+            "Hashtag & trend research",
+            "Ads & campaign management",
+            "Profile optimization",
+            "Community / comment management",
+            "Monthly performance insights",
+            "Creative direction"
+          ]
+        }
+      ],
+      timeline: "Ongoing",
+      ideal: "Brands that want to stay active, consistent and professionally presented online."
+    }
+  },
+  {
+    id: "digital-partner",
+    name: "Digital Growth Partner",
+    price: "₹34,999",
+    cadence: "month",
+    tagline: "Your website, web application & social presence — managed together.",
+    featured: true,
+    badge: "RECOMMENDED",
+    highlights: [
+      "Everything in Social Presence",
+      "Website management",
+      "Web application maintenance",
+      "Content & UI updates",
+      "Bug fixes & technical support",
+      "Performance monitoring"
+    ],
+    cta: { label: "Become a Digital Partner", href: "/#contact" },
+    details: {
+      intro: "The ultimate retainer for businesses that want one expert team handling their entire digital presence, from social media to application support.",
+      groups: [
+        {
+          title: "Inclusions",
+          items: [
+            "Everything in Social Presence",
+            "Website management",
+            "Web application maintenance",
+            "Content & UI updates",
+            "Bug fixes & technical support",
+            "Performance monitoring",
+            "Security & maintenance",
+            "Hosting / deployment support",
+            "New sections & minor features",
+            "Social content & publishing",
+            "Monthly digital performance review"
+          ]
+        }
+      ],
+      timeline: "Ongoing",
+      ideal: "Businesses that want one team handling their entire digital presence."
     }
   }
 ];
