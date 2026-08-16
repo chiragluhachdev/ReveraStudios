@@ -44,7 +44,7 @@ export default function PricingPage() {
             />
             <Reveal delay={0.1}>
               <p className="mt-8 max-w-2xl text-pretty text-xl leading-relaxed text-stone">
-                Don&apos;t just build your product. Keep it moving. <br className="hidden md:block"/> One yearly plan for hosting, maintenance, updates and technical support.
+                Don&apos;t just build your product. Keep it moving. <br className="hidden md:block"/> Flexible plans for building, hosting, maintaining and continuously improving your digital presence.
               </p>
             </Reveal>
           </div>
