@@ -248,7 +248,7 @@ export const partnershipPlans: Plan[] = [
   {
     id: "social-presence",
     name: "Social Presence",
-    price: "₹25,000",
+    price: "₹24,999",
     cadence: "month",
     tagline: "Your complete social media team, handled by Rêvera.",
     highlights: [
