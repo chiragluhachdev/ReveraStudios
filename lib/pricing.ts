@@ -33,7 +33,7 @@ export const webPlans: Plan[] = [
     name: "Starter",
     price: "₹2,499",
     cadence: "month",
-    tagline: "For simple digital presence.",
+    tagline: "Website build + hosting + ongoing care",
     highlights: [
       "Domain included",
       "Business email",
@@ -68,7 +68,7 @@ export const webPlans: Plan[] = [
     name: "Growth",
     price: "₹4,999",
     cadence: "month",
-    tagline: "For growing businesses.",
+    tagline: "Advanced website + ongoing growth",
     featured: true,
     badge: "Recommended",
     highlights: [
@@ -331,13 +331,11 @@ export const partnershipPlans: Plan[] = [
 ];
 
 export const oneTimeProjects = [
-  { name: "Landing Website", price: "₹15K+" },
-  { name: "Business Website", price: "₹25K+" },
-  { name: "E-commerce", price: "₹25K+" },
-  { name: "Web App", price: "₹30K+" },
-  { name: "SaaS MVP", price: "₹30K+" },
-  { name: "Mobile App", price: "₹30K+" },
-  { name: "Custom Software", price: "₹75K+" },
+  { name: "Landing Website", price: "₹5K+" },
+  { name: "Business Website", price: "₹15K+" },
+  { name: "E-commerce", price: "₹15K+" },
+  { name: "Web App", price: "₹20K+" },
+  { name: "Custom Software", price: "₹50K+" },
 ];
 
 export const pricingFaqs: { q: string; a: string }[] = [
