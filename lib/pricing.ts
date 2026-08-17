@@ -182,8 +182,8 @@ export const appPlans: Plan[] = [
   {
     id: "deployment-care",
     name: "Deployment + Care",
-    price: "₹49,999",
-    cadence: "year",
+    price: "₹24,999",
+    cadence: "one-time + ₹1,999 / mo",
     tagline: "For clients who want Rêvera to keep their app running.",
     featured: true,
     badge: "Recommended",
@@ -220,8 +220,8 @@ export const appPlans: Plan[] = [
   {
     id: "app-maintenance",
     name: "App Maintenance",
-    price: "₹29,999",
-    cadence: "year",
+    price: "₹2,499",
+    cadence: "month",
     tagline: "For apps already deployed and needing ongoing technical care.",
     highlights: [
       "Bug fixes",
