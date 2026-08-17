@@ -68,20 +68,22 @@ export const webPlans: Plan[] = [
     name: "Growth",
     price: "₹4,999",
     cadence: "month",
-    tagline: "Advanced website + ongoing growth",
+    tagline: "SEO & Search Ready",
     featured: true,
     badge: "Recommended",
     highlights: [
       "Everything in Starter",
       "Premium custom design",
       "Advanced sections & features",
+      "SEO setup & optimization",
+      "Google Search visibility",
       "Regular updates",
       "Performance & security maintenance",
       "Priority support"
     ],
     cta: { label: "Grow Your Brand", href: "/#contact" },
     details: {
-      intro: "For growing businesses that need a custom online presence with regular updates and advanced features.",
+      intro: "Get found. Get noticed. For growing businesses that need a custom online presence with SEO and advanced features.",
       groups: [
         {
           title: "Inclusions",
@@ -89,6 +91,8 @@ export const webPlans: Plan[] = [
             "Everything in Starter",
             "Premium custom website design",
             "Advanced sections & features",
+            "SEO setup & optimization",
+            "Google Search visibility",
             "Regular content updates",
             "Performance & security maintenance",
             "Priority support"
@@ -104,18 +108,20 @@ export const webPlans: Plan[] = [
     name: "Scale",
     price: "₹8,999",
     cadence: "month",
-    tagline: "For businesses needing more.",
+    tagline: "SEO + Performance Marketing",
     highlights: [
       "Everything in Growth",
       "CMS / dynamic functionality",
       "Advanced integrations",
+      "Google & Meta Ads management",
+      "Conversion-focused landing pages",
+      "SEO & search optimization",
       "Ongoing improvements",
-      "More frequent updates",
       "Priority technical support"
     ],
     cta: { label: "Scale Up", href: "/#contact" },
     details: {
-      intro: "For businesses needing complex, dynamic functionality, advanced integrations, and continuous improvements.",
+      intro: "Build it. Rank it. Grow it. For businesses needing complex functionality, ads management, and continuous scaling.",
       groups: [
         {
           title: "Inclusions",
@@ -123,10 +129,13 @@ export const webPlans: Plan[] = [
             "Everything in Growth",
             "CMS / dynamic functionality",
             "Advanced integrations",
+            "Google & Meta Ads management",
+            "Conversion-focused landing pages",
+            "SEO & search optimization",
             "Ongoing improvements",
-            "More frequent updates",
             "Priority technical support"
-          ]
+          ],
+          note: "* Ad spend is separate."
         }
       ],
       timeline: "1-2 weeks",
