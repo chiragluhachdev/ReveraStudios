@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// Rêvera Studio — Pricing configuration.
+// Rêvera Studio — Pricing configuration.xx
 // Everything the /pricing page renders is driven from this file.
 // ─────────────────────────────────────────────────────────────
 
