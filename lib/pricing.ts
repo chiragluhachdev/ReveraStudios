@@ -31,115 +31,125 @@ export const webPlans: Plan[] = [
   {
     id: "starter",
     name: "Starter",
-    price: "₹2,499",
-    cadence: "month",
-    tagline: "Website build + hosting + ongoing care",
+    price: "₹6,999",
+    cadence: "one-time",
+    tagline: "A professional website to get you online",
     highlights: [
-      "Domain included",
-      "Business email",
       "Custom website design",
-      "Monthly maintenance",
-      "Content updates",
-      "Technical support"
+      "Responsive development",
+      "Up to 5 pages",
+      "Contact / enquiry form",
+      "WhatsApp integration",
+      "Basic SEO setup",
+      "Social media links",
+      "Deployment & configuration"
     ],
     cta: { label: "Start Building", href: "/#contact" },
     details: {
-      intro: "Perfect for a simple digital presence. We build your website, host it, and maintain it for you.",
+      intro: "Everything you need to get online: a custom, responsive website with an enquiry form, WhatsApp integration and basic SEO, deployed and configured for you.",
       groups: [
         {
           title: "Inclusions",
           items: [
-            "Domain setup",
-            "Business email",
-            "Hosting",
             "Custom website design",
-            "Monthly maintenance",
-            "Content updates",
-            "Technical support"
+            "Responsive development",
+            "Up to 5 pages",
+            "Contact / enquiry form",
+            "WhatsApp integration",
+            "Basic SEO setup",
+            "Social media links",
+            "Deployment & configuration"
           ]
         }
       ],
       timeline: "1-2 weeks",
-      ideal: "Freelancers, creators, local shops"
+      ideal: "Individuals & small businesses"
     }
   },
   {
     id: "growth",
     name: "Growth",
-    price: "₹4,999",
-    cadence: "month",
-    tagline: "SEO & Search Ready",
+    price: "₹14,999",
+    cadence: "one-time",
+    tagline: "A stronger digital presence built to grow",
     featured: true,
     badge: "Recommended",
     highlights: [
       "Everything in Starter",
       "Premium custom design",
-      "Advanced sections & features",
-      "SEO setup & optimization",
-      "Google Search visibility",
-      "Regular updates",
-      "Performance & security maintenance",
-      "Priority support"
+      "Up to 10 pages",
+      "Advanced sections & interactions",
+      "CMS / dynamic content",
+      "Advanced forms & integrations",
+      "SEO optimization",
+      "Google Search Console setup",
+      "Analytics integration",
+      "Performance optimization"
     ],
     cta: { label: "Grow Your Brand", href: "/#contact" },
     details: {
-      intro: "Get found. Get noticed. For growing businesses that need a custom online presence with SEO and advanced features.",
+      intro: "Get found. Get noticed. A premium custom website with dynamic content, analytics and SEO, built for businesses and brands that are growing.",
       groups: [
         {
           title: "Inclusions",
           items: [
             "Everything in Starter",
-            "Premium custom website design",
-            "Advanced sections & features",
-            "SEO setup & optimization",
-            "Google Search visibility",
-            "Regular content updates",
-            "Performance & security maintenance",
-            "Priority support"
+            "Premium custom design",
+            "Up to 10 pages",
+            "Advanced sections & interactions",
+            "CMS / dynamic content",
+            "Advanced forms & integrations",
+            "SEO optimization",
+            "Google Search Console setup",
+            "Analytics integration",
+            "Performance optimization"
           ]
         }
       ],
       timeline: "1-2 weeks",
-      ideal: "Growing startups, restaurants, agencies"
+      ideal: "Growing businesses & brands"
     }
   },
   {
     id: "scale",
     name: "Scale",
-    price: "₹8,999",
-    cadence: "month",
-    tagline: "SEO + Performance Marketing",
+    price: "₹19,999",
+    cadence: "one-time",
+    tagline: "Advanced websites & platforms for ambitious businesses",
     highlights: [
       "Everything in Growth",
-      "CMS / dynamic functionality",
-      "Advanced integrations",
-      "Google & Meta Ads management",
+      "Custom functionality",
+      "Dynamic dashboards / portals",
+      "Advanced API integrations",
+      "Database integration",
+      "Authentication / user accounts",
       "Conversion-focused landing pages",
-      "SEO & search optimization",
-      "Ongoing improvements",
-      "Priority technical support"
+      "Advanced SEO",
+      "Payment gateway integration",
+      "Custom automation"
     ],
     cta: { label: "Scale Up", href: "/#contact" },
     details: {
-      intro: "Build it. Rank it. Grow it. For businesses needing complex functionality, ads management, and continuous scaling.",
+      intro: "A complete digital platform: custom functionality, dashboards, user accounts, payments and integrations, built around how your business works.",
       groups: [
         {
           title: "Inclusions",
           items: [
             "Everything in Growth",
-            "CMS / dynamic functionality",
-            "Advanced integrations",
-            "Google & Meta Ads management",
+            "Custom functionality",
+            "Dynamic dashboards / portals",
+            "Advanced API integrations",
+            "Database integration",
+            "Authentication / user accounts",
             "Conversion-focused landing pages",
-            "SEO & search optimization",
-            "Ongoing improvements",
-            "Priority technical support"
-          ],
-          note: "* Ad spend is separate."
+            "Advanced SEO",
+            "Payment gateway integration",
+            "Custom automation"
+          ]
         }
       ],
       timeline: "1-2 weeks",
-      ideal: "E-commerce, dynamic portals, scale-ups"
+      ideal: "Businesses that need a complete digital platform"
     }
   }
 ];
