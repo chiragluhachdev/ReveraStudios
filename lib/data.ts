@@ -75,8 +75,33 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "ark-kidoid",
+    id: "churro-academy",
     index: "01",
+    title: "Churro Academy",
+    client: "Churro Academy",
+    sector: "Education • Online Baking Academy",
+    year: "2026",
+    image: "/videos/churrosz.png",
+    story:
+      "A warm, editorial learning platform for Churro Academy that turns a passion for desserts into real skills. Aspiring bakers explore expert-led courses, follow detailed step-by-step lessons at their own pace, and earn a certificate with every course.",
+    services: [
+      "Brand Experience",
+      "UI/UX Design",
+      "Web Development",
+      "Course Platform",
+      "Responsive Design",
+    ],
+    results: [
+      { value: "Expert-Led", label: "Courses" },
+      { value: "Certified", label: "Every course" },
+      { value: "Desktop + Mobile", label: "Responsive platform" },
+    ],
+    href: "https://www.churroacademyglobal.com/",
+    cta: "Visit Website",
+  },
+  {
+    id: "ark-kidoid",
+    index: "02",
     title: "ARK Kidoid | MKP",
     client: "Masti Ki Paathshaala",
     sector: "Education • App & Web Platform",
@@ -95,28 +120,6 @@ export const projects: Project[] = [
       { value: "Kids & Adults", label: "Audience" }
     ],
     href: "https://www.mastikipaathshaala.org/",
-    cta: "Visit Website",
-  },
-  {
-    id: "mr-bites",
-    index: "02",
-    title: "MR BITES",
-    client: "MR BITES",
-    sector: "Foodtech • Campus Ordering App",
-    year: "2026",
-    image: "/videos/mrbitesx.png",
-    story:
-      "A dedicated campus food ordering platform designed for students and teachers. By allowing users to place orders early through the mobile app, MR BITES eliminates long queues and waiting times, ensuring a seamless and efficient dining experience.",
-    services: [
-      "Product Strategy",
-      "UI/UX Design",
-      "Mobile App Development"
-    ],
-    results: [
-      { value: "50%", label: "Wait time reduced" },
-      { value: "iOS & Android", label: "App Platforms" }
-    ],
-    href: "https://www.mrbites.in/",
     cta: "Visit Website",
   },
   {
@@ -142,8 +145,59 @@ export const projects: Project[] = [
     cta: "Visit Website",
   },
   {
-    id: "presnag",
+    id: "mr-bites",
     index: "04",
+    title: "MR BITES",
+    client: "MR BITES",
+    sector: "Foodtech • Campus Ordering App",
+    year: "2026",
+    image: "/videos/mrbitesx.png",
+    story:
+      "A dedicated campus food ordering platform designed for students and teachers. By allowing users to place orders early through the mobile app, MR BITES eliminates long queues and waiting times, ensuring a seamless and efficient dining experience.",
+    services: [
+      "Product Strategy",
+      "UI/UX Design",
+      "Mobile App Development"
+    ],
+    results: [
+      { value: "50%", label: "Wait time reduced" },
+      { value: "iOS & Android", label: "App Platforms" }
+    ],
+    href: "https://www.mrbites.in/",
+    cta: "Visit Website",
+  },
+  {
+    id: "geoenergys",
+    index: "05",
+    title: "GeoEnergys",
+    client: "Sanchit Chugh",
+    clientLabel: "Sanchit Chugh · Independent Research / Energy Analytics",
+    sector: "Energy Intelligence Platform • Data Analytics",
+    year: "2026",
+    image: "/videos/GeoEnergys.png",
+    story:
+      "An interactive energy intelligence platform that turns global energy trade into clean, explorable data. Compare major economies and analyse petroleum, gas, coal and electricity flows — powered by official U.S. EIA datasets.",
+    services: [
+      "Research",
+      "UI/UX Design",
+      "Dashboard Design",
+      "Data Visualization",
+      "Frontend Development",
+      "API Integration",
+      "Responsive Development",
+    ],
+    results: [
+      { value: "10", label: "Major economies" },
+      { value: "4", label: "Energy types" },
+      { value: "EIA.gov", label: "Official data source" },
+      { value: "Multiple", label: "Interactive dashboards" },
+    ],
+    href: "https://geo-energys.vercel.app/",
+    cta: "View Live Project",
+  },
+  {
+    id: "presnag",
+    index: "06",
     title: "PreSnag",
     client: "PreSnag",
     sector: "Restaurant SaaS • Ordering Platform",
@@ -166,6 +220,31 @@ export const projects: Project[] = [
     ],
     href: "https://presnag.com",
     cta: "Visit Platform",
+  },
+  {
+    id: "miyaabi",
+    index: "07",
+    title: "Miyaabi",
+    client: "Miyaabi",
+    sector: "Fashion E-Commerce • Lifestyle Brand Experience",
+    year: "2026",
+    image: "/videos/miyaabix2.png",
+    story:
+      "A modern fashion commerce platform for a contemporary clothing brand built on elevated everyday essentials. Minimal design, immersive storytelling and seamless shopping showcase curated collections and timeless wardrobe staples.",
+    services: [
+      "Brand Identity",
+      "Fashion UI/UX",
+      "E-Commerce Development",
+      "Responsive Design",
+      "Product Experience",
+    ],
+    results: [
+      { value: "Fashion", label: "Design-led" },
+      { value: "Desktop + Mobile", label: "Responsive store" },
+      { value: "End-to-End", label: "Design → Build" },
+    ],
+    href: "https://miyaabi.vercel.app/",
+    cta: "Visit Store",
   },
   /*
   {
@@ -196,60 +275,6 @@ export const projects: Project[] = [
     cta: "Visit Store",
   },
   */
-  {
-    id: "miyaabi",
-    index: "05",
-    title: "Miyaabi",
-    client: "Miyaabi",
-    sector: "Fashion E-Commerce • Lifestyle Brand Experience",
-    year: "2026",
-    image: "/videos/miyaabix2.png",
-    story:
-      "A modern fashion commerce platform for a contemporary clothing brand built on elevated everyday essentials. Minimal design, immersive storytelling and seamless shopping showcase curated collections and timeless wardrobe staples.",
-    services: [
-      "Brand Identity",
-      "Fashion UI/UX",
-      "E-Commerce Development",
-      "Responsive Design",
-      "Product Experience",
-    ],
-    results: [
-      { value: "Fashion", label: "Design-led" },
-      { value: "Desktop + Mobile", label: "Responsive store" },
-      { value: "End-to-End", label: "Design → Build" },
-    ],
-    href: "https://miyaabi.vercel.app/",
-    cta: "Visit Store",
-  },
-  {
-    id: "geoenergys",
-    index: "06",
-    title: "GeoEnergys",
-    client: "Sanchit Chugh",
-    clientLabel: "Sanchit Chugh · Independent Research / Energy Analytics",
-    sector: "Energy Intelligence Platform • Data Analytics",
-    year: "2026",
-    image: "/videos/GeoEnergys.png",
-    story:
-      "An interactive energy intelligence platform that turns global energy trade into clean, explorable data. Compare major economies and analyse petroleum, gas, coal and electricity flows — powered by official U.S. EIA datasets.",
-    services: [
-      "Research",
-      "UI/UX Design",
-      "Dashboard Design",
-      "Data Visualization",
-      "Frontend Development",
-      "API Integration",
-      "Responsive Development",
-    ],
-    results: [
-      { value: "10", label: "Major economies" },
-      { value: "4", label: "Energy types" },
-      { value: "EIA.gov", label: "Official data source" },
-      { value: "Multiple", label: "Interactive dashboards" },
-    ],
-    href: "https://geo-energys.vercel.app/",
-    cta: "View Live Project",
-  }
 ];
 
 export type Service = {
