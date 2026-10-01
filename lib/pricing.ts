@@ -13,6 +13,8 @@ export type Plan = {
   id: string;
   name: string;
   price: string;
+  /** Shows a small "from" before the price (starting price). */
+  startingFrom?: boolean;
   cadence?: string;
   tagline: string;
   highlights: string[];
@@ -32,6 +34,7 @@ export const webPlans: Plan[] = [
     id: "starter",
     name: "Starter",
     price: "₹6,999",
+    startingFrom: true,
     cadence: "one-time",
     tagline: "A professional website to get you online",
     highlights: [
@@ -70,6 +73,7 @@ export const webPlans: Plan[] = [
     id: "growth",
     name: "Growth",
     price: "₹14,999",
+    startingFrom: true,
     cadence: "one-time",
     tagline: "A stronger digital presence built to grow",
     featured: true,
@@ -114,6 +118,7 @@ export const webPlans: Plan[] = [
     id: "scale",
     name: "Scale",
     price: "₹19,999",
+    startingFrom: true,
     cadence: "one-time",
     tagline: "Advanced websites & platforms for ambitious businesses",
     highlights: [
@@ -160,22 +165,26 @@ export const appPlans: Plan[] = [
     name: "App Deployment",
     price: "₹24,999",
     cadence: "one-time",
-    tagline: "For clients who already have an app and simply need it published.",
+    tagline: "We design, build and launch your app on iOS & Android.",
     highlights: [
+      "Custom app design (UI/UX)",
+      "iOS & Android app development",
+      "Backend & database setup",
       "iOS App Store deployment",
       "Google Play Store deployment",
       "Store listing setup",
-      "App signing & certificates",
-      "Build & release management",
-      "Submission support"
+      "App signing & certificates"
     ],
     cta: { label: "Deploy App", href: "/#contact" },
     details: {
-      intro: "A dedicated service to take your finished app source code and successfully publish it to the Apple App Store and Google Play Store.",
+      intro: "We take your idea from concept to the stores: designing and developing your app, then publishing it on the Apple App Store and Google Play Store.",
       groups: [
         {
           title: "Inclusions",
           items: [
+            "Custom app design (UI/UX)",
+            "iOS & Android app development",
+            "Backend & database setup",
             "iOS App Store deployment",
             "Google Play Store deployment",
             "Store listing setup",
@@ -185,16 +194,16 @@ export const appPlans: Plan[] = [
           ]
         }
       ],
-      timeline: "1-2 weeks",
-      ideal: "Founders who have built an app but need expert help launching it."
+      timeline: "Depends on scope",
+      ideal: "Founders and businesses ready to launch their own app."
     }
   },
   {
     id: "deployment-care",
     name: "Deployment + Care",
     price: "₹24,999",
-    cadence: "one-time + ₹1,999 / mo",
-    tagline: "For clients who want Rêvera to keep their app running.",
+    cadence: "one-time + ₹999 / mo",
+    tagline: "We build and launch your app, then keep it running.",
     featured: true,
     badge: "Recommended",
     highlights: [
@@ -207,7 +216,7 @@ export const appPlans: Plan[] = [
     ],
     cta: { label: "Deploy & Maintain", href: "/#contact" },
     details: {
-      intro: "The complete package. We will deploy your app to the stores and provide ongoing technical care, updates, and backend maintenance for a full year.",
+      intro: "The complete package. We design, build and launch your app on the stores, then provide ongoing technical care, updates and backend maintenance for a full year.",
       groups: [
         {
           title: "Inclusions",
@@ -230,9 +239,9 @@ export const appPlans: Plan[] = [
   {
     id: "app-maintenance",
     name: "App Maintenance",
-    price: "₹2,499",
+    price: "₹1,499",
     cadence: "month",
-    tagline: "For apps already deployed and needing ongoing technical care.",
+    tagline: "Ongoing technical care to keep your app secure, updated and running smoothly.",
     highlights: [
       "Bug fixes",
       "Backend maintenance",
@@ -243,7 +252,7 @@ export const appPlans: Plan[] = [
     ],
     cta: { label: "Maintain App", href: "/#contact" },
     details: {
-      intro: "A dedicated maintenance plan to ensure your already-deployed mobile application stays secure, updated, and flawless.",
+      intro: "A dedicated maintenance plan to keep your mobile app secure, updated and flawless after launch.",
       groups: [
         {
           title: "Inclusions",
@@ -258,7 +267,7 @@ export const appPlans: Plan[] = [
         }
       ],
       timeline: "Ongoing",
-      ideal: "Founders with an active app looking for reliable ongoing technical support."
+      ideal: "Businesses that want reliable ongoing technical support for their app."
     }
   }
 ];

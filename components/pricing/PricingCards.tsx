@@ -36,6 +36,9 @@ function PlanCard({ plan, open, setActive }: { plan: Plan; open: (id: PlanId) =>
 
       {/* Price */}
       <div className="mt-8 flex items-baseline gap-2 border-b border-ink/10 pb-8">
+        {plan.startingFrom && (
+          <span className="text-sm text-stone">from</span>
+        )}
         <span className="font-display text-5xl font-medium tracking-tight text-ink">
           {plan.price}
         </span>
@@ -131,7 +134,7 @@ export default function PricingCards() {
           <Reveal>
             <div className="mb-10 flex flex-col gap-2">
               <span className="eyebrow text-ink/50">02 — Mobile Apps</span>
-              <h2 className="font-display text-4xl font-medium tracking-tight text-ink">iOS & Android Maintenance</h2>
+              <h2 className="font-display text-4xl font-medium tracking-tight text-ink">iOS & Android Apps</h2>
             </div>
           </Reveal>
           
@@ -217,6 +220,9 @@ function PlanDetails({
               {plan.name}
             </h3>
             <p className="mt-1 flex items-baseline gap-2">
+              {plan.startingFrom && (
+                <span className="text-sm text-stone">from</span>
+              )}
               <span className={`font-display text-2xl ${priceColor}`}>{plan.price}</span>
               {plan.cadence && (
                 <span className="text-sm text-stone">/ {plan.cadence}</span>

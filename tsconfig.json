@@ -19,5 +19,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "3d-nova"]
+  "exclude": ["node_modules", "3d-nova", "ownbase"]
 }
