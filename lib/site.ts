@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// Rêvera Studio — central site / SEO configuration.
+// Rêvera Studios — central site / SEO configuration.
 //
 // Single source of truth for metadata, structured data and brand
 // facts. Keeping copy consistent here (title, description, contact)
@@ -12,30 +12,30 @@ export const SITE_URL = "https://www.reverastudios.com";
 
 export const site = {
   url: SITE_URL,
-  name: "Rêvera Studio",
-  legalName: "Rêvera Studio",
-  titleDefault: "Rêvera Studio | Creative Technology & Digital Agency",
-  titleTemplate: "%s | Rêvera Studio",
+  name: "Rêvera Studios",
+  legalName: "Rêvera Studios",
+  titleDefault: "Rêvera Studios | Creative Technology & Digital Agency",
+  titleTemplate: "%s | Rêvera Studios",
   tagline: "Where Ideas Become Experiences",
 
   // The canonical long-form description — reused verbatim across
   // metadata, Organization schema and on-page About copy so search
   // and AI systems get one consistent story.
   description:
-    "Rêvera Studio is a creative technology and digital agency based in Faridabad, India, specializing in premium websites, mobile applications, branding, digital marketing, cinematic content creation, AI integrations, and end-to-end digital experiences for modern businesses.",
+    "Rêvera Studios is a creative technology and digital agency based in Faridabad, India, specializing in premium websites, mobile applications, branding, digital marketing, cinematic content creation, AI integrations, and end-to-end digital experiences for modern businesses.",
 
   // Short homepage <meta description> (~155 chars) — kept separate from
   // the long `description` used in structured data / manifest.
   metaDescription:
-    "Rêvera Studio is a creative technology & digital agency in Faridabad, India, building premium websites, mobile apps, branding, content and AI experiences.",
+    "Rêvera Studios is a creative technology & digital agency in Faridabad, India, building premium websites, mobile apps, branding, content and AI experiences.",
 
   // Short description for Open Graph / social cards.
   ogDescription:
-    "Premium creative technology studio building websites, mobile apps, digital brands and cinematic experiences.",
+    "Premium creative technology studios building websites, mobile apps, digital brands and cinematic experiences.",
 
   keywords: [
-    "Rêvera Studio",
-    "Revera Studio",
+    "Rêvera Studios",
+    "Revera Studios",
     "Revera",
     "reverastudios",
     "Creative Agency",
@@ -49,7 +49,7 @@ export const site = {
     "Digital Marketing",
     "Next.js Agency",
     "React Native Development",
-    "Creative Studio",
+    "Creative Studios",
     "AI Automation",
     "Business Websites",
     "App Store Deployment",
@@ -109,7 +109,7 @@ import type { Metadata } from "next";
 // Graph + Twitter, always including the OG image). Use this for every
 // new page so no page ever ships with missing/partial social tags.
 // `title` is the segment title; the root layout's template appends
-// " | Rêvera Studio" to the <title>, while og/twitter get the full form.
+// " | Rêvera Studios" to the <title>, while og/twitter get the full form.
 export function pageMetadata({
   title,
   description,
@@ -136,7 +136,7 @@ export function pageMetadata({
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: "Rêvera Studio — Creative Technology & Digital Agency",
+          alt: "Rêvera Studios — Creative Technology & Digital Agency",
         },
       ],
     },

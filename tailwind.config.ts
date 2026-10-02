@@ -18,8 +18,8 @@ const config: Config = {
         // Logo red — the "ê" and full stop in the "Rêvera." wordmark.
         brand: "#AB0003",
         // Gen Z pops — used on dark surfaces (banners, stickers, highlights).
-        lime: "#C8F26D",
-        lilac: "#C4B5FD",
+        lime: "#DCFC5A",
+        lilac: "#927FF7",
         sky: "#8EDCFB",
         pink: "#FFA8D4",
         gold: "#B08D57",

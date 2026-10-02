@@ -161,7 +161,7 @@ export default function Services() {
           </div>
           <Reveal delay={0.1} className="hidden md:block">
             <p className="max-w-xs text-pretty text-base leading-relaxed text-canvas/60">
-              One studio, end to end. Strategy, craft and technology under a
+              One studios, end to end. Strategy, craft and technology under a
               single roof — so nothing gets lost in translation.
             </p>
           </Reveal>

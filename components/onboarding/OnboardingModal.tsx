@@ -48,7 +48,7 @@ export default function OnboardingModal({
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", "ddd62bd8-d371-4fe5-8b1a-950647809c6d");
     formData.append("subject", `✨ New Onboarding Request: ${planLabel(selectedPlan)}`);
-    formData.append("from_name", "Revera Studios Website");
+    formData.append("from_name", "Revera Studioss Website");
     // Append actual label to web3forms payload if they don't capture the <select> automatically.
     // Since we named the select "plan_selected", Web3Forms will capture it, but we can override it with the clean label.
     formData.set("plan_selected", planLabel(selectedPlan));
@@ -176,7 +176,7 @@ export default function OnboardingModal({
                         name="brief"
                         rows={4}
                         className={`${inputCls} resize-none`}
-                        placeholder="Tell us a little bit about what you'd like Rêvera Studio to build..."
+                        placeholder="Tell us a little bit about what you'd like Rêvera Studios to build..."
                       />
                     </div>
                   </div>
@@ -221,7 +221,7 @@ function Success({ onClose }: { onClose: () => void }) {
       <h3 className="mt-8 font-display text-4xl font-medium tracking-tight text-ink sm:text-5xl">
         Thank you for choosing
         <br />
-        <span className="italic">Rêvera Studio.</span>
+        <span className="italic">Rêvera Studios.</span>
       </h3>
 
       <p className="mt-8 max-w-lg text-pretty text-base leading-relaxed text-ink/70">

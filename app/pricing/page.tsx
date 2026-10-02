@@ -16,7 +16,7 @@ import { oneTimeProjects } from "@/lib/pricing";
 export const metadata: Metadata = pageMetadata({
   title: "Pricing",
   description:
-    "Rêvera Studio pricing — carefully crafted plans to build, grow and launch premium websites, mobile apps, branding and AI experiences for modern businesses.",
+    "Rêvera Studios pricing — carefully crafted plans to build, grow and launch premium websites, mobile apps, branding and AI experiences for modern businesses.",
   path: "/pricing",
 });
 

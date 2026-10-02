@@ -6,7 +6,7 @@ import Process from "@/components/Process";
 import WhoWeAre from "@/components/WhoWeAre";
 import ClientLogos from "@/components/ClientLogos";
 import Testimonials from "@/components/Testimonials";
-// import Team from "@/components/Team"; // "Behind the Studio" hidden for now
+// import Team from "@/components/Team"; // "Behind the Studios" hidden for now
 import InstagramGallery from "@/components/InstagramGallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -43,7 +43,7 @@ export default function Home() {
         <WhoWeAre />
         <ClientLogos />
         <Testimonials />
-        {/* <Team /> — "Behind the Studio" hidden for now */}
+        {/* <Team /> — "Behind the Studios" hidden for now */}
         <InstagramGallery />
         <Contact />
       </main>

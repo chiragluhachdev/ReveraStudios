@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// Rêvera Studio — Agency workflow shared types, constants & helpers.
+// Rêvera Studios — Agency workflow shared types, constants & helpers.
 //
 // Persistence lives in MongoDB (see lib/server/repo.ts) and is reached
 // from the client through /api routes (see lib/api.ts). This module is
@@ -7,7 +7,7 @@
 // ─────────────────────────────────────────────────────────────
 
 export const BRAND = {
-  name: "Rêvera Studio",
+  name: "Rêvera Studios",
   type: "Technology & Digital Agency",
   address: "Faridabad, Haryana – 121001, India",
   pan: "BQRPH8890K",

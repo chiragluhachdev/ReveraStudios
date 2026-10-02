@@ -219,8 +219,8 @@ function SceneBuild() {
 }
 
 const swatches = [
-  { c: "bg-lime", hex: "#C8F26D" },
-  { c: "bg-lilac", hex: "#C4B5FD" },
+  { c: "bg-lime", hex: "#DCFC5A" },
+  { c: "bg-lilac", hex: "#927FF7" },
   { c: "bg-sky", hex: "#8EDCFB" },
   { c: "bg-ink", hex: "#0A0A0A" },
 ];
@@ -319,7 +319,7 @@ function SceneServices() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.5, ease: EASE }}
           >
-            <p className="font-sans text-xl font-semibold tracking-[-0.03em] text-ink sm:text-3xl">Rêvera Studio</p>
+            <p className="font-sans text-xl font-semibold tracking-[-0.03em] text-ink sm:text-3xl">Rêvera Studios</p>
             <p className="mt-1 max-w-[16rem] text-sm leading-snug text-ink/60 sm:text-base">
               Creative technology for modern brands.
             </p>
@@ -394,7 +394,7 @@ export default function Hero() {
                       className="mb-3 flex items-center gap-2 text-xs font-medium text-ink/70 sm:text-sm lg:mb-4"
                     >
                       <span className="h-1.5 w-1.5 rounded-full bg-ink" />
-                      Rêvera Studio
+                      Rêvera Studios
                     </motion.p>
                   )}
                   <p aria-hidden className={headline}>

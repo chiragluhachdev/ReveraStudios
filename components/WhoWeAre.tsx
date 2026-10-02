@@ -23,7 +23,7 @@ type Seg =
 
 // The sentence, with inline photo pills and highlighted words.
 const statement: Seg[] = [
-  { t: "An independent studio in Faridabad, India" },
+  { t: "An independent studios in Faridabad, India" },
   { img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=70", alt: "The team at work" },
   { t: "crafting" },
   { t: "websites", mark: "bg-lime" },
@@ -230,7 +230,7 @@ export default function WhoWeAre() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="studio" aria-label="Who we are" className="relative bg-canvas py-20 lg:py-36">
+    <section id="studios" aria-label="Who we are" className="relative bg-canvas py-20 lg:py-36">
       <span id="about" className="absolute -top-20" aria-hidden />
       <div className="container-x">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-10">

@@ -51,7 +51,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Rêvera Studio — Creative Technology & Digital Agency",
+        alt: "Rêvera Studios — Creative Technology & Digital Agency",
       },
     ],
   },

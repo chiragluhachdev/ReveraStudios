@@ -8,7 +8,7 @@ import { nav, contactMeta } from "@/lib/data";
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
 
 // Each letter of the giant wordmark jumps and takes a pop colour on hover.
-const letterPops = ["#C8F26D", "#C4B5FD", "#8EDCFB", "#FFA8D4"];
+const letterPops = ["#DCFC5A", "#927FF7", "#8EDCFB", "#FFA8D4"];
 
 function Wordmark() {
   const reduce = useReducedMotion();
@@ -30,7 +30,7 @@ function Wordmark() {
       ))}
       <motion.span
         className="inline-block cursor-default text-brand"
-        whileHover={reduce ? {} : { scale: 1.3, color: "#C8F26D" }}
+        whileHover={reduce ? {} : { scale: 1.3, color: "#DCFC5A" }}
         transition={{ type: "spring", stiffness: 400, damping: 12 }}
       >
         .
@@ -156,7 +156,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className={label}>Studio</p>
+            <p className={label}>Studios</p>
             <p className="text-[15px] font-semibold leading-relaxed text-ink">{contactMeta.location}</p>
             <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/70">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-lime" />
@@ -167,7 +167,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col gap-2 border-t border-ink/10 py-6 text-sm text-ink/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Rêvera Studio. All rights reserved.</p>
+          <p>© {year} Rêvera Studios. All rights reserved.</p>
           <p>Crafted with intention.</p>
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function InstagramGallery() {
               </span>
             </Reveal>
             <AnimatedHeading
-              text="From the studio, / daily."
+              text="From the studios, / daily."
               className="mt-4 font-sans text-[11vw] font-normal leading-[0.98] tracking-[-0.055em] text-ink sm:text-6xl lg:text-7xl"
             />
           </div>

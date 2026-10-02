@@ -163,7 +163,7 @@ export default function ReceiptDocument({ doc }: { doc: Invoice }) {
             </p>
             <p className="mt-1.5 text-sm leading-relaxed text-ink/75">
               Payment has been successfully received and verified by Rêvera
-              Studio. The project is now officially active and development
+              Studios. The project is now officially active and development
               activities have commenced.
             </p>
           </div>
@@ -173,7 +173,7 @@ export default function ReceiptDocument({ doc }: { doc: Invoice }) {
       {/* Footer */}
       <footer className="border-t border-ink/10 pt-6 text-center [break-inside:avoid]">
         <p className="font-display text-lg tracking-tight text-ink">
-          Thank you for choosing Rêvera Studio.
+          Thank you for choosing Rêvera Studios.
         </p>
         <p className="mt-3 text-[11px] leading-relaxed text-stone">
           This is a computer-generated receipt and does not require a physical

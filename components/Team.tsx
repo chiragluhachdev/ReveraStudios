@@ -19,7 +19,7 @@ export default function Team() {
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end lg:mb-16">
           <div>
             <Reveal>
-              <span className="eyebrow">08 — Behind the Studio</span>
+              <span className="eyebrow">08 — Behind the Studios</span>
             </Reveal>
             <AnimatedHeading
               text="The people / behind the work."

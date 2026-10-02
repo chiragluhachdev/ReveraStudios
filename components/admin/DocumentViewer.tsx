@@ -35,15 +35,15 @@ export default function DocumentViewer({
   const total = invoiceTotal(doc.items);
   const paid = current.status === "Paid";
 
-  const shareText = `Hi ${doc.client.name}, here is your ${doc.docType} ${doc.id} from Rêvera Studio. Amount: ${formatINR(
+  const shareText = `Hi ${doc.client.name}, here is your ${doc.docType} ${doc.id} from Rêvera Studios. Amount: ${formatINR(
     total
-  )}. Pay to ${UPI.accountHolder}, A/c ${UPI.accountNumber}, IFSC ${UPI.ifsc}. Thank you for choosing Rêvera Studio.`;
+  )}. Pay to ${UPI.accountHolder}, A/c ${UPI.accountNumber}, IFSC ${UPI.ifsc}. Thank you for choosing Rêvera Studios.`;
 
   const waHref = `https://wa.me/${doc.client.phone.replace(/\D/g, "")}?text=${encodeURIComponent(
     shareText
   )}`;
   const mailHref = `mailto:${doc.client.email}?subject=${encodeURIComponent(
-    `Rêvera Studio — ${doc.docType} ${doc.id}`
+    `Rêvera Studios — ${doc.docType} ${doc.id}`
   )}&body=${encodeURIComponent(shareText)}`;
 
   const remove = async () => {

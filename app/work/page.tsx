@@ -14,7 +14,7 @@ import { projects } from "@/lib/data";
 export const metadata: Metadata = pageMetadata({
   title: "Work",
   description:
-    "Selected work by Rêvera Studio — websites, apps and platforms for education, food, culture, fashion and energy brands.",
+    "Selected work by Rêvera Studios — websites, apps and platforms for education, food, culture, fashion and energy brands.",
   path: "/work",
 });
 

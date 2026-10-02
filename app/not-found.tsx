@@ -21,7 +21,7 @@ export default function NotFound() {
         href="/"
         className="group mt-10 inline-flex items-center gap-3 rounded-full bg-ink px-8 py-4 text-sm font-medium text-canvas transition-all duration-500 ease-expo hover:bg-accent"
       >
-        Back to Rêvera Studio
+        Back to Rêvera Studios
       </Link>
     </main>
   );

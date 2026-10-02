@@ -228,7 +228,7 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
       <footer className="border-t border-ink/10 pt-8 pb-8 [break-inside:avoid]">
         <div className="flex items-end justify-between">
           <p className="font-display text-lg tracking-tight text-ink">
-            Thank you for choosing Rêvera Studio.
+            Thank you for choosing Rêvera Studios.
           </p>
           <div className="flex flex-col items-end text-right">
             <p className="text-[11px] uppercase tracking-[0.2em] text-stone">
@@ -238,7 +238,7 @@ export default function InvoiceDocument({ doc }: { doc: Invoice }) {
             <p className="text-stone">__________________________</p>
             <p className="mt-1 text-sm font-medium text-ink">Harshit Vishariya</p>
             <p className="text-xs text-stone">Proprietor</p>
-            <p className="text-xs text-stone">Rêvera Studio</p>
+            <p className="text-xs text-stone">Rêvera Studios</p>
           </div>
         </div>
       </footer>

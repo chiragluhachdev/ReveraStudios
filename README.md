@@ -1,8 +1,8 @@
-# Rêvera Studio
+# Rêvera Studios
 
 **Where Ideas Become Experiences.**
 
-A premium, editorial marketing site for a creative technology studio — built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Framer Motion and Lenis smooth scroll.
+A premium, editorial marketing site for a creative technology studios — built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Framer Motion and Lenis smooth scroll.
 
 ## Getting started
 

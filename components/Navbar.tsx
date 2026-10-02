@@ -80,7 +80,7 @@ export default function Navbar() {
             <a
               href={onHome ? "#top" : "/"}
               className="flex items-center gap-2.5 text-ink"
-              aria-label="Rêvera Studio home"
+              aria-label="Rêvera Studios home"
             >
               <span className="relative h-8 w-8 overflow-hidden rounded-[9px] bg-black sm:h-9 sm:w-9">
                 <Image src="/webtoplogo.png" alt="" fill sizes="36px" className="object-contain p-[14%]" />

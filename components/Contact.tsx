@@ -23,8 +23,8 @@ export default function Contact() {
     const formData = new FormData(e.currentTarget);
     // Add the Web3Forms access key and professional formatting
     formData.append("access_key", "ddd62bd8-d371-4fe5-8b1a-950647809c6d");
-    formData.append("subject", "✨ New Project Enquiry | Revera Studios");
-    formData.append("from_name", "Revera Studios Website");
+    formData.append("subject", "✨ New Project Enquiry | Revera Studioss");
+    formData.append("from_name", "Revera Studioss Website");
     if (needs.length) formData.append("services", needs.join(", "));
 
     try {

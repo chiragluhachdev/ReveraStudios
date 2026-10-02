@@ -1,4 +1,4 @@
-// Centralised content for Rêvera Studio.
+// Centralised content for Rêvera Studios.
 // Images use Unsplash placeholders — swap freely with your own assets.
 
 export type ShowreelItem = {
@@ -474,7 +474,7 @@ export const instagram = [
 export const nav = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "#services" },
-  { label: "Studio", href: "#studio" },
+  { label: "Studios", href: "#studios" },
   { label: "Contact", href: "#contact" },
 ];
 
