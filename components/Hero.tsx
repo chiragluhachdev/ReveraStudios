@@ -119,16 +119,15 @@ function SceneWordmark() {
           <span className="h-0 flex-1 border-t-[3px] border-dashed border-canvas/80" />
         </div>
       ))}
-      {/* Centred by flex (not a translate class — motion's x would override it);
-          slides in from the right and settles fully inside the stage. */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+      {/* Shifted right on desktop so the white tab doesn't cover the start of the word */}
+      <div className="absolute inset-0 flex items-center justify-center sm:justify-end sm:pr-[10%] lg:pr-[15%] overflow-hidden">
         <motion.span
-          className="whitespace-nowrap font-sans text-[19vw] font-semibold leading-none tracking-[-0.05em] text-canvas sm:text-[17vw] lg:text-[14vw]"
+          className="whitespace-nowrap font-sans text-[11vw] font-semibold leading-none tracking-[-0.05em] text-canvas sm:text-[9vw] lg:text-[7.5vw]"
           initial={{ x: "70%", opacity: 0 }}
-          animate={{ x: "0%", opacity: 1 }}
+          animate={{ x: "0%", opacity: 1 }} 
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          Rêvera
+          Rêvera Studios
         </motion.span>
       </div>
     </div>
@@ -144,9 +143,32 @@ function SceneBuild() {
   });
   return (
     <div className="absolute inset-0 flex items-center justify-center gap-3 p-4 sm:gap-5 lg:justify-end lg:pr-[7%]">
+      {/* Floating Widget (Fills top-left void on mobile) */}
+      <motion.div
+        className="absolute left-[8%] top-[45%] z-0 flex flex-col gap-1.5 rounded-lg bg-[#221C19] p-2.5 shadow-xl ring-1 ring-canvas/10 sm:left-[10%] sm:top-[25%] lg:left-[22%] lg:top-[30%]"
+        initial={{ opacity: 0, y: 20, rotate: -15 }}
+        animate={{ opacity: 1, y: 0, rotate: -6 }}
+        transition={{ type: "spring", stiffness: 180, damping: 15, delay: 1.8 }}
+      >
+        <span className="h-2 w-14 rounded-full bg-pink" />
+        <span className="h-1.5 w-8 rounded-full bg-canvas/20" />
+      </motion.div>
+
+      {/* Floating Code Snippet (Fills top-right void) */}
+      <motion.div
+        className="absolute right-[5%] top-[25%] z-0 flex flex-col gap-1.5 rounded-lg bg-[#1A1513] p-3 shadow-lg ring-1 ring-canvas/5 sm:right-[15%] sm:top-[20%] lg:right-[35%] lg:top-[18%]"
+        initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
+        animate={{ opacity: 1, scale: 1, rotate: 4 }}
+        transition={{ type: "spring", stiffness: 150, damping: 20, delay: 2.1 }}
+      >
+        <span className="h-1.5 w-10 rounded-full bg-lime/80" />
+        <span className="h-1.5 w-16 rounded-full bg-sky/80" />
+        <span className="h-1.5 w-12 rounded-full bg-lilac/80" />
+      </motion.div>
+
       {/* Browser */}
       <motion.div
-        className="relative flex aspect-[16/10] w-[70%] flex-col overflow-hidden rounded-xl bg-[#221C19] ring-1 ring-canvas/10 sm:w-[60%] lg:w-[44%]"
+        className="relative z-10 flex aspect-[16/10] w-[72%] flex-col overflow-hidden rounded-xl bg-[#221C19] shadow-2xl ring-1 ring-canvas/10 sm:w-[60%] lg:w-[44%]"
         initial={{ opacity: 0, y: 30, rotate: -2 }}
         animate={{ opacity: 1, y: 0, rotate: 0 }}
         transition={{ duration: 0.7, ease: EASE }}
@@ -168,11 +190,11 @@ function SceneBuild() {
               <span className="h-2 w-6 rounded-full bg-canvas/25" />
             </span>
           </motion.div>
-          <motion.div {...pop(0.6)} className="relative flex flex-[1.3] flex-col justify-center gap-[8%] rounded-lg bg-lime px-[5%]">
+          <motion.div {...pop(0.6)} className="relative flex flex-[1.3] flex-col justify-center gap-[8%] rounded-lg bg-lime px-[5%] shadow-inner">
             <span className="h-[14%] w-[62%] rounded-full bg-ink/85" />
             <span className="h-[14%] w-[44%] rounded-full bg-ink/85" />
             <motion.span
-              className="mt-[2%] flex h-[20%] w-[26%] items-center justify-center rounded-full text-[8px] font-bold sm:text-[10px]"
+              className="mt-[2%] flex h-[20%] w-[26%] items-center justify-center rounded-full text-[8px] font-bold shadow-sm sm:text-[10px]"
               initial={{ backgroundColor: "#0A0A0A", color: "#FAFAF8" }}
               animate={{ backgroundColor: ["#0A0A0A", "#0A0A0A", "#FAFAF8"], color: ["#FAFAF8", "#FAFAF8", "#0A0A0A"] }}
               transition={{ duration: 2.6, times: [0, 0.92, 1] }}
@@ -182,14 +204,14 @@ function SceneBuild() {
           </motion.div>
           <div className="flex flex-1 gap-[4%]">
             {["bg-lilac", "bg-sky", "bg-pink"].map((c, i) => (
-              <motion.span key={c} {...pop(0.95 + i * 0.12)} className={`flex-1 rounded-lg ${c}`} />
+              <motion.span key={c} {...pop(0.95 + i * 0.12)} className={`flex-1 rounded-lg shadow-sm ${c}`} />
             ))}
           </div>
         </div>
         {/* Cursor */}
         <motion.svg
           viewBox="0 0 24 24"
-          className="absolute h-5 w-5 drop-shadow sm:h-6 sm:w-6"
+          className="absolute h-6 w-6 drop-shadow-lg sm:h-7 sm:w-7"
           initial={{ left: "88%", top: "92%", opacity: 0 }}
           animate={{ left: ["88%", "88%", "20%", "20%"], top: ["92%", "92%", "64%", "64%"], opacity: [0, 1, 1, 1], scale: [1, 1, 1, 0.8] }}
           transition={{ duration: 2.6, times: [0, 0.35, 0.85, 1], ease: "easeInOut" }}
@@ -200,16 +222,16 @@ function SceneBuild() {
 
       {/* Phone */}
       <motion.div
-        className="flex aspect-[9/18] w-[20%] flex-col gap-[6%] overflow-hidden rounded-[1.1rem] bg-[#221C19] p-[2.5%] ring-1 ring-canvas/10 sm:w-[16%] lg:w-[11%]"
+        className="z-10 flex aspect-[9/18] w-[22%] flex-col gap-[6%] overflow-hidden rounded-[1.1rem] bg-[#221C19] p-[2.5%] shadow-2xl ring-1 ring-canvas/10 sm:w-[16%] lg:w-[11%]"
         initial={{ opacity: 0, y: 60, rotate: 6 }}
         animate={{ opacity: 1, y: 0, rotate: 3 }}
         transition={{ type: "spring", stiffness: 140, damping: 16, delay: 1.2 }}
       >
         <span className="mx-auto mt-[4%] h-1 w-1/3 rounded-full bg-canvas/25" />
-        <motion.span {...pop(1.5)} className="h-[22%] rounded-lg bg-lilac" />
+        <motion.span {...pop(1.5)} className="h-[22%] rounded-lg bg-lilac shadow-sm" />
         {[0, 1, 2].map((n) => (
           <motion.span key={n} {...pop(1.65 + n * 0.12)} className="flex h-[12%] items-center gap-[8%] rounded-lg bg-canvas/10 px-[8%]">
-            <span className="aspect-square h-1/2 rounded-full bg-lime" />
+            <span className="aspect-square h-1/2 rounded-full bg-lime shadow-sm" />
             <span className="h-[18%] flex-1 rounded-full bg-canvas/40" />
           </motion.span>
         ))}
@@ -228,43 +250,67 @@ const swatches = [
 // A brand kit snapping together around the logo.
 function SceneBrand() {
   return (
-    <div className="absolute inset-0 flex items-center justify-center gap-5 p-4 sm:gap-8 lg:justify-end lg:pr-[8%]">
+    <div className="absolute inset-0 p-4 sm:flex sm:items-center sm:justify-center sm:gap-6 sm:p-6 lg:justify-end lg:pr-[8%]">
+      {/* Type Card (Top Right on Mobile) */}
       <motion.div
-        className="flex flex-col items-center"
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
+        drag
+        dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
+        whileHover={{ scale: 1.05, rotate: 2 }}
+        whileDrag={{ scale: 1.1, cursor: "grabbing" }}
+        className="absolute right-4 top-[28%] z-20 flex cursor-grab flex-col items-center justify-center rounded-2xl bg-white/60 px-5 py-4 shadow-lg ring-1 ring-ink/5 backdrop-blur-md sm:static sm:px-8 sm:py-6 lg:top-auto lg:right-auto"
+        initial={{ opacity: 0, y: -20, rotate: -4 }}
+        animate={{ opacity: 1, y: 0, rotate: -2 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 }}
       >
-        <span className="font-display text-6xl italic leading-none text-ink sm:text-7xl lg:text-8xl">Aa</span>
-        <span className="mt-2 text-[10px] uppercase tracking-[0.25em] text-ink/50 sm:text-xs">Type</span>
+        <span className="pointer-events-none font-display text-5xl italic leading-none text-ink sm:text-6xl lg:text-7xl">Aa</span>
+        <span className="pointer-events-none mt-3 rounded-full bg-ink/5 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-ink/50 sm:text-[10px]">Typography</span>
       </motion.div>
 
-      <div className="relative">
-        <Logo className="h-24 w-24 sm:h-32 sm:w-32 lg:h-40 lg:w-40" />
+      {/* Logo Center (Bottom Left on Mobile) */}
+      <div className="absolute bottom-[24%] left-[8%] z-10 flex flex-col items-center sm:static lg:bottom-auto lg:left-auto">
+        <Logo className="h-24 w-24 shadow-2xl sm:h-36 sm:w-36 lg:h-44 lg:w-44" />
         <motion.span
-          className="absolute -right-4 -top-4 font-display text-3xl text-ink sm:text-4xl"
-          initial={{ scale: 0, rotate: -90 }}
-          animate={{ scale: 1, rotate: 180 }}
-          transition={{ duration: 1.4, ease: EASE, delay: 0.5 }}
+          className="absolute -right-5 -top-5 font-display text-4xl text-brand sm:text-5xl"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 12 }}
+          transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.5 }}
+        >
+          ✦
+        </motion.span>
+        <motion.span
+          className="absolute -bottom-4 -left-4 font-display text-3xl text-lime sm:text-4xl"
+          initial={{ scale: 0, rotate: 90 }}
+          animate={{ scale: 1, rotate: -12 }}
+          transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.7 }}
         >
           ✦
         </motion.span>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 sm:gap-3">
+      {/* Colors Card (Bottom Right on Mobile) */}
+      <motion.div
+        drag
+        dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
+        whileHover={{ scale: 1.05, rotate: -2 }}
+        whileDrag={{ scale: 1.1, cursor: "grabbing" }}
+        className="absolute bottom-6 right-4 z-30 grid cursor-grab grid-cols-2 gap-2 rounded-2xl bg-white/60 p-3 shadow-lg ring-1 ring-ink/5 backdrop-blur-md sm:static sm:gap-4 sm:p-5 lg:bottom-auto lg:right-auto"
+        initial={{ opacity: 0, y: 40, rotate: 4 }}
+        animate={{ opacity: 1, y: 0, rotate: 2 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.35 }}
+      >
         {swatches.map((sw, i) => (
           <motion.div
             key={sw.hex}
-            className="flex flex-col items-center"
-            initial={{ opacity: 0, y: -40, rotate: i % 2 ? 12 : -12 }}
-            animate={{ opacity: 1, y: 0, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 260, damping: 14, delay: 0.35 + i * 0.12 }}
+            className="pointer-events-none flex flex-col items-center gap-1.5"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.5 + i * 0.1 }}
           >
-            <span className={`h-10 w-10 rounded-full ring-2 ring-canvas sm:h-14 sm:w-14 ${sw.c}`} />
-            <span className="mt-1 font-mono text-[9px] text-ink/50 sm:text-[10px]">{sw.hex}</span>
+            <span className={`h-10 w-10 rounded-full shadow-inner ring-1 ring-ink/10 sm:h-12 sm:w-12 ${sw.c}`} />
+            <span className="font-mono text-[9px] font-medium text-ink/60 sm:text-[10px]">{sw.hex}</span>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -347,9 +393,9 @@ function SceneServices() {
 // Each scene sets how long it holds before the next one takes over.
 const scenes = [
   { key: "wordmark", bg: DARK, ms: 3600, el: <SceneWordmark /> },
-  { key: "build", bg: DARK, ms: 4200, el: <SceneBuild /> },
-  { key: "brand", bg: LIGHT, ms: 3400, el: <SceneBrand /> },
   { key: "services", bg: LIGHT, ms: 4400, el: <SceneServices /> },
+  { key: "build", bg: DARK, ms: 4200, el: <SceneBuild /> },
+  // { key: "brand", bg: LIGHT, ms: 3400, el: <SceneBrand /> },
 ];
 
 /* ───────────── Hero ───────────── */
