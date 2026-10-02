@@ -5,11 +5,9 @@ import Image from "next/image";
 import {
   AnimatePresence,
   motion,
-  MotionValue,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
-  useTransform,
 } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { services, Service } from "@/lib/data";
@@ -28,29 +26,19 @@ const popFor = (i: number) => pops[i % pops.length];
 const tilts = [-1.2, 1, -0.6, 0.8];
 
 // Mobile only: one sticky card per service; later cards slide over earlier ones.
-function StackCard({
-  service,
-  i,
-  total,
-  progress,
-}: {
-  service: Service;
-  i: number;
-  total: number;
-  progress: MotionValue<number>;
-}) {
-  const reduce = useReducedMotion();
+// Kept deliberately cheap to scroll on phones: a fixed tilt (no per-frame
+// scale), no backdrop blur, light shadows.
+function StackCard({ service, i, total }: { service: Service; i: number; total: number }) {
   const pop = popFor(i);
-  const scale = useTransform(progress, [i / total, 1], [1, 1 - (total - 1 - i) * 0.025]);
 
   return (
     <div className="sticky -mx-3 mb-[4vh] last:mb-0 sm:-mx-6" style={{ top: `calc(5.5rem + ${i * 0.6}rem)` }}>
-      <motion.article
-        style={reduce ? { rotate: tilts[i % tilts.length] } : { scale, rotate: tilts[i % tilts.length] }}
-        className="relative isolate flex min-h-[26rem] origin-top flex-col overflow-hidden rounded-[1.75rem] p-6 text-canvas shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)]"
+      <article
+        style={{ transform: `rotate(${tilts[i % tilts.length]}deg)` }}
+        className="relative isolate flex min-h-[26rem] flex-col overflow-hidden rounded-[1.75rem] p-6 text-canvas shadow-[0_16px_30px_-20px_rgba(0,0,0,0.8)]"
       >
         {/* Background photo + legibility gradient */}
-        <Image src={service.image} alt="" fill sizes="100vw" className="-z-10 object-cover" />
+        <Image src={service.image} alt="" fill sizes="(max-width: 640px) 100vw, 80vw" className="-z-10 object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/90 via-black/55 to-black/20" />
 
         <div className="flex items-start justify-between">
@@ -59,7 +47,7 @@ function StackCard({
           >
             0{i + 1}
           </span>
-          <span className="rounded-full border border-canvas/30 bg-black/30 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-canvas/80 backdrop-blur-sm">
+          <span className="rounded-full border border-canvas/30 bg-black/45 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-canvas/80">
             {i + 1} / {total}
           </span>
         </div>
@@ -75,14 +63,14 @@ function StackCard({
             {service.deliverables.map((d) => (
               <span
                 key={d}
-                className={`rounded-full border bg-black/20 px-3 py-1 text-xs font-semibold text-canvas/90 backdrop-blur-sm ${pop.border}`}
+                className={`rounded-full border bg-black/40 px-3 py-1 text-xs font-semibold text-canvas/90 ${pop.border}`}
               >
                 {d}
               </span>
             ))}
           </div>
         </div>
-      </motion.article>
+      </article>
     </div>
   );
 }
@@ -139,9 +127,14 @@ export default function Services() {
   const { scrollYProgress } = useScroll({ target: stackRef, offset: ["start start", "end end"] });
   // Which card is on top of the mobile stack (drives the sticky counter).
   const [onTop, setOnTop] = useState(0);
-  useMotionValueEvent(scrollYProgress, "change", (v) =>
-    setOnTop(Math.min(services.length - 1, Math.max(0, Math.floor(v * services.length))))
-  );
+  const onTopRef = useRef(0);
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    const next = Math.min(services.length - 1, Math.max(0, Math.floor(v * services.length)));
+    if (next !== onTopRef.current) {
+      onTopRef.current = next;
+      setOnTop(next);
+    }
+  });
 
   return (
     <section id="services" className="relative bg-[#151515] py-20 text-canvas lg:py-36">
@@ -188,7 +181,6 @@ export default function Services() {
               service={service}
               i={i}
               total={services.length}
-              progress={scrollYProgress}
             />
           ))}
         </div>

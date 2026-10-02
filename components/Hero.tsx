@@ -143,6 +143,32 @@ function SceneBuild() {
   });
   return (
     <div className="absolute inset-0 flex items-center justify-center gap-3 p-4 sm:gap-5 lg:justify-end lg:pr-[7%]">
+      {/* Floating Status Badge (Fills the top-left void on mobile) */}
+      <motion.div
+        className="absolute left-[8%] top-[38%] z-10 flex items-center gap-2 rounded-full border border-canvas/10 bg-[#221C19] px-3 py-1.5 shadow-2xl sm:left-[15%] sm:top-[25%] lg:left-[25%] lg:top-[20%]"
+        initial={{ opacity: 0, scale: 0.8, x: -20 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20, delay: 1.8 }}
+      >
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75"></span>
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-lime"></span>
+        </span>
+        <span className="font-mono text-[9px] font-medium text-canvas/80 sm:text-[10px]">Deploying...</span>
+      </motion.div>
+
+      {/* Floating UI Component (Enhances the scene globally) */}
+      <motion.div
+        className="absolute right-[5%] top-[15%] z-10 hidden aspect-square w-12 flex-col gap-1.5 rounded-xl border border-canvas/10 bg-[#221C19] p-2 shadow-2xl sm:flex lg:right-[3%] lg:w-16"
+        initial={{ opacity: 0, scale: 0.8, y: -20, rotate: 10 }}
+        animate={{ opacity: 1, scale: 1, y: 0, rotate: 6 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20, delay: 2.1 }}
+      >
+        <span className="h-1/2 w-full rounded-md bg-lilac/90" />
+        <span className="h-1.5 w-3/4 rounded-full bg-canvas/30" />
+        <span className="h-1.5 w-1/2 rounded-full bg-canvas/30" />
+      </motion.div>
+
       {/* Browser */}
       <motion.div
         className="relative flex aspect-[16/10] w-[70%] flex-col overflow-hidden rounded-xl bg-[#221C19] ring-1 ring-canvas/10 sm:w-[60%] lg:w-[44%]"
