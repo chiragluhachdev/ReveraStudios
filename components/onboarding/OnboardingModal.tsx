@@ -185,7 +185,7 @@ export default function OnboardingModal({
                 {/* Footer */}
                 <div className="flex items-center justify-between gap-4 border-t border-ink/10 px-6 py-5 sm:px-10">
                   <div className="text-sm text-stone">
-                    {error && <span className="text-accent">Something went wrong — try again.</span>}
+                    {error && <span className="text-red-600">Something went wrong — try again.</span>}
                   </div>
                   
                   <button

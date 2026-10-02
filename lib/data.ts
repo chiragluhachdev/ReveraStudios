@@ -100,8 +100,30 @@ export const projects: Project[] = [
     cta: "Visit Website",
   },
   {
-    id: "ark-kidoid",
+    id: "mr-bites",
     index: "02",
+    title: "MR BITES",
+    client: "MR BITES",
+    sector: "Foodtech • Campus Ordering App",
+    year: "2026",
+    image: "/videos/mrbitesx.png",
+    story:
+      "A dedicated campus food ordering platform designed for students and teachers. By allowing users to place orders early through the mobile app, MR BITES eliminates long queues and waiting times, ensuring a seamless and efficient dining experience.",
+    services: [
+      "Product Strategy",
+      "UI/UX Design",
+      "Mobile App Development"
+    ],
+    results: [
+      { value: "50%", label: "Wait time reduced" },
+      { value: "iOS & Android", label: "App Platforms" }
+    ],
+    href: "https://www.mrbites.in/",
+    cta: "Visit Website",
+  },
+  {
+    id: "ark-kidoid",
+    index: "03",
     title: "ARK Kidoid | MKP",
     client: "Masti Ki Paathshaala",
     sector: "Education • App & Web Platform",
@@ -124,7 +146,7 @@ export const projects: Project[] = [
   },
   {
     id: "indian-sacred-roots",
-    index: "03",
+    index: "04",
     title: "Indian Sacred Roots",
     client: "Indian Sacred Roots",
     sector: "Culture • Information Portal",
@@ -142,28 +164,6 @@ export const projects: Project[] = [
       { value: "Web", label: "Platform" }
     ],
     href: "https://www.indiansacredroots.com/",
-    cta: "Visit Website",
-  },
-  {
-    id: "mr-bites",
-    index: "04",
-    title: "MR BITES",
-    client: "MR BITES",
-    sector: "Foodtech • Campus Ordering App",
-    year: "2026",
-    image: "/videos/mrbitesx.png",
-    story:
-      "A dedicated campus food ordering platform designed for students and teachers. By allowing users to place orders early through the mobile app, MR BITES eliminates long queues and waiting times, ensuring a seamless and efficient dining experience.",
-    services: [
-      "Product Strategy",
-      "UI/UX Design",
-      "Mobile App Development"
-    ],
-    results: [
-      { value: "50%", label: "Wait time reduced" },
-      { value: "iOS & Android", label: "App Platforms" }
-    ],
-    href: "https://www.mrbites.in/",
     cta: "Visit Website",
   },
   {
@@ -374,21 +374,25 @@ export const processSteps = [
     no: "01",
     title: "Discover",
     body: "We listen, audit and research until the problem is unmistakably clear. Strategy before pixels, always.",
+    tags: ["Research", "Audit", "Strategy"],
   },
   {
     no: "02",
     title: "Create",
     body: "Concepts become craft. We design, shoot, write and build in tight, obsessive loops.",
+    tags: ["Design", "Content", "Build"],
   },
   {
     no: "03",
     title: "Launch",
     body: "We ship with precision — QA'd, optimised and staged for the moment it matters most.",
+    tags: ["QA", "Optimise", "Go-live"],
   },
   {
     no: "04",
     title: "Scale",
     body: "The work is never done. We measure, iterate and grow the brand long after go-live.",
+    tags: ["Measure", "Iterate", "Grow"],
   },
 ];
 
@@ -468,18 +472,16 @@ export const instagram = [
 ];
 
 export const nav = [
-  { label: "Work", href: "#work" },
+  { label: "Work", href: "/work" },
   { label: "Services", href: "#services" },
   { label: "Studio", href: "#studio" },
-  { label: "Process", href: "#process" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const contactMeta = {
   email: "studios.revera@gmail.com",
   phone: "+91 8130809374",
-  instagram: "@reverastudios.co",
+  instagram: "@reverastudios.in",
   facebook: "@reverastudio",
   location: "Faridabad, 121001, Haryana",
 };

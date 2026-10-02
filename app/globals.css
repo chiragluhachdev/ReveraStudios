@@ -96,6 +96,15 @@ body {
   }
 }
 
+/* Horizontal scrollers (project strip, pricing cards) — keep the swipe, hide the bar */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Line-mask reveal helper (used with framer-motion) */
 .mask-line {
   display: block;

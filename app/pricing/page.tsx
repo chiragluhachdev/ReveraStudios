@@ -157,7 +157,7 @@ export default function PricingPage() {
                       </a>
                       <StartProjectButton
                         plan="custom"
-                        className="group inline-flex items-center gap-3 rounded-full bg-canvas px-9 py-4 text-sm font-medium text-ink transition-all duration-500 ease-expo hover:bg-accent hover:text-canvas"
+                        className="group inline-flex items-center gap-3 rounded-full bg-canvas px-9 py-4 text-sm font-medium text-ink transition-all duration-500 ease-expo hover:bg-lime hover:text-ink"
                       >
                         Request a Proposal
                         <ArrowUpRight

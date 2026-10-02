@@ -69,7 +69,7 @@ export const site = {
 
   // Public social profiles (drives Organization `sameAs`).
   sameAs: [
-    "https://instagram.com/reverastudios.co",
+    "https://instagram.com/reverastudios.in",
     "https://facebook.com/reverastudio",
   ],
 
@@ -156,6 +156,7 @@ export const pages: {
   priority: number;
 }[] = [
   { path: "/", changeFrequency: "monthly", priority: 1 },
+  { path: "/work", changeFrequency: "monthly", priority: 0.9 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
 ];
 

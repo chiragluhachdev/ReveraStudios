@@ -13,7 +13,15 @@ const config: Config = {
         ivory: "#F1EEE9",
         ink: "#0A0A0A",
         stone: "#6B6862",
-        accent: "#B4472E",
+        // Dark charcoal replaces the old terracotta accent.
+        accent: "#2A2A2A",
+        // Logo red — the "ê" and full stop in the "Rêvera." wordmark.
+        brand: "#AB0003",
+        // Gen Z pops — used on dark surfaces (banners, stickers, highlights).
+        lime: "#C8F26D",
+        lilac: "#C4B5FD",
+        sky: "#8EDCFB",
+        pink: "#FFA8D4",
         gold: "#B08D57",
       },
       fontFamily: {
@@ -36,9 +44,16 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "marquee-reverse": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
       animation: {
         marquee: "marquee var(--marquee-duration, 40s) linear infinite",
+        "marquee-reverse":
+          "marquee-reverse var(--marquee-duration, 40s) linear infinite",
+        "spin-slow": "spin 14s linear infinite",
       },
     },
   },
