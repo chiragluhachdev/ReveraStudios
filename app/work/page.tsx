@@ -38,9 +38,6 @@ export default function WorkPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-ink" />
                 Selected work
               </span>
-              <span className="-rotate-3 rounded-full bg-lime px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-ink">
-                {projects.length} projects
-              </span>
             </Reveal>
             <AnimatedHeading
               as="h1"
@@ -53,9 +50,6 @@ export default function WorkPage() {
                 culture, fashion and energy — designed, built and shipped end
                 to end.
               </p>
-            </Reveal>
-            <Reveal delay={0.15} className="mt-8">
-              <WorkStats />
             </Reveal>
           </div>
         </section>
