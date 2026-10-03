@@ -71,6 +71,10 @@ export type Project = {
   cta?: string;
   /** Optional client / attribution line shown under the sector. */
   clientLabel?: string;
+  /** Where the product runs — drives the platform chips on /work. */
+  platforms?: ("Web" | "iOS" | "Android")[];
+  /** Published on the App Store and Google Play. */
+  liveOnStores?: boolean;
 };
 
 export const projects: Project[] = [
@@ -98,6 +102,7 @@ export const projects: Project[] = [
     ],
     href: "https://www.churroacademyglobal.com/",
     cta: "Visit Website",
+    platforms: ["Web"],
   },
   {
     id: "mr-bites",
@@ -108,18 +113,21 @@ export const projects: Project[] = [
     year: "2026",
     image: "/videos/mrbitesx.png",
     story:
-      "A dedicated campus food ordering platform designed for students and teachers. By allowing users to place orders early through the mobile app, MR BITES eliminates long queues and waiting times, ensuring a seamless and efficient dining experience.",
+      "A dedicated campus food ordering platform for students and teachers. We designed and built the MR BITES app — now live on the App Store and Google Play — so users can order ahead and skip the queue entirely, alongside the website.",
     services: [
       "Product Strategy",
       "UI/UX Design",
-      "Mobile App Development"
+      "Mobile App Development",
+      "App Store & Play Store Launch"
     ],
     results: [
-      { value: "50%", label: "Wait time reduced" },
-      { value: "iOS & Android", label: "App Platforms" }
+      { value: "Live", label: "App Store & Google Play" },
+      { value: "50%", label: "Wait time reduced" }
     ],
     href: "https://www.mrbites.in/",
     cta: "Visit Website",
+    platforms: ["Web", "iOS", "Android"],
+    liveOnStores: true,
   },
   {
     id: "ark-kidoid",
@@ -143,6 +151,7 @@ export const projects: Project[] = [
     ],
     href: "https://www.mastikipaathshaala.org/",
     cta: "Visit Website",
+    platforms: ["Web", "iOS", "Android"],
   },
   {
     id: "indian-sacred-roots",
@@ -165,6 +174,7 @@ export const projects: Project[] = [
     ],
     href: "https://www.indiansacredroots.com/",
     cta: "Visit Website",
+    platforms: ["Web"],
   },
   {
     id: "geoenergys",
@@ -194,6 +204,7 @@ export const projects: Project[] = [
     ],
     href: "https://geo-energys.vercel.app/",
     cta: "View Live Project",
+    platforms: ["Web"],
   },
   {
     id: "presnag",
@@ -220,6 +231,7 @@ export const projects: Project[] = [
     ],
     href: "https://presnag.com",
     cta: "Visit Platform",
+    platforms: ["Web"],
   },
   {
     id: "miyaabi",
@@ -245,6 +257,7 @@ export const projects: Project[] = [
     ],
     href: "https://miyaabi.vercel.app/",
     cta: "Visit Store",
+    platforms: ["Web"],
   },
   /*
   {

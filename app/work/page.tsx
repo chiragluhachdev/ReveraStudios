@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/ui/Reveal";
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import ProjectList from "@/components/work/ProjectList";
+import ProjectList, { WorkStats } from "@/components/work/ProjectList";
 import Ticker from "@/components/Ticker";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema, pageMetadata } from "@/lib/site";
@@ -49,9 +49,13 @@ export default function WorkPage() {
             />
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-stone sm:text-lg">
-                Education, food, culture, fashion and energy — every project
-                designed, built and shipped end to end.
+                Websites, web apps and mobile apps for education, food,
+                culture, fashion and energy — designed, built and shipped end
+                to end.
               </p>
+            </Reveal>
+            <Reveal delay={0.15} className="mt-8">
+              <WorkStats />
             </Reveal>
           </div>
         </section>
