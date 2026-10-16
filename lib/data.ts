@@ -486,6 +486,7 @@ export const instagram = [
 
 export const nav = [
   { label: "Work", href: "/work" },
+  { label: "Concepts", href: "/concepts" },
   { label: "Services", href: "#services" },
   { label: "Studios", href: "#studios" },
   { label: "Contact", href: "#contact" },

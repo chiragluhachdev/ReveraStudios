@@ -157,6 +157,12 @@ export const pages: {
 }[] = [
   { path: "/", changeFrequency: "monthly", priority: 1 },
   { path: "/work", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/concepts", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/concepts/interior-design", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/concepts/real-estate", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/concepts/academy", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/concepts/saas", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/concepts/shopify", changeFrequency: "monthly", priority: 0.6 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
 ];
 
