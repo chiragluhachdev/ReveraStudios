@@ -1,12 +1,16 @@
 import { ReactNode } from "react";
 import {
+  Bodoni_Moda,
   Bricolage_Grotesque,
+  Caveat,
   Cormorant_Garamond,
+  DM_Sans,
   Fraunces,
   Instrument_Serif,
   Jost,
   Manrope,
   Space_Grotesk,
+  Young_Serif,
 } from "next/font/google";
 
 // Typefaces for the fictional concept brands. Loaded only under /concepts so
@@ -36,11 +40,15 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 const jost = Jost({ subsets: ["latin"], variable: "--font-jost", display: "swap" });
+const young = Young_Serif({ subsets: ["latin"], weight: "400", variable: "--font-young", display: "swap" });
+const dmsans = DM_Sans({ subsets: ["latin"], variable: "--font-dmsans", display: "swap" });
+const caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat", display: "swap" });
+const bodoni = Bodoni_Moda({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-bodoni", display: "swap" });
 
 export default function ConceptsLayout({ children }: { children: ReactNode }) {
   return (
     <div
-      className={`${cormorant.variable} ${manrope.variable} ${bricolage.variable} ${space.variable} ${fraunces.variable} ${instrument.variable} ${jost.variable}`}
+      className={`${cormorant.variable} ${manrope.variable} ${bricolage.variable} ${space.variable} ${fraunces.variable} ${instrument.variable} ${jost.variable} ${young.variable} ${dmsans.variable} ${caveat.variable} ${bodoni.variable}`}
     >
       {children}
     </div>

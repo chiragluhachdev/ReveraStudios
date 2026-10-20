@@ -17,6 +17,8 @@ import Strategy from "@/components/concepts/Strategy";
 import AutomationFlow from "@/components/concepts/AutomationFlow";
 import ConceptNav from "@/components/concepts/ConceptNav";
 import InteriorMoodboard from "@/components/concepts/InteriorMoodboard";
+import BakeryMenu from "@/components/concepts/BakeryMenu";
+import FashionLookbook from "@/components/concepts/FashionLookbook";
 import { breadcrumbSchema, pageMetadata } from "@/lib/site";
 import { concepts, conceptSections, getConcept } from "@/lib/concepts";
 
@@ -69,11 +71,17 @@ export default async function ConceptPage({ params }: Params) {
   const index = concepts.findIndex((c) => c.slug === concept.slug);
   const others = concepts.filter((c) => c.slug !== concept.slug);
 
-  // The interior concept gets an extra Moodboard section after the brand.
-  const hasMoodboard = concept.slug === "interior-design";
-  const sections = hasMoodboard
-    ? [conceptSections[0], { id: "moodboard", label: "Moodboard" }, ...conceptSections.slice(1)]
-    : conceptSections;
+  // Concept-specific extra sections (e.g. Moodboard, Menu) sit after Brand.
+  const extraLabels = { moodboard: "Moodboard", menu: "Menu", lookbook: "Lookbook" } as const;
+  const extras = concept.extras ?? [];
+  const hasMoodboard = extras.includes("moodboard");
+  const hasMenu = extras.includes("menu");
+  const hasLookbook = extras.includes("lookbook");
+  const sections = [
+    conceptSections[0],
+    ...extras.map((id) => ({ id, label: extraLabels[id] })),
+    ...conceptSections.slice(1),
+  ];
   const at = (id: string) => sections.findIndex((x) => x.id === id);
   const no = (id: string) => String(at(id) + 1).padStart(2, "0");
   // Alternate section backgrounds in order, whatever the section count.
@@ -142,6 +150,24 @@ export default async function ConceptPage({ params }: Params) {
             <div className="container-x">
               <SectionHead no={no("moodboard")} label="Moodboard" title="Where every room begins." body="Light, material and colour, pinned before a single drawing. Rearrange it — this is how Oriel would present a concept." />
               <InteriorMoodboard concept={concept} />
+            </div>
+          </section>
+        )}
+
+        {hasMenu && (
+          <section id="menu" className={`scroll-mt-24 py-14 lg:py-24 ${band("menu")}`}>
+            <div className="container-x">
+              <SectionHead no={no("menu")} label="Menu design" title="A menu you want to read twice." body="Printed menu, daily chalkboard and a scan-to-order table card — one menu, three places." />
+              <BakeryMenu concept={concept} />
+            </div>
+          </section>
+        )}
+
+        {hasLookbook && (
+          <section id="lookbook" className={`scroll-mt-24 py-14 lg:py-24 ${band("lookbook")}`}>
+            <div className="container-x">
+              <SectionHead no={no("lookbook")} label="Campaign & lookbook" title="An editorial you can shop." body="The AW26 campaign as a lookbook — every look links straight to the pieces in it." />
+              <FashionLookbook concept={concept} />
             </div>
           </section>
         )}

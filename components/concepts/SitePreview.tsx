@@ -4,6 +4,8 @@ import { ComponentType, useEffect, useRef, useState } from "react";
 import { Lock, Monitor, Smartphone } from "lucide-react";
 import { Concept, ConceptSlug } from "@/lib/concepts";
 import InteriorSite from "@/components/concepts/sites/InteriorSite";
+import BakerySite from "@/components/concepts/sites/BakerySite";
+import FashionSite from "@/components/concepts/sites/FashionSite";
 import RealEstateSite from "@/components/concepts/sites/RealEstateSite";
 import AcademySite from "@/components/concepts/sites/AcademySite";
 import SaasSite from "@/components/concepts/sites/SaasSite";
@@ -23,6 +25,8 @@ const sites: Record<ConceptSlug, ComponentType<SiteProps>> = {
   academy: AcademySite,
   saas: SaasSite,
   shopify: StoreSite,
+  "bakery-cafe": BakerySite,
+  fashion: FashionSite,
 };
 
 export default function SitePreview({ concept }: { concept: Concept }) {

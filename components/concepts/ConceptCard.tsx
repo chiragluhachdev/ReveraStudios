@@ -58,7 +58,7 @@ export default function ConceptCard({ concept, i }: { concept: Concept; i: numbe
 
         <div className="flex flex-1 flex-col gap-5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
           <div className="flex flex-wrap gap-1.5">
-            {inside.map((x) => (
+            {(concept.tags ?? inside).map((x) => (
               <span key={x} className="rounded-full bg-ink/[0.05] px-3 py-1 text-[11px] font-semibold text-ink/70">
                 {x}
               </span>

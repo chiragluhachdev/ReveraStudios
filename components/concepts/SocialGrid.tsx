@@ -14,6 +14,8 @@ const highlights: Record<ConceptSlug, string[]> = {
   academy: ["Admissions", "Student work", "Mentors", "Demo day"],
   saas: ["Product", "Customers", "Changelog", "Events"],
   shopify: ["Rituals", "New in", "Reviews", "Behind batch"],
+  "bakery-cafe": ["Today's bake", "Pre-order", "4am club", "Café"],
+  fashion: ["AW26", "Lookbook", "Atelier", "Restocks"],
 };
 
 // Deterministic "likes" so server and client render the same numbers.

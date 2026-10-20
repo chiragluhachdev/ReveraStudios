@@ -163,6 +163,8 @@ export const pages: {
   { path: "/concepts/academy", changeFrequency: "monthly", priority: 0.6 },
   { path: "/concepts/saas", changeFrequency: "monthly", priority: 0.6 },
   { path: "/concepts/shopify", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/concepts/bakery-cafe", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/concepts/fashion", changeFrequency: "monthly", priority: 0.6 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
 ];
 

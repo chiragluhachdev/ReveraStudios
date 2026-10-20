@@ -7,7 +7,7 @@
 export const unsplash = (id: string, w = 1400) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`;
 
-export type ConceptSlug = "interior-design" | "real-estate" | "academy" | "saas" | "shopify";
+export type ConceptSlug = "interior-design" | "real-estate" | "academy" | "saas" | "shopify" | "bakery-cafe" | "fashion";
 
 export type SocialPost =
   | { kind: "photo"; image: string; overlay?: string; caption: string }
@@ -47,12 +47,17 @@ export type Concept = {
     title: string;
     steps: { title: string; detail: string }[];
   };
+  /** Chips on the landing card (defaults to the standard five). */
+  tags?: string[];
+  /** Extra concept-specific sections, inserted after Brand identity. */
+  extras?: ("moodboard" | "menu" | "lookbook")[];
 };
 
 export const concepts: Concept[] = [
   {
     slug: "interior-design",
     category: "Interior Design",
+    extras: ["moodboard"],
     pitch:
       "Portfolio-led studios: before/after reveals, style discovery, moodboards and consultation bookings.",
     cover: unsplash("1618220179428-22790b461013"),
@@ -357,6 +362,134 @@ export const concepts: Concept[] = [
         { title: "Confirmation sent", detail: "Email + WhatsApp, branded" },
         { title: "Fulfilment updates", detail: "Packed → shipped → delivered" },
         { title: "Refill reminder", detail: "Day 30: “Running low?”" },
+      ],
+    },
+  },
+  {
+    slug: "bakery-cafe",
+    category: "Bakery & Café",
+    pitch:
+      "Warm, artisan branding with pastry photography, menu design, online ordering and a cozy café website.",
+    cover: unsplash("1555507036-ab1f4038808a"),
+    tags: ["Brand", "Website", "Social", "Menu", "Automation"],
+    extras: ["menu"],
+    brand: {
+      name: "Crumb & Co.",
+      wordmark: "Crumb & Co.",
+      descriptor: "Bakehouse & Café",
+      positioning:
+        "A neighbourhood bakehouse in Bandra that bakes at 4am and sells out by noon. Crumb & Co. is warm, a little cheeky and obsessed with butter — it sounds like your favourite baker, not a chain.",
+      voice: ["Warm", "Cheeky", "Crafted"],
+      displayFont: "var(--font-young), serif",
+      bodyFont: "var(--font-dmsans), sans-serif",
+      displayName: "Young Serif",
+      bodyName: "DM Sans + Caveat",
+      palette: [
+        { name: "Flour", hex: "#FBF4E8" },
+        { name: "Cocoa", hex: "#3A2318" },
+        { name: "Crust", hex: "#C46A2B" },
+        { name: "Pistachio", hex: "#8E9B6A" },
+        { name: "Butter", hex: "#F2CF86" },
+      ],
+      handle: "crumbandco.bakes",
+    },
+    website: { domain: "crumbandco.in", pages: ["Home", "Menu", "Order", "Visit"] },
+    social: {
+      bio: "Bakehouse & café · Bandra, Mumbai 🥐\nBaked at 4am · Pre-order for pickup ↓",
+      followers: "54.6K",
+      posts: [
+        { kind: "photo", image: unsplash("1555507036-ab1f4038808a", 600), overlay: "72 layers. Zero shortcuts.", caption: "Our butter croissant: three days, 72 layers, one very patient baker." },
+        { kind: "type", text: "Baked at 4am. Gone by noon.", tone: 1, caption: "Pre-order the night before and we'll hold yours. Link in bio." },
+        { kind: "photo", image: unsplash("1483695028939-5bb13f8648b0", 600), caption: "Pain au chocolat, straight off the tray at 7:10am." },
+        { kind: "photo", image: unsplash("1517686469429-8bdb88b9f907", 600), overlay: "Behind the counter", caption: "4:12am. The dough doesn't wait, so neither do we." },
+        { kind: "stat", value: "1,200", label: "Croissants every Saturday", tone: 2, caption: "1,200 croissants every Saturday. Still not enough, apparently." },
+        { kind: "photo", image: unsplash("1565958011703-44f9829ba187", 600), overlay: "New · Orange cardamom tart", caption: "New on the counter: orange cardamom tart. A little bit Paris, a lot Bombay." },
+        { kind: "photo", image: unsplash("1509042239860-f550ce710b93", 600), caption: "Flat whites for the laptop crew. Tables are yours till 11." },
+        { kind: "type", text: "Butter is a love language.", tone: 3, caption: "And we are very fluent." },
+        { kind: "photo", image: unsplash("1549931319-a545dcf3bc73", 600), overlay: "Sourdough Sundays", caption: "Country sourdough, 36-hour ferment. Sundays only — pre-order to be safe." },
+      ],
+    },
+    strategy: {
+      goal: "Fill the counter by 8am and the tables all day — and sell out on purpose, not by accident.",
+      points: [
+        { title: "Pre-orders & pickup", body: "Order-ahead with pickup slots turns tomorrow's demand into tonight's bake list — less waste, fewer “sorry, sold out” moments." },
+        { title: "A menu that reads in seconds", body: "Clear categories, prices and dietary tags on the site, the QR table card and the printed menu, all from one source." },
+        { title: "Local discovery", body: "Accurate hours, a live “out of the oven” board and photo-rich pages built for “bakery near me” and Google Maps." },
+        { title: "Loyalty that feels personal", body: "A digital stamp card and birthday treat bring regulars back without discount-driven margins." },
+      ],
+      metrics: ["Pre-orders per day", "Sell-through before close", "Repeat visits", "Google Maps actions"],
+    },
+    automation: {
+      title: "Pre-order to pickup, without the phone ringing",
+      steps: [
+        { title: "Order placed", detail: "Online or via table QR" },
+        { title: "Bake list updated", detail: "Kitchen prep sheet at 3:30am" },
+        { title: "“It's ready” message", detail: "WhatsApp when it's on the shelf" },
+        { title: "Next-day nudge", detail: "Review request + stamp added" },
+      ],
+    },
+  },
+  {
+    slug: "fashion",
+    category: "Fashion & Lifestyle",
+    pitch:
+      "Editorial campaigns, lookbooks, product collections and a premium online storefront.",
+    cover: unsplash("1581044777550-4cfa60707c03"),
+    tags: ["Branding", "Website", "Social", "E-commerce", "Strategy"],
+    extras: ["lookbook"],
+    brand: {
+      name: "Formé Studio",
+      wordmark: "FORMÉ",
+      descriptor: "Studio",
+      positioning:
+        "Considered womenswear and unisex essentials, cut in small runs in Mumbai. Formé is editorial and precise — fewer pieces, better fabrics, and campaigns that feel like a magazine rather than a sale.",
+      voice: ["Editorial", "Precise", "Quietly bold"],
+      displayFont: "var(--font-bodoni), serif",
+      bodyFont: "var(--font-inter), sans-serif",
+      displayName: "Bodoni Moda",
+      bodyName: "Inter",
+      palette: [
+        { name: "Bone", hex: "#F3EFE8" },
+        { name: "Noir", hex: "#141312" },
+        { name: "Oxblood", hex: "#6E1F24" },
+        { name: "Taupe", hex: "#A89A8A" },
+        { name: "Stone", hex: "#DDD6CB" },
+      ],
+      handle: "forme.studio",
+    },
+    website: { domain: "formestudio.in", pages: ["Home", "Shop", "Product", "Bag"] },
+    social: {
+      bio: "Considered essentials · Made in small runs, Mumbai\nAW26 “Quiet Hours” — out now",
+      followers: "88.3K",
+      posts: [
+        { kind: "photo", image: unsplash("1581044777550-4cfa60707c03", 600), overlay: "Quiet Hours — AW26", caption: "Quiet Hours. Our autumn–winter collection, shot at golden hour and in no particular hurry." },
+        { kind: "type", text: "Wear it slower.", tone: 1, caption: "Fewer pieces, worn more often. That's the whole idea." },
+        { kind: "photo", image: unsplash("1558769132-cb1aea458c5e", 600), caption: "The knit wall, before it ships. Every piece is wool, cotton or linen." },
+        { kind: "stat", value: "86%", label: "Natural fibres this season", tone: 2, caption: "86% natural fibres across AW26 — and we're working on the rest." },
+        { kind: "photo", image: unsplash("1488161628813-04466f872be2", 600), overlay: "Look 03", caption: "Look 03: the Atelier Bomber and pleated wide-leg trouser in camel." },
+        { kind: "photo", image: unsplash("1551232864-3f0890e580d9", 600), caption: "Studio rail, Tuesday morning." },
+        { kind: "type", text: "Fewer, better, longer.", tone: 3, caption: "Our three-word design brief." },
+        { kind: "photo", image: unsplash("1566174053879-31528523f8ae", 600), overlay: "The Plum Dress", caption: "The Plum Dress — bias-cut satin, made in a run of 120." },
+        { kind: "photo", image: unsplash("1562157873-818bc0726f68", 600), caption: "The Essential Tee, now in six colours. Heavyweight organic cotton." },
+      ],
+    },
+    strategy: {
+      goal: "Make every visit feel like opening a magazine — then make checkout as effortless as the clothes.",
+      points: [
+        { title: "Editorial to commerce", body: "Shop-the-look hotspots turn every campaign image into a product page, so inspiration is one tap from the bag." },
+        { title: "Collection navigation", body: "Category filters, sorting and hover alternate images let people browse a collection the way they'd browse a rail." },
+        { title: "Fit confidence", body: "Size guides, fit notes and sold-out sizes shown honestly cut size-related returns — the biggest cost in fashion e-commerce." },
+        { title: "Mobile checkout", body: "A thumb-friendly product page, a free-shipping progress bar and a short checkout built for the 80% who shop on phones." },
+      ],
+      metrics: ["Conversion rate", "Average order value", "Size-related return rate", "Lookbook → product clicks"],
+    },
+    automation: {
+      title: "Drop day to repeat customer",
+      steps: [
+        { title: "Drop announced", detail: "Waitlist gets early access" },
+        { title: "Order confirmed", detail: "Branded email + WhatsApp" },
+        { title: "Shipped & styled", detail: "Tracking with styling notes" },
+        { title: "Restock alert", detail: "Size back? They hear first" },
       ],
     },
   },

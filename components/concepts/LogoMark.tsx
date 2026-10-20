@@ -13,6 +13,25 @@ export default function LogoMark({
   className?: string;
 }) {
   switch (slug) {
+    // Formé — an "F" in a fine frame, with the acute accent as a slash.
+    case "fashion":
+      return (
+        <svg viewBox="0 0 48 48" className={className} aria-hidden fill="none">
+          <rect x="7" y="9" width="34" height="34" stroke={color} strokeWidth="1.5" />
+          <path d="M19 37V17h12M19 27h9" stroke={color} strokeWidth="2.5" strokeLinecap="square" />
+          <path d="M28 4l6-6" transform="translate(0 7)" stroke={accent} strokeWidth="2.5" strokeLinecap="round" />
+        </svg>
+      );
+    // Crumb & Co. — a scored loaf with a couple of crumbs.
+    case "bakery-cafe":
+      return (
+        <svg viewBox="0 0 48 48" className={className} aria-hidden fill="none">
+          <path d="M6 30c0-9 8-16 18-16s18 7 18 16c0 4-3 6-6 6H12c-3 0-6-2-6-6z" stroke={color} strokeWidth="2.5" strokeLinejoin="round" />
+          <path d="M16 22l4 7M23 20l4 8M30 21l4 7" stroke={accent} strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="12" cy="41" r="1.6" fill={color} />
+          <circle cx="18" cy="42.5" r="1.1" fill={color} />
+        </svg>
+      );
     // Oriel — a bay ("oriel") window: three facets, mullions, one lit pane.
     case "interior-design":
       return (
